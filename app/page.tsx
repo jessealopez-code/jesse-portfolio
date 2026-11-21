@@ -100,7 +100,7 @@ export default function Home() {
           {chapters.map((c, ci) => (
             <div key={c.company} className="chapter">
               <div className="chapter-head">
-                <span className="eyebrow">Chapter {pad(ci + 1)}</span>
+                <span className="eyebrow">{c.category}</span>
                 <h3 className="chapter-company">{c.company}</h3>
                 <p className="chapter-headline">{c.headline}</p>
                 <p className="muted small">{c.note}</p>

@@ -74,6 +74,7 @@ export type Project = {
 
 export type Chapter = {
   company: string;
+  category: string;
   headline: string;
   note: string;
   projects: Project[];
@@ -82,6 +83,7 @@ export type Chapter = {
 export const chapters: Chapter[] = [
   {
     company: "Square",
+    category: "Fintech · SMB payments",
     headline: "Doubled revenue of Square Invoices",
     note: "Positioning, pricing and launches across 6 markets.",
     projects: [
@@ -110,6 +112,7 @@ export const chapters: Chapter[] = [
   },
   {
     company: "Klaviyo",
+    category: "E-commerce marketing SaaS",
     headline: "Repositioned for a rebrand and launched enterprise",
     note: "Product positioning across every surface.",
     projects: [
@@ -138,6 +141,7 @@ export const chapters: Chapter[] = [
   },
   {
     company: "Brex",
+    category: "Corporate spend management",
     headline: "Expanded Brex into Enterprise SaaS",
     note: "SaaS launch, Brex AI, first-ever pricing page.",
     projects: [
@@ -166,6 +170,7 @@ export const chapters: Chapter[] = [
   },
   {
     company: "Dandy",
+    category: "Digital dental lab",
     headline: "3× acquisition through full-funnel marketing",
     note: "Category repositioning, video and social proof.",
     projects: [
