@@ -3,6 +3,7 @@ import { bio, chapters, highlights, links, principles, site, vori } from "@/cont
 import LogoMarquee from "./components/LogoMarquee";
 import Placeholder from "./components/Placeholder";
 import WebsiteStack from "./components/WebsiteStack";
+import { VideoGrid, VideoLink, youtubeId } from "./components/VideoModal";
 import QuoteSlider from "./components/QuoteSlider";
 import SmartLink from "./components/SmartLink";
 
@@ -114,9 +115,15 @@ export default function Home() {
                     <div className="card-body">
                       <h4>{p.title}</h4>
                       <p>{p.text}</p>
-                      <SmartLink href={p.href} className="card-link">
-                        {p.linkLabel} →
-                      </SmartLink>
+                      {youtubeId(p.href) && p.href !== "#" ? (
+                        <VideoLink url={p.href} className="card-link">
+                          ▶ {p.linkLabel}
+                        </VideoLink>
+                      ) : (
+                        <SmartLink href={p.href} className="card-link">
+                          {p.linkLabel} →
+                        </SmartLink>
+                      )}
                     </div>
                   </article>
                 ))}
@@ -247,19 +254,7 @@ export default function Home() {
               <span className="vori-num">04</span>
               {vori.videos.heading}
             </h3>
-            <div className="vori-grid-3">
-              {vori.videos.ids.map((id, i) => (
-                <div key={id} className="video">
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${id}`}
-                    title={`Vori video ${i + 1}`}
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                </div>
-              ))}
-            </div>
+            <VideoGrid ids={vori.videos.ids} label="Vori video" />
           </div>
 
           <div className="vori-block">
