@@ -84,7 +84,7 @@ export type Chapter = {
 export const chapters: Chapter[] = [
   {
     company: "Intuit",
-    category: "QuickBooks · small business software",
+    category: "SMB software",
     headline: "Led QuickBooks' first global brand strategy team",
     note: "Brand strategy and performance across the US, UK, Canada and Australia.",
     projects: [
