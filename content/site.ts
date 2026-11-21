@@ -133,7 +133,7 @@ export const chapters: Chapter[] = [
       {
         title: "Revamped Klaviyo's web acquisition pages",
         text: "Led revamp of Klaviyo's performance-marketing landing pages and website consideration pages to improve the acquisition rate of new customers.",
-        image: "", // placeholder shown until an image is added, e.g. "/images/klaviyo-web.jpg"
+        image: "/images/klaviyo-web.jpg",
         linkLabel: "",
         href: "#",
       },
