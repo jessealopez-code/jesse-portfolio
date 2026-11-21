@@ -6,10 +6,10 @@
 // ─────────────────────────────────────────────────────────────
 
 export const links = {
-  linkedin: "#",
+  linkedin: "https://www.linkedin.com/in/jessealopez/",
   sharebird: "#",
   twitter: "#",
-  recommendations: "#", // e.g. your LinkedIn recommendations page
+  recommendations: "https://www.linkedin.com/in/jessealopez/details/recommendations/",
   email: "", // optional, e.g. "jesse@example.com" — leave empty to hide
 };
 
@@ -90,21 +90,21 @@ export const chapters: Chapter[] = [
         text: "Built and executed GTM plan—competitive analysis, positioning, messaging, and pricing—for ACH bank transfers.",
         image: "/images/square-ach.jpg",
         linkLabel: "Visit ACH payments page",
-        href: "#",
+        href: "https://squareup.com/us/en/payments/ach-payments",
       },
       {
         title: "Launched Square Invoices SaaS tier",
         text: "Led positioning, packaging, pricing, and messaging across 6 markets (US, CA, UK, AU, JP, IE).",
         image: "/images/square-saas-tier.jpg",
         linkLabel: "Visit pricing page",
-        href: "#",
+        href: "https://squareup.com/us/en/invoices/pricing",
       },
       {
         title: "Led brand campaign for Square",
         text: "Partnered with Brand Marketing on the first-ever Professional Services campaign.",
         image: "/images/square-brand-campaign.jpg",
         linkLabel: "Visit campaign page",
-        href: "#",
+        href: "https://squareup.com/us/en/solutions/professional-services",
       },
     ],
   },
@@ -118,20 +118,20 @@ export const chapters: Chapter[] = [
         text: "Developed and launched new product positioning to support the company’s rebranding across all surfaces.",
         image: "/images/klaviyo-positioning.jpg",
         linkLabel: "Read re-branding announcement",
-        href: "#",
+        href: "https://www.klaviyo.com/newsroom/klaviyo-rebrand",
       },
       {
         title: "Launched Klaviyo One",
         text: "Built GTM strategy—positioning, messaging, marketing and sales strategy, and pricing—for the enterprise offering.",
         image: "/images/klaviyo-one.jpg",
         linkLabel: "Read Klaviyo One announcement",
-        href: "#",
+        href: "https://www.klaviyo.com/newsroom/klaviyo-introduces-klaviyo-one",
       },
     ],
   },
   {
     company: "Brex",
-    headline: "Expanded Brex into Enterprise",
+    headline: "Expanded Brex into Enterprise SaaS",
     note: "SaaS launch, Brex AI, first-ever pricing page.",
     projects: [
       {
@@ -139,21 +139,21 @@ export const chapters: Chapter[] = [
         text: "Revamped positioning and messaging across organic and paid surfaces for the paid software business.",
         image: "/images/brex-saas.jpg",
         linkLabel: "Read Brex Empower announcement",
-        href: "#",
+        href: "https://www.brex.com/journal/press/brex-ga-empower",
       },
       {
         title: "Led launch of Brex AI",
         text: "Partnered with Product and Marketing to launch a suite of spend management automation capabilities.",
         image: "/images/brex-ai.jpg",
         linkLabel: "Visit Brex AI page",
-        href: "#",
+        href: "https://www.brex.com/platform/brex-ai",
       },
       {
         title: "Introduced Brex pricing page",
         text: "Launched the first-ever SaaS pricing page to guide prospects’ decision-making.",
         image: "/images/brex-pricing.jpg",
         linkLabel: "Visit pricing page",
-        href: "#",
+        href: "https://www.brex.com/pricing",
       },
     ],
   },
@@ -167,21 +167,21 @@ export const chapters: Chapter[] = [
         text: "Qual and quant research to reposition Dandy as a category-defining dental lab.",
         image: "/images/dandy-repositioning.jpg",
         linkLabel: "Review Q1’24 vs Q2’24",
-        href: "#",
+        href: "https://web.archive.org/web/diff/20240226234009/20240929183556/meetdandy.com",
       },
       {
         title: "Championed video storytelling",
         text: "Partnered with Vidico on the first-ever digital dental workflows video.",
         image: "/images/dandy-video.jpg",
         linkLabel: "Watch workflow video",
-        href: "#",
+        href: "https://youtu.be/QKPrFzTGJd0",
       },
       {
         title: "Expanded social proof program",
         text: "Built social proof assets with Customer Marketing for prospects evaluating Dandy.",
         image: "/images/dandy-social-proof.jpg",
         linkLabel: "Watch testimonials",
-        href: "#",
+        href: "https://www.meetdandy.com/why-dentists-love-dandy/",
       },
     ],
   },
@@ -207,7 +207,10 @@ export const highlights: Highlight[] = [
       "Crafted a user-centric homepage that doubled website conversion rates.",
       "Optimized web copy for SEO, soaring from #15 to #1 for most trafficked keyword in product category.",
     ],
-    link: { label: "Review 2019 vs 2021 Invoices evolution", href: "#" },
+    link: {
+      label: "Review 2019 vs 2021 Invoices evolution",
+      href: "https://web.archive.org/web/diff/20190830034015/20211101082459/https:/squareup.com/us/en/invoices",
+    },
   },
   {
     stat: "3×",
