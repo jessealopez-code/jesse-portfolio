@@ -1456,3 +1456,9 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
     transform: scale(1.04);
   }
 }
+
+.chip-section-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

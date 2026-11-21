@@ -267,6 +267,27 @@ export const vori = {
   stat: "1",
   title: "Highlight: Scaled Vori's marketing engine as a team of one",
   subtitle: "",
+  chip: {
+    heading: "Launched Chip, the first-ever grocery virtual employee",
+    image: "/images/vori-chip-section.jpg",
+    alt: "Vori homepage section introducing Chip: The grocery employee who already knows your store",
+    points: [
+      {
+        title: "Positioned as an employee, not a feature",
+        text: "\u201cBig chains hire a department. You hire Chip.\u201d Framed AI in the language grocers already use: hiring help.",
+      },
+      {
+        title: "Three promises that answer the AI objections",
+        text: "Knows your numbers. Does the actual work. Changes nothing without you.",
+      },
+      {
+        title: "Three roles, shown on the job",
+        text: "A Pricing Coordinator, Inventory Controller and Marketing Manager, each with a product visual of the work Chip does.",
+      },
+    ],
+    href: "https://www.vori.com/chip",
+    linkLabel: "Meet Chip",
+  },
   website: {
     heading: "Rebuilt Vori.com with depth for every stage of the funnel",
     pages: [

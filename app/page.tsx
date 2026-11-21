@@ -202,16 +202,40 @@ export default function Home() {
           <div className="vori-block">
             <h3 className="vori-subhead">
               <span className="vori-num">01</span>
+              {vori.chip.heading}
+            </h3>
+            <div className="launch">
+              <div className="launch-media chip-section-media">
+                <img src={vori.chip.image} alt={vori.chip.alt} loading="lazy" />
+              </div>
+              <div className="launch-body">
+                <ul className="cases-uses" data-reveal>
+                  {vori.chip.points.map((pt) => (
+                    <li key={pt.title}>
+                      <h4>{pt.title}</h4>
+                      <p>{pt.text}</p>
+                    </li>
+                  ))}
+                </ul>
+                <SmartLink href={vori.chip.href} className="highlight-link">
+                  {vori.chip.linkLabel} →
+                </SmartLink>
+              </div>
+            </div>
+          </div>
+
+          <Collapsible>
+          <div className="vori-block">
+            <h3 className="vori-subhead">
+              <span className="vori-num">02</span>
               {vori.website.heading}
             </h3>
             <WebsiteStack pages={vori.website.pages} />
           </div>
 
-          <Collapsible>
-
           <div className="vori-block">
             <h3 className="vori-subhead">
-              <span className="vori-num">02</span>
+              <span className="vori-num">03</span>
               {vori.content.heading}
             </h3>
             <div className="vori-grid-2" data-reveal>
@@ -232,7 +256,7 @@ export default function Home() {
 
           <div className="vori-block">
             <h3 className="vori-subhead">
-              <span className="vori-num">03</span>
+              <span className="vori-num">04</span>
               {vori.caseStudies.heading}
             </h3>
             <div className="cases-wrap">
@@ -259,7 +283,7 @@ export default function Home() {
 
           <div className="vori-block">
             <h3 className="vori-subhead">
-              <span className="vori-num">04</span>
+              <span className="vori-num">05</span>
               {vori.videos.heading}
             </h3>
             <VideoGrid ids={vori.videos.ids} label="Vori video" />
@@ -267,7 +291,7 @@ export default function Home() {
 
           <div className="vori-block">
             <h3 className="vori-subhead">
-              <span className="vori-num">05</span>
+              <span className="vori-num">06</span>
               {vori.launches.heading}
             </h3>
             <div className="launch">
