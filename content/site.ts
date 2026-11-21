@@ -241,25 +241,25 @@ export const vori = {
       {
         label: "Homepage",
         text: "The front door. Positions Vori as the AI-native grocery operating system and routes owners and chain leaders to the right next step.",
-        image: "", // e.g. "/images/vori-home.jpg"
+        image: "/images/vori-home.jpg",
         href: "https://www.vori.com/",
       },
       {
         label: "Product pages",
         text: "Go deep on each capability — what it does, how it works in a real store, and the proof behind it.",
-        image: "",
+        image: "/images/vori-product.jpg",
         href: "#",
       },
       {
         label: "Solution pages",
         text: "Speak to specific store formats, like natural and organic or produce markets, with the workflows that matter most to each operator.",
-        image: "",
+        image: "/images/vori-solution.jpg",
         href: "#",
       },
       {
         label: "Competitive pages",
         text: "Clear side-by-sides against legacy grocery POS systems that give evaluators the confidence to switch.",
-        image: "",
+        image: "/images/vori-competitive.jpg",
         href: "#",
       },
     ],

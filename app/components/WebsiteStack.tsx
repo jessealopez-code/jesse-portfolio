@@ -18,7 +18,16 @@ export default function WebsiteStack({ pages }: { pages: Page[] }) {
         <div className="stack-back stack-back--2" aria-hidden="true" />
         <div className="stack-back stack-back--1" aria-hidden="true" />
         <article className="stack-front" key={i} aria-live="polite">
-          <Placeholder src={page.image} alt={`Vori ${page.label.toLowerCase()}`} label={`${page.label} screenshot`} />
+          {page.image ? (
+            // Scrollable frame so long, full-page screenshots can be explored in place
+            <div className="stack-scroll" tabIndex={0} aria-label={`Vori ${page.label.toLowerCase()} — scroll to explore`}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={page.image} alt={`Vori ${page.label.toLowerCase()}`} />
+            </div>
+          ) : (
+            <Placeholder alt={`Vori ${page.label.toLowerCase()}`} label={`${page.label} screenshot`} />
+          )}
+          {page.image ? <span className="stack-hint">Scroll ↓</span> : null}
         </article>
       </div>
       <div className="stack-info">
