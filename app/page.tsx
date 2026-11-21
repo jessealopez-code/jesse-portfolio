@@ -3,7 +3,8 @@ import { bio, chapters, highlights, links, principles, site, vori } from "@/cont
 import LogoMarquee from "./components/LogoMarquee";
 import Placeholder from "./components/Placeholder";
 import WebsiteStack from "./components/WebsiteStack";
-import { VideoGrid, VideoLink, youtubeId } from "./components/VideoModal";
+import { VideoGrid, VideoLink } from "./components/VideoModal";
+import { youtubeId } from "@/lib/youtube";
 import QuoteSlider from "./components/QuoteSlider";
 import SmartLink from "./components/SmartLink";
 

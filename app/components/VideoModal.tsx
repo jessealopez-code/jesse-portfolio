@@ -1,13 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-/** Pulls the video ID out of youtube.com/watch?v=…, youtu.be/…, or a bare ID. */
-export function youtubeId(url: string): string | null {
-  if (/^[\w-]{11}$/.test(url)) return url;
-  const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
-  return m ? m[1] : null;
-}
+import { youtubeId } from "@/lib/youtube";
 
 function Modal({ id, title, onClose }: { id: string; title: string; onClose: () => void }) {
   const closeRef = useRef<HTMLButtonElement>(null);
