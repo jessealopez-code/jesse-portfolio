@@ -7,6 +7,12 @@ import { VideoGrid, VideoLink } from "./components/VideoModal";
 import { youtubeId } from "@/lib/youtube";
 import QuoteSlider from "./components/QuoteSlider";
 import SmartLink from "./components/SmartLink";
+import CardRail from "./components/CardRail";
+import CompanyTabs from "./components/CompanyTabs";
+import FloatingContact from "./components/FloatingContact";
+import Collapsible from "./components/Collapsible";
+import BeforeAfter from "./components/BeforeAfter";
+import { companyId } from "@/lib/ids";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -101,15 +107,16 @@ export default function Home() {
             <br />
             across <span className="accent">tech.</span>
           </h2>
+          <CompanyTabs companies={chapters.map((c) => c.company)} />
           {chapters.map((c, ci) => (
-            <div key={c.company} className="chapter">
+            <div key={c.company} className="chapter" id={companyId(c.company)} data-company={c.company}>
               <div className="chapter-head">
                 <span className="eyebrow">{c.category}</span>
                 <h3 className="chapter-company">{c.company}</h3>
                 <p className="chapter-headline">{c.headline}</p>
                 <p className="muted small">{c.note}</p>
               </div>
-              <div className="chapter-cards">
+              <CardRail className="chapter-cards" label={`${c.company} projects`}>
                 {c.projects.map((p) => (
                   <article key={p.title} className="card">
                     <Placeholder src={p.image} alt={p.title} label={c.company} />
@@ -128,7 +135,7 @@ export default function Home() {
                     </div>
                   </article>
                 ))}
-              </div>
+              </CardRail>
             </div>
           ))}
         </section>
@@ -141,14 +148,8 @@ export default function Home() {
                 <span className="highlight-stat">{h.stat}</span>
                 <h2 className="highlight-title">{h.title}</h2>
               </div>
-              <div className="compare">
-                {[h.before, h.after].map((side) => (
-                  <figure key={side.label}>
-                    <img src={side.image} alt={side.alt} loading="lazy" />
-                    <figcaption>{side.label}</figcaption>
-                  </figure>
-                ))}
-              </div>
+              <BeforeAfter before={h.before} after={h.after} />
+              <Collapsible>
               <div className="highlight-points">
                 {h.points.map((pt) => (
                   <p key={pt.slice(0, 24)}>{pt}</p>
@@ -162,7 +163,7 @@ export default function Home() {
               {h.extra ? (
                 <div className="vori-block">
                   <h3 className="vori-subhead">{h.extra.heading}</h3>
-                  <div className="vori-grid-3">
+                  <CardRail className="vori-grid-3" label="Credibility projects">
                     {h.extra.items.map((item) => (
                       <article key={item.title} className="card">
                         <Placeholder src={item.image} alt={item.title} label="Image" />
@@ -175,9 +176,10 @@ export default function Home() {
                         </div>
                       </article>
                     ))}
-                  </div>
+                  </CardRail>
                 </div>
               ) : null}
+              </Collapsible>
             </div>
           ))}
         </section>
@@ -201,6 +203,8 @@ export default function Home() {
             </h3>
             <WebsiteStack pages={vori.website.pages} />
           </div>
+
+          <Collapsible>
 
           <div className="vori-block">
             <h3 className="vori-subhead">
@@ -292,6 +296,7 @@ export default function Home() {
               ))}
             </ol>
           </div>
+          </Collapsible>
         </section>
 
         {/* Testimonials */}
@@ -305,6 +310,8 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <FloatingContact linkedin={links.linkedin} />
 
       <footer id="contact" className="footer">
         <div className="container footer-inner">
