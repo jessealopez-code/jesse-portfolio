@@ -234,7 +234,7 @@ chapters.push({
 // ── Vori: the spotlight section below the company blocks ──
 export const vori = {
   stat: "1",
-  title: "Highlight: Built Vori's marketing engine as a team of one",
+  title: "Highlight: Scaled Vori's marketing engine as a team of one",
   subtitle: "",
   website: {
     heading: "Rebuilt Vori.com with depth for every stage of the funnel",
