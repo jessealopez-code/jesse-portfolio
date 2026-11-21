@@ -125,6 +125,36 @@ export default function Home() {
           ))}
         </section>
 
+        {/* Highlights */}
+        <section className="container highlights">
+          {highlights.map((h) => (
+            <div key={h.title} className="highlight">
+              <div className="highlight-head">
+                <span className="highlight-stat">{h.stat}</span>
+                <h2 className="highlight-title">{h.title}</h2>
+              </div>
+              <div className="compare">
+                {[h.before, h.after].map((side) => (
+                  <figure key={side.label}>
+                    <img src={side.image} alt={side.alt} loading="lazy" />
+                    <figcaption>{side.label}</figcaption>
+                  </figure>
+                ))}
+              </div>
+              <div className="highlight-points">
+                {h.points.map((pt) => (
+                  <p key={pt.slice(0, 24)}>{pt}</p>
+                ))}
+              </div>
+              {h.link ? (
+                <SmartLink href={h.link.href} className="highlight-link">
+                  {h.link.label} →
+                </SmartLink>
+              ) : null}
+            </div>
+          ))}
+        </section>
+
         {/* Vori spotlight */}
         <section className="container vori" aria-labelledby="vori-title">
           <div className="highlight-head">
@@ -220,36 +250,6 @@ export default function Home() {
               ))}
             </ol>
           </div>
-        </section>
-
-        {/* Highlights */}
-        <section className="container highlights">
-          {highlights.map((h) => (
-            <div key={h.title} className="highlight">
-              <div className="highlight-head">
-                <span className="highlight-stat">{h.stat}</span>
-                <h2 className="highlight-title">{h.title}</h2>
-              </div>
-              <div className="compare">
-                {[h.before, h.after].map((side) => (
-                  <figure key={side.label}>
-                    <img src={side.image} alt={side.alt} loading="lazy" />
-                    <figcaption>{side.label}</figcaption>
-                  </figure>
-                ))}
-              </div>
-              <div className="highlight-points">
-                {h.points.map((pt) => (
-                  <p key={pt.slice(0, 24)}>{pt}</p>
-                ))}
-              </div>
-              {h.link ? (
-                <SmartLink href={h.link.href} className="highlight-link">
-                  {h.link.label} →
-                </SmartLink>
-              ) : null}
-            </div>
-          ))}
         </section>
 
         {/* Testimonials */}

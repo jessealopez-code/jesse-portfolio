@@ -405,8 +405,8 @@ blockquote {
 
 /* ── Vori spotlight ─────────────────────────────────── */
 .vori {
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 0;
+  padding-bottom: 128px;
   display: flex;
   flex-direction: column;
   gap: 88px;

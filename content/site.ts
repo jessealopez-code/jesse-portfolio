@@ -18,9 +18,9 @@ export const site = {
   role: "Product marketing leader",
   title: "Jesse Lopez — Marketer, Strategist, Storyteller",
   description:
-    "Product marketing leader who has doubled revenue at Square and tripled acquisition at Dandy through positioning, GTM and storytelling.",
+    "Product marketing leader who helps tech companies say what makes them different — and grow because of it.",
   heroIntro:
-    "I help tech companies say what makes them different — and grow because of it. 2× revenue at Square. 3× acquisition at Dandy.",
+    "I help tech companies say what makes them different — and grow because of it.",
   footerLine: "If you can dream it, you can do it!",
 };
 
@@ -203,7 +203,7 @@ export const chapters: Chapter[] = [
 chapters.push({
   company: "Vori",
   category: "AI grocery operating system",
-  headline: "~80% of new ARR as a marketing team of one",
+  headline: "Built the marketing function from the ground up",
   note: "Brand, demand gen, product marketing and marketing ops for independent grocers.",
   projects: [
     {
@@ -215,7 +215,7 @@ chapters.push({
     },
     {
       title: "Built a full-funnel demand engine",
-      text: "Partnered with a growth agency on Meta and Google campaigns that generated $15M+ in pipeline and 600+ booked demos in H1 2026.",
+      text: "Partnered with a growth agency on Meta and Google campaigns that became Vori's largest source of new business.",
       image: "",
       linkLabel: "",
       href: "#",
@@ -232,9 +232,9 @@ chapters.push({
 
 // ── Vori: the spotlight section below the company blocks ──
 export const vori = {
-  stat: "80%",
-  title: "Highlight: Built Vori's marketing engine as a team of one",
-  subtitle: "~80% of new ARR in H1 2026 · $15M+ pipeline · 600+ booked demos",
+  stat: "0→1",
+  title: "Highlight: Built Vori's marketing engine from zero to one",
+  subtitle: "Brand, demand generation, product marketing and marketing ops — as a team of one",
   website: {
     heading: "Rebuilt Vori.com with depth for every stage of the funnel",
     pages: [
@@ -245,20 +245,20 @@ export const vori = {
         href: "https://www.vori.com/",
       },
       {
-        label: "Product page",
-        text: "Goes deep on one capability — what it does, how it works in a real store, and the proof behind it.",
+        label: "Product pages",
+        text: "Go deep on each capability — what it does, how it works in a real store, and the proof behind it.",
         image: "",
         href: "#",
       },
       {
-        label: "Solution page",
-        text: "Speaks to a specific store format, like natural and organic or produce markets, with the workflows that matter most to that operator.",
+        label: "Solution pages",
+        text: "Speak to specific store formats, like natural and organic or produce markets, with the workflows that matter most to each operator.",
         image: "",
         href: "#",
       },
       {
-        label: "Competitive page",
-        text: "A clear side-by-side against legacy grocery POS systems that gives evaluators the confidence to switch.",
+        label: "Competitive pages",
+        text: "Clear side-by-sides against legacy grocery POS systems that give evaluators the confidence to switch.",
         image: "",
         href: "#",
       },

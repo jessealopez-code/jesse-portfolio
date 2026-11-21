@@ -37,12 +37,12 @@ export default function WebsiteStack({ pages }: { pages: Page[] }) {
           ))}
         </div>
         <span className="eyebrow">
-          Page {i + 1} of {n}
+          {i + 1} of {n}
         </span>
         <h4 className="stack-title">{page.label}</h4>
         <p className="stack-text">{page.text}</p>
         <SmartLink href={page.href} className="card-link">
-          Visit the page →
+          Visit →
         </SmartLink>
         <div className="slider-buttons">
           <button type="button" className="btn-round" aria-label="Previous page" onClick={() => setI((i - 1 + n) % n)}>
