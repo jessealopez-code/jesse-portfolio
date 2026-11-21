@@ -148,7 +148,7 @@ export default function Home() {
           {highlights.map((h) => (
             <div key={h.title} className="highlight">
               <div className="highlight-head">
-                <span className="highlight-stat"><CountUp value={h.stat} /></span>
+                <span className="highlight-stat">{h.stat}</span>
                 <h2 className="highlight-title">{h.title}</h2>
               </div>
               <BeforeAfter before={h.before} after={h.after} />
