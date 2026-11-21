@@ -519,31 +519,6 @@ blockquote {
   animation: stack-in 0.35s ease;
 }
 
-.stack-scroll {
-  aspect-ratio: 16 / 10;
-  overflow-y: auto;
-  background: #fff;
-  overscroll-behavior: contain;
-}
-
-.stack-scroll img {
-  width: 100%;
-  height: auto;
-}
-
-.stack-hint {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
-  background: rgba(18, 18, 18, 0.8);
-  color: var(--text);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 6px 10px;
-  border-radius: 999px;
-  pointer-events: none;
-}
-
 @keyframes stack-in {
   from {
     opacity: 0;
