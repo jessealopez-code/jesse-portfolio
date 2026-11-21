@@ -1,0 +1,179 @@
+/* eslint-disable @next/next/no-img-element */
+import { bio, chapters, highlights, links, principles, site } from "@/content/site";
+import LogoMarquee from "./components/LogoMarquee";
+import QuoteSlider from "./components/QuoteSlider";
+import SmartLink from "./components/SmartLink";
+
+const pad = (n: number) => String(n).padStart(2, "0");
+
+function SocialLinks({ className }: { className?: string }) {
+  return (
+    <div className={className}>
+      <SmartLink href={links.linkedin}>LinkedIn ↗</SmartLink>
+      <SmartLink href={links.sharebird}>Sharebird ↗</SmartLink>
+      <SmartLink href={links.twitter}>X / Twitter ↗</SmartLink>
+      {links.email ? <a href={`mailto:${links.email}`}>{links.email}</a> : null}
+    </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <>
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
+
+      <header className="container nav">
+        <a href="#top" className="nav-logo">
+          JL.
+        </a>
+        <nav className="nav-links" aria-label="Main">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#words">Kind words</a>
+          <a href="#contact" className="accent-link">
+            Say hello →
+          </a>
+        </nav>
+      </header>
+
+      <main id="main">
+        {/* Hero */}
+        <section id="top" className="container hero">
+          <div className="hero-text">
+            <p className="muted">
+              {site.name} — {site.role.toLowerCase()}
+            </p>
+            <h1 className="hero-title">
+              Marketer.
+              <br />
+              Strategist.
+              <br />
+              <span className="accent">Storyteller.</span>
+            </h1>
+            <p className="hero-intro">{site.heroIntro}</p>
+          </div>
+          <div className="hero-photo">
+            <img src="/images/hero.jpg" alt={`${site.name} seated on a wooden block, smiling`} />
+          </div>
+        </section>
+
+        <LogoMarquee />
+
+        {/* About */}
+        <section id="about" className="container about">
+          <div className="about-head">
+            <img className="headshot" src="/images/headshot.jpg" alt={`Portrait of ${site.name}`} />
+            <h2 className="h2">{bio.heading}</h2>
+          </div>
+          <div className="about-body">
+            {bio.paragraphs.map((p) => (
+              <p key={p.slice(0, 24)}>{p}</p>
+            ))}
+          </div>
+        </section>
+
+        {/* Principles */}
+        <section className="principles">
+          <div className="container">
+            <h2 className="principles-title">The best marketing is clear, compelling, and memorable.</h2>
+            <div className="principles-grid">
+              {principles.map((p, i) => (
+                <div key={p.title} className="principle">
+                  <span className="principle-num">{pad(i + 1)}</span>
+                  <h3>{p.title}</h3>
+                  <p>{p.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Work by company */}
+        <section id="work" className="container work">
+          <h2 className="work-title">
+            Led impactful work
+            <br />
+            across <span className="accent">tech.</span>
+          </h2>
+          {chapters.map((c, ci) => (
+            <div key={c.company} className="chapter">
+              <div className="chapter-head">
+                <span className="eyebrow">Chapter {pad(ci + 1)}</span>
+                <h3 className="chapter-company">{c.company}</h3>
+                <p className="chapter-headline">{c.headline}</p>
+                <p className="muted small">{c.note}</p>
+              </div>
+              <div className="chapter-cards">
+                {c.projects.map((p) => (
+                  <article key={p.title} className="card">
+                    <img src={p.image} alt={p.title} loading="lazy" />
+                    <div className="card-body">
+                      <h4>{p.title}</h4>
+                      <p>{p.text}</p>
+                      <SmartLink href={p.href} className="card-link">
+                        {p.linkLabel} →
+                      </SmartLink>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+
+        {/* Highlights */}
+        <section className="container highlights">
+          {highlights.map((h) => (
+            <div key={h.title} className="highlight">
+              <div className="highlight-head">
+                <span className="highlight-stat">{h.stat}</span>
+                <h2 className="highlight-title">{h.title}</h2>
+              </div>
+              <div className="compare">
+                {[h.before, h.after].map((side) => (
+                  <figure key={side.label}>
+                    <img src={side.image} alt={side.alt} loading="lazy" />
+                    <figcaption>{side.label}</figcaption>
+                  </figure>
+                ))}
+              </div>
+              <div className="highlight-points">
+                {h.points.map((pt) => (
+                  <p key={pt.slice(0, 24)}>{pt}</p>
+                ))}
+              </div>
+              {h.link ? (
+                <SmartLink href={h.link.href} className="highlight-link">
+                  {h.link.label} →
+                </SmartLink>
+              ) : null}
+            </div>
+          ))}
+        </section>
+
+        {/* Testimonials */}
+        <section id="words" className="words">
+          <div className="words-inner">
+            <h2 className="eyebrow">Leadership: developed high-performing teams</h2>
+            <QuoteSlider />
+            <SmartLink href={links.recommendations} className="accent-link">
+              Read all recommendations →
+            </SmartLink>
+          </div>
+        </section>
+      </main>
+
+      <footer id="contact" className="footer">
+        <div className="container footer-inner">
+          <p className="footer-line">{site.footerLine}</p>
+          <SocialLinks className="footer-links" />
+          <p className="footer-copy">
+            © {new Date().getFullYear()} {site.name}
+          </p>
+        </div>
+      </footer>
+    </>
+  );
+}
