@@ -151,6 +151,25 @@ export default function Home() {
                   {h.link.label} →
                 </SmartLink>
               ) : null}
+              {h.extra ? (
+                <div className="vori-block">
+                  <h3 className="vori-subhead">{h.extra.heading}</h3>
+                  <div className="vori-grid-3">
+                    {h.extra.items.map((item) => (
+                      <article key={item.title} className="card">
+                        <Placeholder src={item.image} alt={item.title} label="Image" />
+                        <div className="card-body">
+                          <h4>{item.title}</h4>
+                          <p>{item.text}</p>
+                          <SmartLink href={item.href} className="card-link">
+                            {item.linkLabel} →
+                          </SmartLink>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
             </div>
           ))}
         </section>

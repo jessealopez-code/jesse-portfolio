@@ -91,21 +91,21 @@ export const chapters: Chapter[] = [
       {
         title: "Ran QuickBooks' first global segmentation study",
         text: "Partnered with The Cambridge Group on research across 8 markets, then led the segmentation story that guided leadership's marketing and product priorities worldwide.",
-        image: "", // placeholder until an image is added, e.g. "/images/intuit-segmentation.jpg"
+        image: "/images/intuit-segmentation.jpg",
         linkLabel: "",
         href: "#",
       },
       {
         title: "Authored QuickBooks' first global media strategy",
         text: "Partnered with Hearts & Science to shape how QuickBooks invests in media across developed, developing and emerging markets.",
-        image: "", // e.g. "/images/intuit-media.jpg"
+        image: "/images/intuit-media.jpg",
         linkLabel: "",
         href: "#",
       },
       {
         title: "Made brand performance a global discipline",
         text: "Revamped two senior marketing forums, for media performance and for brand health and competitive reviews, and rolled out brand dashboards and marketing mix modeling across the four largest markets.",
-        image: "", // e.g. "/images/intuit-performance.jpg"
+        image: "/images/intuit-performance.jpg",
         linkLabel: "",
         href: "#",
       },
@@ -362,6 +362,10 @@ export type Highlight = {
   after: { image: string; label: string; alt: string };
   points: string[];
   link?: { label: string; href: string };
+  extra?: {
+    heading: string;
+    items: { title: string; text: string; image: string; href: string; linkLabel: string }[];
+  };
 };
 
 export const highlights: Highlight[] = [
@@ -388,8 +392,33 @@ export const highlights: Highlight[] = [
     points: [
       "Revamped positioning and messaging to differentiate in a fragmented dental lab space, and reframed features into a dentist-centric workflow narrative.",
       "Enriched prospect education and improved funnel performance through video storytelling.",
-      "Upleveled market credibility through social proof, pricing & packaging, and targeted offers.",
     ],
+    extra: {
+      heading: "Upleveled market credibility through social proof, pricing & packaging, and targeted offers",
+      items: [
+        {
+          title: "Championed customer stories to strengthen credibility",
+          text: "Amplified authentic clinical voices to validate product efficacy and deepen clinician trust in a crowded dental lab space.",
+          image: "/images/dandy-stories.jpg",
+          href: "https://www.meetdandy.com/customer-stories/",
+          linkLabel: "Read customer stories",
+        },
+        {
+          title: "Evolved pricing & packaging to attract new audiences",
+          text: "Launched Dandy's first-ever pricing page to empower dentists to easily understand our offerings and lab commitments.",
+          image: "/images/dandy-pricing.jpg",
+          href: "https://www.meetdandy.com/pricing/",
+          linkLabel: "Visit pricing page",
+        },
+        {
+          title: "Launched foundations for upmarket offering",
+          text: "Enabled the acquisition of multi-location dental practices through targeted product and service offerings.",
+          image: "/images/dandy-upmarket.jpg",
+          href: "#",
+          linkLabel: "",
+        },
+      ],
+    },
   },
 ];
 
