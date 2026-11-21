@@ -400,8 +400,8 @@ export const highlights: Highlight[] = [
           title: "Championed customer stories to strengthen credibility",
           text: "Amplified authentic clinical voices to validate product efficacy and deepen clinician trust in a crowded dental lab space.",
           image: "/images/dandy-stories.jpg",
-          href: "https://www.meetdandy.com/customer-stories/",
-          linkLabel: "Read customer stories",
+          href: "https://www.meetdandy.com/case-studies/clinical-case-studies/",
+          linkLabel: "Read case studies",
         },
         {
           title: "Evolved pricing & packaging to attract new audiences",
