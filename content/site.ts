@@ -43,6 +43,7 @@ export const logos = [
   { name: "Klaviyo", src: "/logos/klaviyo.png", height: 30 },
   { name: "Dandy", src: "/logos/dandy.png", height: 36 },
   { name: "Gusto", src: "/logos/gusto.png", height: 40 },
+  { name: "Vori", src: "/logos/vori.png", height: 34 },
 ];
 
 export const principles = [
@@ -203,7 +204,7 @@ export const chapters: Chapter[] = [
 chapters.push({
   company: "Vori",
   category: "AI grocery operating system",
-  headline: "Built the marketing function from the ground up",
+  headline: "Owned marketing end to end, from brand to pipeline",
   note: "Brand, demand gen, product marketing and marketing ops for independent grocers.",
   projects: [
     {

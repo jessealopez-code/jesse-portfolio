@@ -31,9 +31,9 @@ export default function Home() {
           JL.
         </a>
         <nav className="nav-links" aria-label="Main">
+          <a href="#about">Bio</a>
           <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#words">Kind words</a>
+          <a href="#words">Leadership</a>
           <a href="#contact" className="accent-link">
             Say hello →
           </a>
