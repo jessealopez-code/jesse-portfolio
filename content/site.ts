@@ -120,14 +120,14 @@ export const chapters: Chapter[] = [
         title: "Revamped Klaviyo positioning",
         text: "Developed and launched new product positioning to support the company’s rebranding across all surfaces.",
         image: "/images/klaviyo-positioning.jpg",
-        linkLabel: "Read re-branding announcement",
+        linkLabel: "Read announcement",
         href: "https://www.klaviyo.com/newsroom/klaviyo-rebrand",
       },
       {
         title: "Launched Klaviyo One",
         text: "Built GTM strategy—positioning, messaging, marketing and sales strategy, and pricing—for the enterprise offering.",
         image: "/images/klaviyo-one.jpg",
-        linkLabel: "Read Klaviyo One announcement",
+        linkLabel: "Read announcement",
         href: "https://www.klaviyo.com/newsroom/klaviyo-introduces-klaviyo-one",
       },
       {
@@ -149,7 +149,7 @@ export const chapters: Chapter[] = [
         title: "Launched SaaS revenue layer",
         text: "Revamped positioning and messaging across organic and paid surfaces for the paid software business.",
         image: "/images/brex-saas.jpg",
-        linkLabel: "Read Brex Empower announcement",
+        linkLabel: "Read announcement",
         href: "https://www.brex.com/journal/press/brex-ga-empower",
       },
       {
@@ -210,8 +210,8 @@ chapters.push({
       title: "Launched Chip, Vori's AI employee",
       text: "Brought to market the first-ever grocery virtual employee — owners ask in plain language and Chip plans promotions, answers sales questions and prepares shelf tags, then waits for approval.",
       image: "/images/vori-chip.jpg",
-      linkLabel: "See Chip in the 2026 releases",
-      href: "https://www.vori.com/releases-2026",
+      linkLabel: "Meet Chip",
+      href: "https://www.vori.com/chip",
     },
     {
       title: "Built a full-funnel demand engine",
