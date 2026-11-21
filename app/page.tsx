@@ -163,7 +163,7 @@ export default function Home() {
               <h2 id="vori-title" className="highlight-title">
                 {vori.title}
               </h2>
-              <p className="muted">{vori.subtitle}</p>
+              {vori.subtitle ? <p className="muted">{vori.subtitle}</p> : null}
             </div>
           </div>
 

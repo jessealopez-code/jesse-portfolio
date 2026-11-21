@@ -232,9 +232,9 @@ chapters.push({
 
 // ── Vori: the spotlight section below the company blocks ──
 export const vori = {
-  stat: "0→1",
-  title: "Highlight: Built Vori's marketing engine from zero to one",
-  subtitle: "Brand, demand generation, product marketing and marketing ops — as a team of one",
+  stat: "1",
+  title: "Highlight: Built Vori's marketing engine as a team of one",
+  subtitle: "",
   website: {
     heading: "Rebuilt Vori.com with depth for every stage of the funnel",
     pages: [
