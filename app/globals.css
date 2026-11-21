@@ -388,6 +388,20 @@ blockquote {
   object-fit: cover;
 }
 
+.card-placeholder {
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #262626;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 32px;
+  letter-spacing: -0.03em;
+  color: #5a5650;
+}
+
 .card-body {
   padding: 20px 22px 24px;
   display: flex;

@@ -127,6 +127,13 @@ export const chapters: Chapter[] = [
         linkLabel: "Read Klaviyo One announcement",
         href: "https://www.klaviyo.com/newsroom/klaviyo-introduces-klaviyo-one",
       },
+      {
+        title: "Revamped Klaviyo's web acquisition pages",
+        text: "Led revamp of Klaviyo's performance-marketing landing pages and website consideration pages to improve the acquisition rate of new customers.",
+        image: "", // placeholder shown until an image is added, e.g. "/images/klaviyo-web.jpg"
+        linkLabel: "",
+        href: "#",
+      },
     ],
   },
   {

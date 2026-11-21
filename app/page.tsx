@@ -108,7 +108,13 @@ export default function Home() {
               <div className="chapter-cards">
                 {c.projects.map((p) => (
                   <article key={p.title} className="card">
-                    <img src={p.image} alt={p.title} loading="lazy" />
+                    {p.image ? (
+                      <img src={p.image} alt={p.title} loading="lazy" />
+                    ) : (
+                      <div className="card-placeholder" aria-hidden="true">
+                        {c.company}
+                      </div>
+                    )}
                     <div className="card-body">
                       <h4>{p.title}</h4>
                       <p>{p.text}</p>
