@@ -221,9 +221,9 @@ chapters.push({
       href: "#",
     },
     {
-      title: "Stood up marketing operations",
-      text: "Built landing pages, forms and automation to track campaign performance, improving reporting and the marketing-to-AE handoff.",
-      image: "",
+      title: "Armed sales with a full deal toolkit",
+      text: "Built pitch decks, one-pagers and sales collateral that support every stage of the deal.",
+      image: "/images/vori-sales.jpg",
       linkLabel: "",
       href: "#",
     },
