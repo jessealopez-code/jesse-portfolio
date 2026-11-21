@@ -7,8 +7,8 @@
 
 export const links = {
   linkedin: "https://www.linkedin.com/in/jessealopez/",
-  sharebird: "#",
-  twitter: "#",
+  sharebird: "https://sharebird.com/profile/jesse-lopez",
+  twitter: "https://x.com/TheJessefromCA",
   recommendations: "https://www.linkedin.com/in/jessealopez/details/recommendations/",
   email: "", // optional, e.g. "jesse@example.com" — leave empty to hide
 };
