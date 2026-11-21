@@ -285,6 +285,12 @@ export const vori = {
   },
   caseStudies: {
     heading: "Customer stories that prove the value",
+    intro: "Built a library of customer stories from stores like our prospects' — then put them to work at every stage of the funnel to drive consideration and conversion.",
+    uses: [
+      { title: "Embedded in the website", text: "Placed on product and solution pages so evaluators see proof from a store like theirs." },
+      { title: "Nurture programs", text: "Woven into email nurtures to keep prospects engaged and move them toward a demo." },
+      { title: "After sales meetings", text: "Shared as follow-ups after sales meetings to answer objections and keep deals moving." },
+    ],
     items: [
       { image: "/images/vori-case-1.jpg", alt: "How Dat Moi Market serves 60 countries of food on one grocery system" },
       { image: "/images/vori-case-2.jpg", alt: "How Asian Family Market built 30K+ loyalty members across 29 lanes" },

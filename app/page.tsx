@@ -201,10 +201,23 @@ export default function Home() {
               <span className="vori-num">03</span>
               {vori.caseStudies.heading}
             </h3>
-            <div className="vori-cases">
-              {vori.caseStudies.items.map((c) => (
-                <img key={c.image} src={c.image} alt={c.alt} loading="lazy" className="vori-case" />
-              ))}
+            <div className="cases-wrap">
+              <div className="cases-text">
+                <p className="launch-text">{vori.caseStudies.intro}</p>
+                <ul className="cases-uses">
+                  {vori.caseStudies.uses.map((u) => (
+                    <li key={u.title}>
+                      <h4>{u.title}</h4>
+                      <p>{u.text}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="vori-cases">
+                {vori.caseStudies.items.map((c) => (
+                  <img key={c.image} src={c.image} alt={c.alt} loading="lazy" className="vori-case" />
+                ))}
+              </div>
             </div>
           </div>
 
