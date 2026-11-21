@@ -83,6 +83,35 @@ export type Chapter = {
 
 export const chapters: Chapter[] = [
   {
+    company: "Intuit",
+    category: "QuickBooks · small business software",
+    headline: "Led QuickBooks' first global brand strategy team",
+    note: "Brand strategy and performance across the US, UK, Canada and Australia.",
+    projects: [
+      {
+        title: "Ran QuickBooks' first global segmentation study",
+        text: "Partnered with The Cambridge Group on research across 8 markets, then led the segmentation story that guided leadership's marketing and product priorities worldwide.",
+        image: "", // placeholder until an image is added, e.g. "/images/intuit-segmentation.jpg"
+        linkLabel: "",
+        href: "#",
+      },
+      {
+        title: "Authored QuickBooks' first global media strategy",
+        text: "Partnered with Hearts & Science to shape how QuickBooks invests in media across developed, developing and emerging markets.",
+        image: "", // e.g. "/images/intuit-media.jpg"
+        linkLabel: "",
+        href: "#",
+      },
+      {
+        title: "Made brand performance a global discipline",
+        text: "Revamped two senior marketing forums, for media performance and for brand health and competitive reviews, and rolled out brand dashboards and marketing mix modeling across the four largest markets.",
+        image: "", // e.g. "/images/intuit-performance.jpg"
+        linkLabel: "",
+        href: "#",
+      },
+    ],
+  },
+  {
     company: "Square",
     category: "Fintech · SMB payments",
     headline: "Doubled revenue of Square Invoices",
