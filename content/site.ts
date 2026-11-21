@@ -71,6 +71,7 @@ export type Project = {
   image: string;
   linkLabel: string;
   href: string;
+  art?: "chip";
 };
 
 export type Chapter = {
@@ -238,6 +239,7 @@ chapters.push({
   projects: [
     {
       title: "Launched Chip, Vori's AI employee",
+      art: "chip",
       text: "Brought to market the first-ever grocery virtual employee — owners ask in plain language and Chip plans promotions, answers sales questions and prepares shelf tags, then waits for approval.",
       image: "/images/vori-chip.jpg",
       linkLabel: "Meet Chip",

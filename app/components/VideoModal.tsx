@@ -46,7 +46,7 @@ export function VideoGrid({ ids, label }: { ids: string[]; label: string }) {
   const [open, setOpen] = useState<string | null>(null);
   return (
     <>
-      <div className="vori-grid-3">
+      <div className="vori-grid-3" data-reveal>
         {ids.map((id, i) => (
           <button key={id} type="button" className="vthumb" onClick={() => setOpen(id)} aria-label={`Play ${label} ${i + 1}`}>
             {/* eslint-disable-next-line @next/next/no-img-element */}

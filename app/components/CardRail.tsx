@@ -36,7 +36,7 @@ export default function CardRail({
 
   return (
     <div className="rail-wrap">
-      <div ref={ref} className={`${className} rail`} onScroll={onScroll} aria-label={label}>
+      <div ref={ref} className={`${className} rail`} onScroll={onScroll} aria-label={label} data-reveal>
         {children}
       </div>
       {count > 1 ? (

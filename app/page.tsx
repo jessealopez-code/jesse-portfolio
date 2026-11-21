@@ -13,6 +13,9 @@ import FloatingContact from "./components/FloatingContact";
 import Collapsible from "./components/Collapsible";
 import BeforeAfter from "./components/BeforeAfter";
 import { companyId } from "@/lib/ids";
+import Motion from "./components/Motion";
+import CountUp from "./components/CountUp";
+import ChipArt from "./components/ChipArt";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -56,11 +59,11 @@ export default function Home() {
               {site.name} — {site.role.toLowerCase()}
             </p>
             <h1 className="hero-title">
-              Marketer.
+              <span className="hero-line" style={{ animationDelay: "0.1s" }}>Marketer.</span>
               <br />
-              Strategist.
+              <span className="hero-line" style={{ animationDelay: "0.3s" }}>Strategist.</span>
               <br />
-              <span className="accent">Storyteller.</span>
+              <span className="hero-line accent" style={{ animationDelay: "0.5s" }}>Storyteller.</span>
             </h1>
             <p className="hero-intro">{site.heroIntro}</p>
           </div>
@@ -88,7 +91,7 @@ export default function Home() {
         <section className="principles">
           <div className="container">
             <h2 className="principles-title">The best marketing is clear, compelling, and memorable.</h2>
-            <div className="principles-grid">
+            <div className="principles-grid" data-reveal>
               {principles.map((p, i) => (
                 <div key={p.title} className="principle">
                   <span className="principle-num">{pad(i + 1)}</span>
@@ -119,7 +122,7 @@ export default function Home() {
               <CardRail className="chapter-cards" label={`${c.company} projects`}>
                 {c.projects.map((p) => (
                   <article key={p.title} className="card">
-                    <Placeholder src={p.image} alt={p.title} label={c.company} />
+                    {p.art === "chip" ? <ChipArt /> : <Placeholder src={p.image} alt={p.title} label={c.company} />}
                     <div className="card-body">
                       <h4>{p.title}</h4>
                       <p>{p.text}</p>
@@ -145,12 +148,12 @@ export default function Home() {
           {highlights.map((h) => (
             <div key={h.title} className="highlight">
               <div className="highlight-head">
-                <span className="highlight-stat">{h.stat}</span>
+                <span className="highlight-stat"><CountUp value={h.stat} /></span>
                 <h2 className="highlight-title">{h.title}</h2>
               </div>
               <BeforeAfter before={h.before} after={h.after} />
               <Collapsible>
-              <div className="highlight-points">
+              <div className="highlight-points" data-reveal>
                 {h.points.map((pt) => (
                   <p key={pt.slice(0, 24)}>{pt}</p>
                 ))}
@@ -211,7 +214,7 @@ export default function Home() {
               <span className="vori-num">02</span>
               {vori.content.heading}
             </h3>
-            <div className="vori-grid-2">
+            <div className="vori-grid-2" data-reveal>
               {vori.content.items.map((item) => (
                 <article key={item.title} className="card">
                   <Placeholder src={item.image} alt={item.title} label="Cover image" />
@@ -235,7 +238,7 @@ export default function Home() {
             <div className="cases-wrap">
               <div className="cases-text">
                 <p className="launch-text">{vori.caseStudies.intro}</p>
-                <ul className="cases-uses">
+                <ul className="cases-uses" data-reveal>
                   {vori.caseStudies.uses.map((u) => (
                     <li key={u.title}>
                       <h4>{u.title}</h4>
@@ -244,7 +247,7 @@ export default function Home() {
                   ))}
                 </ul>
               </div>
-              <div className="vori-cases">
+              <div className="vori-cases" data-reveal>
                 {vori.caseStudies.items.map((c) => (
                   <a key={c.image} href={c.href} target="_blank" rel="noopener noreferrer" className="vori-case-link">
                     <img src={c.image} alt={c.alt} loading="lazy" className="vori-case" />
@@ -276,7 +279,7 @@ export default function Home() {
                 <div className="launch-stats">
                   {vori.launches.stats.map((s) => (
                     <div key={s.label} className="launch-stat">
-                      <span className="launch-stat-value">{s.value}</span>
+                      <span className="launch-stat-value"><CountUp value={s.value} /></span>
                       <span className="muted small">{s.label}</span>
                     </div>
                   ))}
@@ -286,7 +289,7 @@ export default function Home() {
                 </SmartLink>
               </div>
             </div>
-            <ol className="launch-steps">
+            <ol className="launch-steps" data-reveal>
               {vori.launches.steps.map((s, i) => (
                 <li key={s.title} className="launch-step">
                   <span className="launch-step-num">{pad(i + 1)}</span>
@@ -312,6 +315,7 @@ export default function Home() {
       </main>
 
       <FloatingContact linkedin={links.linkedin} />
+      <Motion />
 
       <footer id="contact" className="footer">
         <div className="container footer-inner">
