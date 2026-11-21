@@ -215,7 +215,9 @@ export default function Home() {
               </div>
               <div className="vori-cases">
                 {vori.caseStudies.items.map((c) => (
-                  <img key={c.image} src={c.image} alt={c.alt} loading="lazy" className="vori-case" />
+                  <a key={c.image} href={c.href} target="_blank" rel="noopener noreferrer" className="vori-case-link">
+                    <img src={c.image} alt={c.alt} loading="lazy" className="vori-case" />
+                  </a>
                 ))}
               </div>
             </div>

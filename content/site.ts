@@ -270,14 +270,14 @@ export const vori = {
       {
         title: "The Modern Grocery Playbook",
         text: "A practical guide to the four habits of high-performing independent grocers.",
-        image: "", // e.g. "/images/vori-playbook.jpg"
+        image: "/images/vori-playbook.jpg",
         href: "https://www.vori.com/blog/the-modern-grocery-playbook",
         linkLabel: "Read the playbook",
       },
       {
         title: "The 2026 Independent Grocery Operator Study",
         text: "Benchmark research with EnsembleIQ and Progressive Grocer, surveying 53 independent U.S. grocers on big-box competition, automation and loyalty.",
-        image: "",
+        image: "/images/vori-study.jpg",
         href: "https://www.vori.com/blog/the-2026-independent-grocery-operator-study",
         linkLabel: "Read the study",
       },
@@ -292,12 +292,12 @@ export const vori = {
       { title: "After sales meetings", text: "Shared as follow-ups after sales meetings to answer objections and keep deals moving." },
     ],
     items: [
-      { image: "/images/vori-case-1.jpg", alt: "How Dat Moi Market serves 60 countries of food on one grocery system" },
-      { image: "/images/vori-case-2.jpg", alt: "How Asian Family Market built 30K+ loyalty members across 29 lanes" },
-      { image: "/images/vori-case-3.jpg", alt: "How Valley Farm Market is saving 20+ hours per week across meat and produce" },
-      { image: "/images/vori-case-4.jpg", alt: "How Big T IGA drives loyalty with 53% higher order count in small-town Montana" },
-      { image: "/images/vori-case-5.jpg", alt: "How Talin Market cut pricing time by 95% and reduced weekly ordering time by 67%" },
-      { image: "/images/vori-case-6.jpg", alt: "How The Willows Market bagged +9.7% more sales with Vori" },
+      { image: "/images/vori-case-1.jpg", href: "https://www.vori.com/customer-stories/dat-moi-market-vori-grocery-pos", alt: "How Dat Moi Market serves 60 countries of food on one grocery system" },
+      { image: "/images/vori-case-2.jpg", href: "https://www.vori.com/customer-stories/asian-family-market-vori-grocery-pos", alt: "How Asian Family Market built 30K+ loyalty members across 29 lanes" },
+      { image: "/images/vori-case-3.jpg", href: "https://www.vori.com/customer-stories/valley-farm-market-vori-grocery-pos", alt: "How Valley Farm Market is saving 20+ hours per week across meat and produce" },
+      { image: "/images/vori-case-4.jpg", href: "https://www.vori.com/customer-stories/big-t-iga-vori-grocery-pos", alt: "How Big T IGA drives loyalty with 53% higher order count in small-town Montana" },
+      { image: "/images/vori-case-5.jpg", href: "https://www.vori.com/customer-stories/talin-market-vori-grocery-pos-copy", alt: "How Talin Market cut pricing time by 95% and reduced weekly ordering time by 67%" },
+      { image: "/images/vori-case-6.jpg", href: "https://www.vori.com/customer-stories/the-willows-market-vori-grocery-pos", alt: "How The Willows Market bagged +9.7% more sales with Vori" },
     ],
   },
   videos: {
