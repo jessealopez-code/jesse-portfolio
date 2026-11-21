@@ -388,18 +388,274 @@ blockquote {
   object-fit: cover;
 }
 
-.card-placeholder {
-  aspect-ratio: 16 / 10;
+.placeholder {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #262626;
-  border-bottom: 1px solid var(--line);
   font-family: var(--display);
   font-weight: 800;
-  font-size: 32px;
+  font-size: 28px;
   letter-spacing: -0.03em;
-  color: #5a5650;
+  color: #6b665e;
+  text-align: center;
+  padding: 16px;
+}
+
+/* ── Vori spotlight ─────────────────────────────────── */
+.vori {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+}
+
+.vori-headline {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vori-headline .highlight-title {
+  flex: none;
+}
+
+.vori-block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border-top: 1px solid var(--line);
+  padding-top: 40px;
+}
+
+.vori-subhead {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.vori-num {
+  font-size: 16px;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.vori-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.vori-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.video {
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Stacked website cards */
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  align-items: center;
+}
+
+.stack-cards {
+  flex: 999 1 560px;
+  min-width: 0;
+  position: relative;
+  padding: 0 0 36px 36px;
+}
+
+.stack-back,
+.stack-front {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.stack-back {
+  position: absolute;
+  inset: 0 36px 36px 0;
+  background: #1f1f1f;
+  border: 1px solid var(--line);
+}
+
+.stack-back--2 {
+  transform: translate(36px, 36px);
+  background: #191919;
+}
+
+.stack-back--1 {
+  transform: translate(18px, 18px);
+}
+
+.stack-front {
+  position: relative;
+  border: 1px solid #333;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  animation: stack-in 0.35s ease;
+}
+
+@keyframes stack-in {
+  from {
+    opacity: 0;
+    transform: translate(18px, 18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.stack-info {
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stack-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.stack-tab {
+  font: inherit;
+  font-size: 14px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid #45413b;
+  background: transparent;
+  color: var(--text-soft);
+  cursor: pointer;
+}
+
+.stack-tab.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.stack-title {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.stack-text {
+  color: var(--text-soft);
+  font-size: 17px;
+}
+
+/* Launches */
+.launch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.launch-media {
+  flex: 999 1 520px;
+  min-width: 0;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.launch-body {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.launch-text {
+  color: var(--text-soft);
+  font-size: 17px;
+}
+
+.launch-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.launch-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.launch-stat-value {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.launch-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.launch-step {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.launch-step-num {
+  font-family: var(--display);
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.launch-step h4 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.launch-step p {
+  font-size: 14px;
+  color: var(--muted);
 }
 
 .card-body {

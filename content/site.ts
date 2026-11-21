@@ -199,6 +199,115 @@ export const chapters: Chapter[] = [
   },
 ];
 
+// ── Vori: the company block (added to the end of `chapters` below) ──
+chapters.push({
+  company: "Vori",
+  category: "AI grocery operating system",
+  headline: "~80% of new ARR as a marketing team of one",
+  note: "Brand, demand gen, product marketing and marketing ops for independent grocers.",
+  projects: [
+    {
+      title: "Launched Chip, Vori's AI employee",
+      text: "Brought to market the first-ever grocery virtual employee — owners ask in plain language and Chip plans promotions, answers sales questions and prepares shelf tags, then waits for approval.",
+      image: "", // placeholder until an image is added, e.g. "/images/vori-chip.jpg"
+      linkLabel: "See Chip in the 2026 releases",
+      href: "https://www.vori.com/releases-2026",
+    },
+    {
+      title: "Built a full-funnel demand engine",
+      text: "Partnered with a growth agency on Meta and Google campaigns that generated $15M+ in pipeline and 600+ booked demos in H1 2026.",
+      image: "",
+      linkLabel: "",
+      href: "#",
+    },
+    {
+      title: "Stood up marketing operations",
+      text: "Built landing pages, forms and automation to track campaign performance, improving reporting and the marketing-to-AE handoff.",
+      image: "",
+      linkLabel: "",
+      href: "#",
+    },
+  ],
+});
+
+// ── Vori: the spotlight section below the company blocks ──
+export const vori = {
+  stat: "80%",
+  title: "Highlight: Built Vori's marketing engine as a team of one",
+  subtitle: "~80% of new ARR in H1 2026 · $15M+ pipeline · 600+ booked demos",
+  website: {
+    heading: "Rebuilt Vori.com with depth for every stage of the funnel",
+    pages: [
+      {
+        label: "Homepage",
+        text: "The front door. Positions Vori as the AI-native grocery operating system and routes owners and chain leaders to the right next step.",
+        image: "", // e.g. "/images/vori-home.jpg"
+        href: "https://www.vori.com/",
+      },
+      {
+        label: "Product page",
+        text: "Goes deep on one capability — what it does, how it works in a real store, and the proof behind it.",
+        image: "",
+        href: "#",
+      },
+      {
+        label: "Solution page",
+        text: "Speaks to a specific store format, like natural and organic or produce markets, with the workflows that matter most to that operator.",
+        image: "",
+        href: "#",
+      },
+      {
+        label: "Competitive page",
+        text: "A clear side-by-side against legacy grocery POS systems that gives evaluators the confidence to switch.",
+        image: "",
+        href: "#",
+      },
+    ],
+  },
+  content: {
+    heading: "Content that drives awareness and credibility",
+    items: [
+      {
+        title: "The Modern Grocery Playbook",
+        text: "A practical guide to the four habits of high-performing independent grocers.",
+        image: "", // e.g. "/images/vori-playbook.jpg"
+        href: "https://www.vori.com/blog/the-modern-grocery-playbook",
+        linkLabel: "Read the playbook",
+      },
+      {
+        title: "The 2026 Independent Grocery Operator Study",
+        text: "Benchmark research with EnsembleIQ and Progressive Grocer, surveying 53 independent U.S. grocers on big-box competition, automation and loyalty.",
+        image: "",
+        href: "https://www.vori.com/blog/the-2026-independent-grocery-operator-study",
+        linkLabel: "Read the study",
+      },
+    ],
+  },
+  videos: {
+    heading: "Video storytelling to drive demand and education",
+    ids: ["DgmH7mlubkE", "eaUk9O0YewQ", "PpslvOr6kRM"],
+  },
+  launches: {
+    heading: "Built AI workflows to deliver launches at scale",
+    text: "Shipped one page covering all 35 of Vori's 2026 releases — a tour of a grocer's store from Chip to the checkout lanes, sales floor, back room and office. Last year that would have been a month-long team project; this time it came mostly out of one Claude project.",
+    stats: [
+      { value: "35", label: "releases on one page" },
+      { value: "1", label: "marketer" },
+      { value: "1", label: "Claude project" },
+    ],
+    steps: [
+      { title: "Capture", text: "Every release announcement in Slack went into Claude, which logged each one as a structured record." },
+      { title: "Write", text: "Co-wrote descriptions with a brand voice agent built on Vori's voice guide, proof points and banned words." },
+      { title: "Design", text: "Claude made product visuals and motion loops from Vori's design system code on GitHub." },
+      { title: "Lay out", text: "Figma turned existing web styles into the layout; Figma AI drew the store map." },
+      { title: "Build", text: "Claude built the page in Webflow through MCP, in minutes." },
+    ],
+    image: "", // e.g. "/images/vori-releases.jpg"
+    href: "https://www.vori.com/releases-2026",
+    linkLabel: "Explore the 2026 releases",
+  },
+};
+
 export type Highlight = {
   stat: string;
   title: string;

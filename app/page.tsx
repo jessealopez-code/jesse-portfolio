@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import { bio, chapters, highlights, links, principles, site } from "@/content/site";
+import { bio, chapters, highlights, links, principles, site, vori } from "@/content/site";
 import LogoMarquee from "./components/LogoMarquee";
+import Placeholder from "./components/Placeholder";
+import WebsiteStack from "./components/WebsiteStack";
 import QuoteSlider from "./components/QuoteSlider";
 import SmartLink from "./components/SmartLink";
 
@@ -108,13 +110,7 @@ export default function Home() {
               <div className="chapter-cards">
                 {c.projects.map((p) => (
                   <article key={p.title} className="card">
-                    {p.image ? (
-                      <img src={p.image} alt={p.title} loading="lazy" />
-                    ) : (
-                      <div className="card-placeholder" aria-hidden="true">
-                        {c.company}
-                      </div>
-                    )}
+                    <Placeholder src={p.image} alt={p.title} label={c.company} />
                     <div className="card-body">
                       <h4>{p.title}</h4>
                       <p>{p.text}</p>
@@ -127,6 +123,103 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </section>
+
+        {/* Vori spotlight */}
+        <section className="container vori" aria-labelledby="vori-title">
+          <div className="highlight-head">
+            <span className="highlight-stat">{vori.stat}</span>
+            <div className="vori-headline">
+              <h2 id="vori-title" className="highlight-title">
+                {vori.title}
+              </h2>
+              <p className="muted">{vori.subtitle}</p>
+            </div>
+          </div>
+
+          <div className="vori-block">
+            <h3 className="vori-subhead">
+              <span className="vori-num">01</span>
+              {vori.website.heading}
+            </h3>
+            <WebsiteStack pages={vori.website.pages} />
+          </div>
+
+          <div className="vori-block">
+            <h3 className="vori-subhead">
+              <span className="vori-num">02</span>
+              {vori.content.heading}
+            </h3>
+            <div className="vori-grid-2">
+              {vori.content.items.map((item) => (
+                <article key={item.title} className="card">
+                  <Placeholder src={item.image} alt={item.title} label="Cover image" />
+                  <div className="card-body">
+                    <h4>{item.title}</h4>
+                    <p>{item.text}</p>
+                    <SmartLink href={item.href} className="card-link">
+                      {item.linkLabel} →
+                    </SmartLink>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="vori-block">
+            <h3 className="vori-subhead">
+              <span className="vori-num">03</span>
+              {vori.videos.heading}
+            </h3>
+            <div className="vori-grid-3">
+              {vori.videos.ids.map((id, i) => (
+                <div key={id} className="video">
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${id}`}
+                    title={`Vori video ${i + 1}`}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="vori-block">
+            <h3 className="vori-subhead">
+              <span className="vori-num">04</span>
+              {vori.launches.heading}
+            </h3>
+            <div className="launch">
+              <div className="launch-media">
+                <Placeholder src={vori.launches.image} alt="Vori 2026 releases page" label="2026 releases page" />
+              </div>
+              <div className="launch-body">
+                <p className="launch-text">{vori.launches.text}</p>
+                <div className="launch-stats">
+                  {vori.launches.stats.map((s) => (
+                    <div key={s.label} className="launch-stat">
+                      <span className="launch-stat-value">{s.value}</span>
+                      <span className="muted small">{s.label}</span>
+                    </div>
+                  ))}
+                </div>
+                <SmartLink href={vori.launches.href} className="highlight-link">
+                  {vori.launches.linkLabel} →
+                </SmartLink>
+              </div>
+            </div>
+            <ol className="launch-steps">
+              {vori.launches.steps.map((s, i) => (
+                <li key={s.title} className="launch-step">
+                  <span className="launch-step-num">{pad(i + 1)}</span>
+                  <h4>{s.title}</h4>
+                  <p>{s.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
         </section>
 
         {/* Highlights */}
