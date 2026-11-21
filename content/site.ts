@@ -209,7 +209,7 @@ chapters.push({
     {
       title: "Launched Chip, Vori's AI employee",
       text: "Brought to market the first-ever grocery virtual employee — owners ask in plain language and Chip plans promotions, answers sales questions and prepares shelf tags, then waits for approval.",
-      image: "", // placeholder until an image is added, e.g. "/images/vori-chip.jpg"
+      image: "/images/vori-chip.jpg",
       linkLabel: "See Chip in the 2026 releases",
       href: "https://www.vori.com/releases-2026",
     },
@@ -302,7 +302,7 @@ export const vori = {
       { title: "Lay out", text: "Figma turned existing web styles into the layout; Figma AI drew the store map." },
       { title: "Build", text: "Claude built the page in Webflow through MCP, in minutes." },
     ],
-    image: "", // e.g. "/images/vori-releases.jpg"
+    image: "/images/vori-releases.jpg",
     href: "https://www.vori.com/releases-2026",
     linkLabel: "Explore the 2026 releases",
   },
