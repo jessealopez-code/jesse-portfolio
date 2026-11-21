@@ -199,6 +199,18 @@ export default function Home() {
           <div className="vori-block">
             <h3 className="vori-subhead">
               <span className="vori-num">03</span>
+              {vori.caseStudies.heading}
+            </h3>
+            <div className="vori-cases">
+              {vori.caseStudies.items.map((c) => (
+                <img key={c.image} src={c.image} alt={c.alt} loading="lazy" className="vori-case" />
+              ))}
+            </div>
+          </div>
+
+          <div className="vori-block">
+            <h3 className="vori-subhead">
+              <span className="vori-num">04</span>
               {vori.videos.heading}
             </h3>
             <div className="vori-grid-3">
@@ -218,7 +230,7 @@ export default function Home() {
 
           <div className="vori-block">
             <h3 className="vori-subhead">
-              <span className="vori-num">04</span>
+              <span className="vori-num">05</span>
               {vori.launches.heading}
             </h3>
             <div className="launch">

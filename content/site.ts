@@ -216,7 +216,7 @@ chapters.push({
     {
       title: "Built a full-funnel demand engine",
       text: "Partnered with a growth agency on Meta and Google campaigns that became Vori's largest source of new business.",
-      image: "",
+      image: "/images/vori-demand.jpg",
       linkLabel: "",
       href: "#",
     },
@@ -281,6 +281,17 @@ export const vori = {
         href: "https://www.vori.com/blog/the-2026-independent-grocery-operator-study",
         linkLabel: "Read the study",
       },
+    ],
+  },
+  caseStudies: {
+    heading: "Customer stories that prove the value",
+    items: [
+      { image: "/images/vori-case-1.jpg", alt: "How Dat Moi Market serves 60 countries of food on one grocery system" },
+      { image: "/images/vori-case-2.jpg", alt: "How Asian Family Market built 30K+ loyalty members across 29 lanes" },
+      { image: "/images/vori-case-3.jpg", alt: "How Valley Farm Market is saving 20+ hours per week across meat and produce" },
+      { image: "/images/vori-case-4.jpg", alt: "How Big T IGA drives loyalty with 53% higher order count in small-town Montana" },
+      { image: "/images/vori-case-5.jpg", alt: "How Talin Market cut pricing time by 95% and reduced weekly ordering time by 67%" },
+      { image: "/images/vori-case-6.jpg", alt: "How The Willows Market bagged +9.7% more sales with Vori" },
     ],
   },
   videos: {

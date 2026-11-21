@@ -888,3 +888,28 @@ blockquote {
     padding: 0 24px;
   }
 }
+
+.vori-cases {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .vori-cases {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .vori-cases {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vori-case {
+  width: 100%;
+  aspect-ratio: 560 / 642;
+  object-fit: cover;
+  border-radius: 16px;
+}
