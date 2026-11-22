@@ -1573,3 +1573,116 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
     cursor: ew-resize;
   }
 }
+
+/* ── Deep dives: the highlight stories on a light background ───────── */
+.deep {
+  --accent: #2563d9;
+  --text: #121212;
+  --text-soft: #3d3a35;
+  --muted: #6b665e;
+  --line: #ddd4c6;
+  --surface: #ffffff;
+  background: var(--cream);
+  color: #121212;
+  padding: 120px 0 8px;
+}
+.deep-open {
+  padding-bottom: 64px;
+}
+.deep-open .eyebrow {
+  color: var(--accent);
+  font-weight: 700;
+}
+.deep-open h2 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(64px, 9vw, 120px);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  margin-top: 14px;
+}
+.deep-sub {
+  margin-top: 22px;
+  font-size: 20px;
+  color: var(--text-soft);
+  max-width: 640px;
+}
+.deep-rule {
+  height: 4px;
+  width: 120px;
+  background: var(--accent);
+  margin-top: 36px;
+}
+.deep .highlights {
+  padding-top: 16px;
+}
+.deep .highlight-points,
+.deep .launch-text,
+.deep .stack-text {
+  color: var(--text-soft);
+}
+.deep .card {
+  border: 1px solid #e4dccf;
+}
+.deep .launch-step {
+  border: 1px solid #e4dccf;
+}
+.deep .btn-round {
+  border-color: #cfc5b5;
+  color: #121212;
+}
+.deep .btn-round--accent,
+.deep .stack-tab.is-active,
+.deep .vthumb-play,
+.deep .ba-line span {
+  color: #fff;
+}
+.deep .stack-back {
+  background: #ebe4d8;
+  border-color: var(--line);
+}
+.deep .stack-back--2 {
+  background: #e4dccf;
+}
+.deep .stack-front {
+  border-color: #e4dccf;
+  box-shadow: 0 18px 36px rgba(60, 45, 20, 0.16);
+}
+.deep .stack-tab {
+  border-color: #cfc5b5;
+}
+.deep .placeholder {
+  background: #ebe4d8;
+  color: #9a9286;
+}
+.deep .vthumb {
+  background: #e4dccf;
+}
+.deep .card:hover {
+  box-shadow: 0 18px 36px rgba(60, 45, 20, 0.16);
+}
+@media (hover: hover) and (pointer: fine) {
+  .deep .screens-viewport::before {
+    background: linear-gradient(90deg, rgba(243, 238, 230, 0.9), rgba(243, 238, 230, 0));
+  }
+  .deep .screens-viewport::after {
+    background: linear-gradient(270deg, rgba(243, 238, 230, 0.9), rgba(243, 238, 230, 0));
+  }
+}
+/* the video pop-up keeps its dark styling */
+.deep .vmodal-close {
+  background: #1c1c1c;
+  color: #f3eee6;
+  border-color: #45413b;
+}
+@media (max-width: 767px) {
+  .deep {
+    padding-top: 88px;
+  }
+  .deep-open {
+    padding-bottom: 40px;
+  }
+  .deep-sub {
+    font-size: 18px;
+  }
+}

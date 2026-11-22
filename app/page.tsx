@@ -145,194 +145,203 @@ export default function Home() {
         </section>
 
         {/* Highlights */}
-        <section className="container highlights">
-          {highlights.map((h) => (
-            <div key={h.title} className="highlight">
-              <div className="highlight-head">
-                <span className="highlight-stat">{h.stat}</span>
-                <h2 className="highlight-title">{h.title}</h2>
-              </div>
-              <BeforeAfter before={h.before} after={h.after} />
-              <Collapsible>
-              <div className="highlight-points" data-reveal>
-                {h.points.map((pt) => (
-                  <p key={pt.slice(0, 24)}>{pt}</p>
-                ))}
-              </div>
-              {h.link ? (
-                <SmartLink href={h.link.href} className="highlight-link">
-                  {h.link.label} →
-                </SmartLink>
-              ) : null}
-              {h.screens ? (
-                <div className="vori-block">
-                  <h3 className="vori-subhead">{h.screens.heading}</h3>
-                  <p className="launch-text screens-text">{h.screens.text}</p>
-                  <ScreenCarousel screens={h.screens.images} label="Square Invoices App Store screens" />
-                </div>
-              ) : null}
-              {h.extra ? (
-                <div className="vori-block">
-                  <h3 className="vori-subhead">{h.extra.heading}</h3>
-                  <CardRail className="vori-grid-3" label="Credibility projects">
-                    {h.extra.items.map((item) => (
-                      <article key={item.title} className="card">
-                        <Placeholder src={item.image} alt={item.title} label="Image" />
-                        <div className="card-body">
-                          <h4>{item.title}</h4>
-                          <p>{item.text}</p>
-                          <SmartLink href={item.href} className="card-link">
-                            {item.linkLabel} →
-                          </SmartLink>
-                        </div>
-                      </article>
-                    ))}
-                  </CardRail>
-                </div>
-              ) : null}
-              </Collapsible>
-            </div>
-          ))}
-        </section>
-
-        {/* Vori spotlight */}
-        <section className="container vori" aria-labelledby="vori-title">
-          <div className="highlight-head">
-            <span className="highlight-stat">{vori.stat}</span>
-            <div className="vori-headline">
-              <h2 id="vori-title" className="highlight-title">
-                {vori.title}
-              </h2>
-              {vori.subtitle ? <p className="muted">{vori.subtitle}</p> : null}
-            </div>
+        <div className="deep">
+          <div className="container deep-open">
+            <p className="eyebrow">Deep dives</p>
+            <h2>Go deeper.</h2>
+            <p className="deep-sub">Selected stories that show how I approach positioning, go-to-market, and storytelling.</p>
+            <div className="deep-rule" />
           </div>
-
-          <div className="vori-block">
-            <h3 className="vori-subhead">
-              <span className="vori-num">01</span>
-              {vori.website.heading}
-            </h3>
-            <WebsiteStack pages={vori.website.pages} />
-          </div>
-
-          <Collapsible>
-          <div className="vori-block">
-            <h3 className="vori-subhead">
-              <span className="vori-num">02</span>
-              {vori.chip.heading}
-            </h3>
-            <div className="launch">
-              <div className="launch-media chip-section-media">
-                <img src={vori.chip.image} alt={vori.chip.alt} loading="lazy" />
-              </div>
-              <div className="launch-body">
-                <ul className="cases-uses" data-reveal>
-                  {vori.chip.points.map((pt) => (
-                    <li key={pt.title}>
-                      <h4>{pt.title}</h4>
-                      <p>{pt.text}</p>
-                    </li>
+          <section className="container highlights">
+            {highlights.map((h) => (
+              <div key={h.title} className="highlight">
+                <div className="highlight-head">
+                  <span className="highlight-stat">{h.stat}</span>
+                  <h2 className="highlight-title">{h.title}</h2>
+                </div>
+                <BeforeAfter before={h.before} after={h.after} />
+                <Collapsible>
+                <div className="highlight-points" data-reveal>
+                  {h.points.map((pt) => (
+                    <p key={pt.slice(0, 24)}>{pt}</p>
                   ))}
-                </ul>
-                <SmartLink href={vori.chip.href} className="highlight-link">
-                  {vori.chip.linkLabel} →
-                </SmartLink>
-              </div>
-            </div>
-          </div>
-
-          <div className="vori-block">
-            <h3 className="vori-subhead">
-              <span className="vori-num">03</span>
-              {vori.content.heading}
-            </h3>
-            <div className="vori-grid-2" data-reveal>
-              {vori.content.items.map((item) => (
-                <article key={item.title} className="card">
-                  <Placeholder src={item.image} alt={item.title} label="Cover image" />
-                  <div className="card-body">
-                    <h4>{item.title}</h4>
-                    <p>{item.text}</p>
-                    <SmartLink href={item.href} className="card-link">
-                      {item.linkLabel} →
-                    </SmartLink>
+                </div>
+                {h.link ? (
+                  <SmartLink href={h.link.href} className="highlight-link">
+                    {h.link.label} →
+                  </SmartLink>
+                ) : null}
+                {h.screens ? (
+                  <div className="vori-block">
+                    <h3 className="vori-subhead">{h.screens.heading}</h3>
+                    <p className="launch-text screens-text">{h.screens.text}</p>
+                    <ScreenCarousel screens={h.screens.images} label="Square Invoices App Store screens" />
                   </div>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          <div className="vori-block">
-            <h3 className="vori-subhead">
-              <span className="vori-num">04</span>
-              {vori.caseStudies.heading}
-            </h3>
-            <div className="cases-wrap">
-              <div className="cases-text">
-                <p className="launch-text">{vori.caseStudies.intro}</p>
-                <ul className="cases-uses" data-reveal>
-                  {vori.caseStudies.uses.map((u) => (
-                    <li key={u.title}>
-                      <h4>{u.title}</h4>
-                      <p>{u.text}</p>
-                    </li>
-                  ))}
-                </ul>
+                ) : null}
+                {h.extra ? (
+                  <div className="vori-block">
+                    <h3 className="vori-subhead">{h.extra.heading}</h3>
+                    <CardRail className="vori-grid-3" label="Credibility projects">
+                      {h.extra.items.map((item) => (
+                        <article key={item.title} className="card">
+                          <Placeholder src={item.image} alt={item.title} label="Image" />
+                          <div className="card-body">
+                            <h4>{item.title}</h4>
+                            <p>{item.text}</p>
+                            <SmartLink href={item.href} className="card-link">
+                              {item.linkLabel} →
+                            </SmartLink>
+                          </div>
+                        </article>
+                      ))}
+                    </CardRail>
+                  </div>
+                ) : null}
+                </Collapsible>
               </div>
-              <div className="vori-cases" data-reveal>
-                {vori.caseStudies.items.map((c) => (
-                  <a key={c.image} href={c.href} target="_blank" rel="noopener noreferrer" className="vori-case-link">
-                    <img src={c.image} alt={c.alt} loading="lazy" className="vori-case" />
-                  </a>
+            ))}
+          </section>
+
+          {/* Vori spotlight */}
+          <section className="container vori" aria-labelledby="vori-title">
+            <div className="highlight-head">
+              <span className="highlight-stat">{vori.stat}</span>
+              <div className="vori-headline">
+                <h2 id="vori-title" className="highlight-title">
+                  {vori.title}
+                </h2>
+                {vori.subtitle ? <p className="muted">{vori.subtitle}</p> : null}
+              </div>
+            </div>
+
+            <div className="vori-block">
+              <h3 className="vori-subhead">
+                <span className="vori-num">01</span>
+                {vori.website.heading}
+              </h3>
+              <WebsiteStack pages={vori.website.pages} />
+            </div>
+
+            <Collapsible>
+            <div className="vori-block">
+              <h3 className="vori-subhead">
+                <span className="vori-num">02</span>
+                {vori.chip.heading}
+              </h3>
+              <div className="launch">
+                <div className="launch-media chip-section-media">
+                  <img src={vori.chip.image} alt={vori.chip.alt} loading="lazy" />
+                </div>
+                <div className="launch-body">
+                  <ul className="cases-uses" data-reveal>
+                    {vori.chip.points.map((pt) => (
+                      <li key={pt.title}>
+                        <h4>{pt.title}</h4>
+                        <p>{pt.text}</p>
+                      </li>
+                    ))}
+                  </ul>
+                  <SmartLink href={vori.chip.href} className="highlight-link">
+                    {vori.chip.linkLabel} →
+                  </SmartLink>
+                </div>
+              </div>
+            </div>
+
+            <div className="vori-block">
+              <h3 className="vori-subhead">
+                <span className="vori-num">03</span>
+                {vori.content.heading}
+              </h3>
+              <div className="vori-grid-2" data-reveal>
+                {vori.content.items.map((item) => (
+                  <article key={item.title} className="card">
+                    <Placeholder src={item.image} alt={item.title} label="Cover image" />
+                    <div className="card-body">
+                      <h4>{item.title}</h4>
+                      <p>{item.text}</p>
+                      <SmartLink href={item.href} className="card-link">
+                        {item.linkLabel} →
+                      </SmartLink>
+                    </div>
+                  </article>
                 ))}
               </div>
             </div>
-          </div>
 
-          <div className="vori-block">
-            <h3 className="vori-subhead">
-              <span className="vori-num">05</span>
-              {vori.videos.heading}
-            </h3>
-            <VideoGrid ids={vori.videos.ids} label="Vori video" />
-          </div>
-
-          <div className="vori-block">
-            <h3 className="vori-subhead">
-              <span className="vori-num">06</span>
-              {vori.launches.heading}
-            </h3>
-            <div className="launch">
-              <div className="launch-media">
-                <Placeholder src={vori.launches.image} alt="Vori 2026 releases page" label="2026 releases page" />
-              </div>
-              <div className="launch-body">
-                <p className="launch-text">{vori.launches.text}</p>
-                <div className="launch-stats">
-                  {vori.launches.stats.map((s) => (
-                    <div key={s.label} className="launch-stat">
-                      <span className="launch-stat-value"><CountUp value={s.value} /></span>
-                      <span className="muted small">{s.label}</span>
-                    </div>
+            <div className="vori-block">
+              <h3 className="vori-subhead">
+                <span className="vori-num">04</span>
+                {vori.caseStudies.heading}
+              </h3>
+              <div className="cases-wrap">
+                <div className="cases-text">
+                  <p className="launch-text">{vori.caseStudies.intro}</p>
+                  <ul className="cases-uses" data-reveal>
+                    {vori.caseStudies.uses.map((u) => (
+                      <li key={u.title}>
+                        <h4>{u.title}</h4>
+                        <p>{u.text}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="vori-cases" data-reveal>
+                  {vori.caseStudies.items.map((c) => (
+                    <a key={c.image} href={c.href} target="_blank" rel="noopener noreferrer" className="vori-case-link">
+                      <img src={c.image} alt={c.alt} loading="lazy" className="vori-case" />
+                    </a>
                   ))}
                 </div>
-                <SmartLink href={vori.launches.href} className="highlight-link">
-                  {vori.launches.linkLabel} →
-                </SmartLink>
               </div>
             </div>
-            <ol className="launch-steps" data-reveal>
-              {vori.launches.steps.map((s, i) => (
-                <li key={s.title} className="launch-step">
-                  <span className="launch-step-num">{pad(i + 1)}</span>
-                  <h4>{s.title}</h4>
-                  <p>{s.text}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-          </Collapsible>
-        </section>
+
+            <div className="vori-block">
+              <h3 className="vori-subhead">
+                <span className="vori-num">05</span>
+                {vori.videos.heading}
+              </h3>
+              <VideoGrid ids={vori.videos.ids} label="Vori video" />
+            </div>
+
+            <div className="vori-block">
+              <h3 className="vori-subhead">
+                <span className="vori-num">06</span>
+                {vori.launches.heading}
+              </h3>
+              <div className="launch">
+                <div className="launch-media">
+                  <Placeholder src={vori.launches.image} alt="Vori 2026 releases page" label="2026 releases page" />
+                </div>
+                <div className="launch-body">
+                  <p className="launch-text">{vori.launches.text}</p>
+                  <div className="launch-stats">
+                    {vori.launches.stats.map((s) => (
+                      <div key={s.label} className="launch-stat">
+                        <span className="launch-stat-value"><CountUp value={s.value} /></span>
+                        <span className="muted small">{s.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <SmartLink href={vori.launches.href} className="highlight-link">
+                    {vori.launches.linkLabel} →
+                  </SmartLink>
+                </div>
+              </div>
+              <ol className="launch-steps" data-reveal>
+                {vori.launches.steps.map((s, i) => (
+                  <li key={s.title} className="launch-step">
+                    <span className="launch-step-num">{pad(i + 1)}</span>
+                    <h4>{s.title}</h4>
+                    <p>{s.text}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            </Collapsible>
+          </section>
+
+        </div>
 
         {/* Testimonials */}
         <section id="words" className="words">
