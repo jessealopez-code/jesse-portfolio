@@ -1437,8 +1437,17 @@ blockquote {
 /* Hero builds in on load (CSS only, so it also works before JavaScript loads) */
 @media (prefers-reduced-motion: no-preference) {
   /* Headline types itself out; TypeTitle moves the cursor along */
-  .tch {
-    animation: type-in 0.01s steps(1) both;
+  /* Letters start hidden; TypeTitle reveals them. If its script never runs, they appear after 5s. */
+  .type-title .tch {
+    opacity: 0;
+    animation: type-fallback 0s 5s forwards;
+  }
+  .type-title.type-js .tch {
+    animation: none;
+  }
+  .type-title .tch.on,
+  .type-title.type-done .tch {
+    opacity: 1;
   }
   .tcaret {
     display: block;
@@ -1455,8 +1464,8 @@ blockquote {
     animation: rise-photo 1s 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
   }
 }
-@keyframes type-in {
-  from { opacity: 0; }
+@keyframes type-fallback {
+  to { opacity: 1; }
 }
 @keyframes caret-blink {
   50% { opacity: 0; }
