@@ -379,6 +379,7 @@ export const vori = {
 };
 
 export type Highlight = {
+  company: string;
   stat: string;
   title: string;
   before: { image: string; label: string; alt: string };
@@ -398,6 +399,7 @@ export type Highlight = {
 
 export const highlights: Highlight[] = [
   {
+    company: "Square Invoices",
     stat: "2×",
     title: "revenue for Square Invoices",
     before: { image: "/images/square-2019.jpg", label: "2019", alt: "Square Invoices page in 2019" },
@@ -426,6 +428,7 @@ export const highlights: Highlight[] = [
     },
   },
   {
+    company: "Dandy",
     stat: "3×",
     title: "acquisition through full-funnel marketing",
     before: { image: "/images/dandy-q1-24.jpg", label: "Q1’24", alt: "Dandy homepage in Q1 2024" },

@@ -17,6 +17,7 @@ import Motion from "./components/Motion";
 import CountUp from "./components/CountUp";
 import ChipArt from "./components/ChipArt";
 import ScreenCarousel from "./components/ScreenCarousel";
+import DeepNav from "./components/DeepNav";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -45,6 +46,7 @@ export default function Home() {
         <nav className="nav-links" aria-label="Main">
           <a href="#about">Bio</a>
           <a href="#work">Work</a>
+          <a href="#deep">Deep dives</a>
           <a href="#words">Leadership</a>
           <a href="#contact" className="accent-link">
             Say hello →
@@ -145,16 +147,22 @@ export default function Home() {
         </section>
 
         {/* Highlights */}
-        <div className="deep">
+        <div className="deep" id="deep">
           <div className="container deep-open">
             <p className="eyebrow">Deep dives</p>
             <h2>Go deeper.</h2>
             <p className="deep-sub">Selected stories that show how I approach positioning, go-to-market, and storytelling.</p>
             <div className="deep-rule" />
           </div>
+          <DeepNav
+            items={[
+              ...highlights.map((h) => ({ id: `deep-${companyId(h.company).slice(3)}`, label: h.company })),
+              { id: "deep-vori", label: "Vori" },
+            ]}
+          />
           <section className="container highlights">
             {highlights.map((h) => (
-              <div key={h.title} className="highlight">
+              <div key={h.title} className="highlight" id={`deep-${companyId(h.company).slice(3)}`}>
                 <div className="highlight-head">
                   <span className="highlight-stat">{h.stat}</span>
                   <h2 className="highlight-title">{h.title}</h2>
@@ -203,7 +211,7 @@ export default function Home() {
           </section>
 
           {/* Vori spotlight */}
-          <section className="container vori" aria-labelledby="vori-title">
+          <section className="container vori" id="deep-vori" aria-labelledby="vori-title">
             <div className="highlight-head">
               <span className="highlight-stat">{vori.stat}</span>
               <div className="vori-headline">
@@ -346,7 +354,12 @@ export default function Home() {
         {/* Testimonials */}
         <section id="words" className="words">
           <div className="words-inner">
-            <h2 className="eyebrow">Leadership: developed high-performing teams</h2>
+            <div className="words-head">
+              <p className="eyebrow">Leadership</p>
+              <h2>In their words.</h2>
+              <p className="words-sub">What the people I&apos;ve managed say about working together.</p>
+              <div className="words-rule" />
+            </div>
             <QuoteSlider />
             <SmartLink href={links.recommendations} className="accent-link">
               Read all recommendations →

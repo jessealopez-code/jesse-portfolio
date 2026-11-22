@@ -1686,3 +1686,104 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
     font-size: 18px;
   }
 }
+
+/* ── Deep dives navigation ──────────────────────────── */
+.deep-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(243, 238, 230, 0.94);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 56px;
+}
+.deep-nav-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.deep-nav-row::-webkit-scrollbar {
+  display: none;
+}
+.deep-nav-label {
+  flex: 0 0 auto;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--muted);
+  margin-right: 12px;
+}
+.deep-tab {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid #cfc5b5;
+  background: transparent;
+  color: var(--text-soft);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.deep-tab:hover {
+  border-color: var(--accent);
+}
+.deep-tab.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+.deep .highlight,
+.deep .vori {
+  scroll-margin-top: 84px;
+}
+.deep .highlights {
+  padding-top: 0;
+}
+@media (max-width: 767px) {
+  .deep-nav-label {
+    display: none;
+  }
+  .deep-nav {
+    margin-bottom: 40px;
+  }
+  .deep-nav-row {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* ── Leadership header ──────────────────────────────── */
+.words-head .eyebrow {
+  color: var(--accent);
+  font-weight: 700;
+}
+.words-head h2 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(56px, 8vw, 104px);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  margin-top: 14px;
+}
+.words-sub {
+  margin-top: 20px;
+  font-size: 20px;
+  color: var(--text-soft);
+  max-width: 620px;
+}
+.words-rule {
+  height: 4px;
+  width: 120px;
+  background: var(--accent);
+  margin-top: 32px;
+}
