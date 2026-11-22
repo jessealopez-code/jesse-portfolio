@@ -84,6 +84,7 @@ export default function Home() {
         {/* About */}
         <section id="about" className="container about">
           <div className="about-head">
+            <p className="eyebrow sec-eyebrow">Bio</p>
             <img className="headshot" src="/images/headshot.jpg" alt={`Portrait of ${site.name}`} />
             <h2 className="h2">{bio.heading}</h2>
           </div>
@@ -97,6 +98,7 @@ export default function Home() {
         {/* Principles */}
         <section className="principles">
           <div className="container">
+            <p className="eyebrow sec-eyebrow">Marketing philosophy</p>
             <h2 className="principles-title">The best marketing is clear, compelling, and memorable.</h2>
             <div className="principles-grid" data-reveal>
               {principles.map((p, i) => (
@@ -112,11 +114,14 @@ export default function Home() {
 
         {/* Work by company */}
         <section id="work" className="container work">
-          <h2 className="work-title">
-            Led impactful work
-            <br />
-            across <span className="accent">tech.</span>
-          </h2>
+          <div className="work-head">
+            <p className="eyebrow sec-eyebrow">Work</p>
+            <h2 className="work-title">
+              Led impactful work
+              <br />
+              across <span className="accent">tech.</span>
+            </h2>
+          </div>
           <CompanyTabs companies={chapters.map((c) => c.company)} />
           {chapters.map((c, ci) => (
             <div key={c.company} className="chapter" id={companyId(c.company)} data-company={c.company}>
@@ -358,7 +363,7 @@ export default function Home() {
         {/* Services */}
         <section id="services" className="container svc">
           <div className="svc-head">
-            <p className="eyebrow">{services.eyebrow}</p>
+            <p className="eyebrow sec-eyebrow">{services.eyebrow}</p>
             <h2>{services.title}</h2>
             <p className="svc-sub">{services.sub}</p>
           </div>

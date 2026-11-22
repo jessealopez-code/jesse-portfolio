@@ -2061,3 +2061,19 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
     margin-top: 36px;
   }
 }
+
+/* Section eyebrows (Bio, Marketing philosophy, Work, Services) match Deep dives and Leadership */
+.sec-eyebrow {
+  color: var(--accent);
+  font-weight: 700;
+}
+.principles .sec-eyebrow {
+  color: #2563d9; /* darker blue on the cream background */
+  margin-bottom: 16px;
+}
+.work-head .sec-eyebrow {
+  margin-bottom: 16px;
+}
+.svc-head .sec-eyebrow {
+  margin-bottom: 0;
+}
