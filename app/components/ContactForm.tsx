@@ -71,7 +71,7 @@ export default function ContactForm({ email, topics }: { email: string; topics: 
           <input name="name" type="text" autoComplete="name" required />
         </label>
         <label>
-          <span>Work email</span>
+          <span>Email</span>
           <input name="email" type="email" autoComplete="email" required />
         </label>
       </div>
