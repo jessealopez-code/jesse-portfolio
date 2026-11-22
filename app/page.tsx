@@ -458,7 +458,7 @@ export default function Home() {
             </div>
             <ContactForm
               email={links.email}
-              topics={services.groups.flatMap((g) => g.cards.map((c) => (c.tag ? `${c.name} (${c.tag})` : c.name)))}
+              topics={site.contactTopics}
             />
           </div>
           <div className="footer-bottom">

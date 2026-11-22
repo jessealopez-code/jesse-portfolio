@@ -70,7 +70,7 @@ export default function ContactForm({ email, topics }: { email: string; topics: 
         <input name="company" type="text" autoComplete="organization" />
       </label>
       <label>
-        <span>What can I help with?</span>
+        <span>What brings you here?</span>
         <select name="topic" defaultValue="">
           <option value="" disabled>
             Choose one

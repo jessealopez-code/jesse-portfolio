@@ -23,6 +23,13 @@ export const site = {
     "I help tech companies say what makes them different — and grow because of it.",
   footerLine: "If you can dream it, you can do it!",
   contactEyebrow: "Say hello",
+  contactTopics: [
+    "A project (fixed scope)",
+    "Ongoing support (fractional or retainer)",
+    "Advisory or board role",
+    "Speaking, panel or workshop",
+    "Mentorship or coffee chat",
+  ],
   contactTitle: "Let's build your story.",
   contactText:
     "Planning a launch, rethinking your positioning, or looking to grow the customers you have? Tell me what you're working on and I'll get back to you.",
