@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { bio, chapters, highlights, links, principles, site, vori } from "@/content/site";
+import { bio, chapters, highlights, links, principles, services, site, vori } from "@/content/site";
 import LogoMarquee from "./components/LogoMarquee";
 import Placeholder from "./components/Placeholder";
 import WebsiteStack from "./components/WebsiteStack";
@@ -48,6 +48,7 @@ export default function Home() {
           <a href="#about">Bio</a>
           <a href="#work">Work</a>
           <a href="#deep">Deep dives</a>
+          <a href="#services">Services</a>
           <a href="#words">Leadership</a>
           <a href="#contact" className="accent-link">
             Say hello →
@@ -353,6 +354,33 @@ export default function Home() {
           </section>
 
         </div>
+
+        {/* Services */}
+        <section id="services" className="container services">
+          <div className="services-head">
+            <p className="eyebrow">{services.eyebrow}</p>
+            <h2>{services.title}</h2>
+            <p className="services-sub">{services.sub}</p>
+          </div>
+          <ol className="stages" data-anim>
+            {services.stages.map((st, i) => (
+              <li key={st.name} className={`stage${st.tag ? " stage--ai" : ""}`} style={{ ["--i" as string]: i } as React.CSSProperties}>
+                <span className="stage-num">{String(i + 1).padStart(2, "0")}</span>
+                {st.tag && <span className="stage-tag">{st.tag}</span>}
+                <h3>{st.name}</h3>
+                <p className="stage-line">{st.line}</p>
+                <ul>
+                  {st.items.map((it) => (
+                    <li key={it}>{it}</li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ol>
+          <a href="#contact" className="services-cta">
+            {services.cta}
+          </a>
+        </section>
 
         {/* Testimonials */}
         <section id="words" className="words">

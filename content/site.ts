@@ -466,6 +466,46 @@ export const highlights: Highlight[] = [
   },
 ];
 
+export const services = {
+  eyebrow: "Services",
+  title: "Where I plug in.",
+  sub: "Six ways I help tech companies sharpen their story and turn it into growth.",
+  cta: "Let's talk →",
+  stages: [
+    {
+      name: "Understand",
+      line: "Know your customer better than your competitors do.",
+      items: ["Customer and prospect interviews", "Segmentation and ideal customer profiles", "Competitive and market analysis"],
+    },
+    {
+      name: "Position",
+      line: "Say what makes you different, and make it stick.",
+      items: ["Positioning and narrative", "Messaging frameworks and testing", "Rollout across every surface"],
+    },
+    {
+      name: "Launch",
+      line: "Bring it to market with conviction.",
+      items: ["GTM strategy and launch plans", "Pricing and packaging", "Sales enablement and deal toolkits"],
+    },
+    {
+      name: "Convert",
+      line: "Turn attention into pipeline.",
+      items: ["Homepage, product and solution pages", "Competitive and comparison pages", "Full-funnel demand programs"],
+    },
+    {
+      name: "Prove",
+      line: "Let customers make the case.",
+      items: ["Case studies and customer stories", "Video storytelling", "Social proof programs"],
+    },
+    {
+      name: "Scale",
+      tag: "AI-powered",
+      line: "Do more with a lean team.",
+      items: ["AI marketing workflows", "Launch and content systems", "Playbooks that keep the engine running"],
+    },
+  ] as { name: string; tag?: string; line: string; items: string[] }[],
+};
+
 export const quotes = [
   { who: "Dandy direct report", text: "During his time at Dandy, he elevated the PMM function through his expertise, leadership, and ability to consistently execute major cross-functional initiatives." },
   { who: "Dandy direct report", text: "Jesse is a brilliant product marketer and leader. He brought a wealth of product marketing knowledge to Dandy and helped elevate the domain area at the company." },
