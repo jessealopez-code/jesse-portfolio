@@ -356,28 +356,42 @@ export default function Home() {
         </div>
 
         {/* Services */}
-        <section id="services" className="container services">
-          <div className="services-head">
+        <section id="services" className="container svc">
+          <div className="svc-head">
             <p className="eyebrow">{services.eyebrow}</p>
             <h2>{services.title}</h2>
-            <p className="services-sub">{services.sub}</p>
+            <p className="svc-sub">{services.sub}</p>
           </div>
-          <ol className="stages" data-anim>
-            {services.stages.map((st, i) => (
-              <li key={st.name} className={`stage${st.tag ? " stage--ai" : ""}`} style={{ ["--i" as string]: i } as React.CSSProperties}>
-                <span className="stage-num">{String(i + 1).padStart(2, "0")}</span>
-                {st.tag && <span className="stage-tag">{st.tag}</span>}
-                <h3>{st.name}</h3>
-                <p className="stage-line">{st.line}</p>
-                <ul>
-                  {st.items.map((it) => (
-                    <li key={it}>{it}</li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ol>
-          <a href="#contact" className="services-cta">
+          {(() => {
+            let n = 0;
+            return services.groups.map((g) => (
+              <div key={g.label} className="svc-group">
+                <div className="svc-act">
+                  <span className="svc-act-label">{g.label}</span>
+                  <span className="svc-act-rule" />
+                </div>
+                <CardRail className="svc-grid" label={`Services: ${g.label}`}>
+                  {g.cards.map((c) => {
+                    n += 1;
+                    return (
+                      <article key={c.name} className={`svc-card${c.tag ? " svc-card--ai" : ""}`}>
+                        <span className="svc-num">{String(n).padStart(2, "0")}</span>
+                        {c.tag && <span className="svc-tag">{c.tag}</span>}
+                        <h3>{c.name}</h3>
+                        <p className="svc-line">{c.line}</p>
+                        <ul>
+                          {c.items.map((it) => (
+                            <li key={it}>{it}</li>
+                          ))}
+                        </ul>
+                      </article>
+                    );
+                  })}
+                </CardRail>
+              </div>
+            ));
+          })()}
+          <a href="#contact" className="svc-cta">
             {services.cta}
           </a>
         </section>

@@ -466,44 +466,71 @@ export const highlights: Highlight[] = [
   },
 ];
 
+export type ServiceCard = { name: string; tag?: string; line: string; items: string[] };
+
 export const services = {
   eyebrow: "Services",
   title: "Where I plug in.",
-  sub: "Six ways I help tech companies sharpen their story and turn it into growth.",
+  sub: "From the first customer interview to the customers who stay and grow.",
   cta: "Let's talk →",
-  stages: [
+  groups: [
     {
-      name: "Understand",
-      line: "Know your customer better than your competitors do.",
-      items: ["Customer and prospect interviews", "Segmentation and ideal customer profiles", "Competitive and market analysis"],
+      label: "Build the story",
+      cards: [
+        {
+          name: "Understand",
+          line: "Know your customer better than your competitors do.",
+          items: ["Customer and prospect interviews", "Segmentation and ideal customer profiles", "Competitive and market analysis"],
+        },
+        {
+          name: "Position",
+          line: "Say what makes you different, and make it stick.",
+          items: ["Positioning and narrative", "Messaging frameworks and testing", "Pricing and packaging"],
+        },
+        {
+          name: "Launch",
+          line: "Bring it to market with conviction.",
+          items: [
+            "GTM planning and launch tiers",
+            "Launch assets: web, email, decks, video",
+            "Cross-team launch management",
+            "Launch readouts and results",
+          ],
+        },
+        {
+          name: "Enable",
+          line: "Give sales the story and the tools to win.",
+          items: ["Pitch decks and one-pagers", "Battlecards and competitive guides", "Sales training and talk tracks"],
+        },
+      ],
     },
     {
-      name: "Position",
-      line: "Say what makes you different, and make it stick.",
-      items: ["Positioning and narrative", "Messaging frameworks and testing", "Rollout across every surface"],
+      label: "Grow the business",
+      cards: [
+        {
+          name: "Convert",
+          line: "Turn attention into pipeline.",
+          items: ["Homepage, product and solution pages", "Competitive and comparison pages", "Full-funnel demand programs"],
+        },
+        {
+          name: "Expand",
+          line: "Turn customers into your biggest growth engine.",
+          items: ["Onboarding and adoption journeys", "Lifecycle and nurture programs", "Upsell, cross-sell and new-tier launches"],
+        },
+        {
+          name: "Prove",
+          line: "Let customers make the case.",
+          items: ["Case studies and customer stories", "Video storytelling", "Advocacy and social proof programs"],
+        },
+        {
+          name: "Scale",
+          tag: "AI-powered",
+          line: "Do more with a lean team.",
+          items: ["AI marketing workflows", "Launch and content systems", "Playbooks that keep the engine running"],
+        },
+      ],
     },
-    {
-      name: "Launch",
-      line: "Bring it to market with conviction.",
-      items: ["GTM strategy and launch plans", "Pricing and packaging", "Sales enablement and deal toolkits"],
-    },
-    {
-      name: "Convert",
-      line: "Turn attention into pipeline.",
-      items: ["Homepage, product and solution pages", "Competitive and comparison pages", "Full-funnel demand programs"],
-    },
-    {
-      name: "Prove",
-      line: "Let customers make the case.",
-      items: ["Case studies and customer stories", "Video storytelling", "Social proof programs"],
-    },
-    {
-      name: "Scale",
-      tag: "AI-powered",
-      line: "Do more with a lean team.",
-      items: ["AI marketing workflows", "Launch and content systems", "Playbooks that keep the engine running"],
-    },
-  ] as { name: string; tag?: string; line: string; items: string[] }[],
+  ] as { label: string; cards: ServiceCard[] }[],
 };
 
 export const quotes = [
