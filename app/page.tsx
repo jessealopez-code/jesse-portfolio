@@ -16,6 +16,7 @@ import { companyId } from "@/lib/ids";
 import Motion from "./components/Motion";
 import CountUp from "./components/CountUp";
 import ChipArt from "./components/ChipArt";
+import ScreenCarousel from "./components/ScreenCarousel";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -162,6 +163,13 @@ export default function Home() {
                 <SmartLink href={h.link.href} className="highlight-link">
                   {h.link.label} →
                 </SmartLink>
+              ) : null}
+              {h.screens ? (
+                <div className="vori-block">
+                  <h3 className="vori-subhead">{h.screens.heading}</h3>
+                  <p className="launch-text screens-text">{h.screens.text}</p>
+                  <ScreenCarousel screens={h.screens.images} label="Square Invoices App Store screens" />
+                </div>
               ) : null}
               {h.extra ? (
                 <div className="vori-block">

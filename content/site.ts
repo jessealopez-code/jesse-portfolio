@@ -385,6 +385,11 @@ export type Highlight = {
   after: { image: string; label: string; alt: string };
   points: string[];
   link?: { label: string; href: string };
+  screens?: {
+    heading: string;
+    text: string;
+    images: { src: string; alt: string }[];
+  };
   extra?: {
     heading: string;
     items: { title: string; text: string; image: string; href: string; linkLabel: string }[];
@@ -405,6 +410,18 @@ export const highlights: Highlight[] = [
     link: {
       label: "Review 2019 vs 2021 Invoices evolution",
       href: "https://web.archive.org/web/diff/20190830034015/20211101082459/https:/squareup.com/us/en/invoices",
+    },
+    screens: {
+      heading: "Repositioned Square Invoices for service businesses",
+      text: "Refreshed the imagery, messaging, and creative across the App Store to speak to service professionals, from contractors to designers, with real people on the job and benefit-led headlines for invoices, estimates, payments, and reporting.",
+      images: [
+        { src: "/images/square-app-1.jpg", alt: "Square Invoices: the invoice maker for small and large businesses" },
+        { src: "/images/square-app-2.jpg", alt: "Customer review: a convenient, fast way to accept and record any kind of payment" },
+        { src: "/images/square-app-3.jpg", alt: "Accept any type of payment" },
+        { src: "/images/square-app-4.jpg", alt: "Invoices and estimates in seconds" },
+        { src: "/images/square-app-5.jpg", alt: "Real-time reports" },
+        { src: "/images/square-app-6.jpg", alt: "Track payments from anywhere" },
+      ],
     },
   },
   {

@@ -1462,3 +1462,77 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
   width: 100%;
   height: auto;
 }
+
+/* ── App screen carousel ────────────────────────────── */
+.screens-text {
+  max-width: 760px;
+  margin-top: -12px;
+}
+.screens {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.screens-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+.screens-nav button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.screens-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.screens-track::-webkit-scrollbar {
+  display: none;
+}
+.screens-track > img {
+  flex: 0 0 calc((100% - 60px) / 4);
+  min-width: 0;
+  aspect-ratio: 314 / 680;
+  object-fit: cover;
+  border-radius: 18px;
+  scroll-snap-align: start;
+}
+.screens-dots {
+  display: none;
+}
+@media (max-width: 767px) {
+  .screens-nav {
+    display: none;
+  }
+  .screens-text {
+    margin-top: 0;
+  }
+  .screens-track {
+    gap: 14px;
+    margin: 0 -20px;
+    padding: 0 20px;
+    scroll-padding: 0 20px;
+  }
+  .screens-track > img {
+    flex: 0 0 62%;
+  }
+  .screens-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+  .screens-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background: #55514a;
+    transition: width 0.25s ease, background 0.25s ease;
+  }
+  .screens-dot.is-active {
+    width: 22px;
+    background: var(--accent);
+  }
+}
