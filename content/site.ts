@@ -421,6 +421,7 @@ export const highlights: Highlight[] = [
         { src: "/images/square-app-4.jpg", alt: "Invoices and estimates in seconds" },
         { src: "/images/square-app-5.jpg", alt: "Real-time reports" },
         { src: "/images/square-app-6.jpg", alt: "Track payments from anywhere" },
+        { src: "/images/square-app-7.jpg", alt: "Multiple invoicing options: invoice, recurring invoice, estimate, project" },
       ],
     },
   },
