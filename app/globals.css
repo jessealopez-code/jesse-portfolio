@@ -2058,7 +2058,7 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
     padding: 20px;
   }
   .svc-cta {
-    margin-top: 36px;
+    display: none; /* the sticky contact bar already covers this on phones */
   }
 }
 
