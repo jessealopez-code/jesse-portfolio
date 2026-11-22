@@ -84,9 +84,11 @@ export default function Home() {
         {/* About */}
         <section id="about" className="container about">
           <div className="about-head">
-            <p className="eyebrow sec-eyebrow">Bio</p>
             <img className="headshot" src="/images/headshot.jpg" alt={`Portrait of ${site.name}`} />
-            <h2 className="h2">{bio.heading}</h2>
+            <div>
+              <p className="eyebrow sec-eyebrow about-eyebrow">Bio</p>
+              <h2 className="h2">{bio.heading}</h2>
+            </div>
           </div>
           <div className="about-body">
             {bio.paragraphs.map((p) => (

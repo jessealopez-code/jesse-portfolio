@@ -2077,3 +2077,6 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
 .svc-head .sec-eyebrow {
   margin-bottom: 0;
 }
+.about-eyebrow {
+  margin-bottom: 12px;
+}
