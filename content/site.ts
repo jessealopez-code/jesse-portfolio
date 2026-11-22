@@ -10,7 +10,7 @@ export const links = {
   sharebird: "https://sharebird.com/profile/jesse-lopez",
   twitter: "https://x.com/TheJessefromCA",
   recommendations: "https://www.linkedin.com/in/jessealopez/details/recommendations/",
-  email: "", // optional, e.g. "jesse@example.com" — leave empty to hide
+  email: "jesse.a.lopez@gmail.com",
 };
 
 export const site = {
@@ -22,6 +22,10 @@ export const site = {
   heroIntro:
     "I help tech companies say what makes them different — and grow because of it.",
   footerLine: "If you can dream it, you can do it!",
+  contactEyebrow: "Say hello",
+  contactTitle: "Let's build your story.",
+  contactText:
+    "Planning a launch, rethinking your positioning, or looking to grow the customers you have? Tell me what you're working on and I'll get back to you.",
 };
 
 export const bio = {
@@ -298,22 +302,28 @@ export const vori = {
         href: "https://www.vori.com/",
       },
       {
+        label: "Overview",
+        text: "The map of the platform. Shows how one connected system powers every part of the store, from the customer's phone to checkout, the aisles, the back room and reporting.",
+        image: "/images/vori-overview.jpg",
+        href: "https://www.vori.com/products",
+      },
+      {
         label: "Product pages",
         text: "Go deep on each capability — what it does, how it works in a real store, and the proof behind it.",
         image: "/images/vori-product.jpg",
-        href: "#",
+        href: "https://www.vori.com/pos",
       },
       {
         label: "Solution pages",
-        text: "Speak to specific store formats, like natural and organic or produce markets, with the workflows that matter most to each operator.",
+        text: "Speak to the problems owners feel most, like protecting margins, and show how Vori solves them in their store.",
         image: "/images/vori-solution.jpg",
-        href: "#",
+        href: "https://www.vori.com/protect-margin",
       },
       {
         label: "Competitive pages",
         text: "Clear side-by-sides against legacy grocery POS systems that give evaluators the confidence to switch.",
         image: "/images/vori-competitive.jpg",
-        href: "#",
+        href: "https://www.vori.com/vori-vs-ncr",
       },
     ],
   },

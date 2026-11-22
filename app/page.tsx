@@ -21,6 +21,7 @@ import ScreenCarousel from "./components/ScreenCarousel";
 import DeepNav from "./components/DeepNav";
 import TypeTitle from "./components/TypeTitle";
 import MobileMenu from "./components/MobileMenu";
+import ContactForm from "./components/ContactForm";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -448,11 +449,24 @@ export default function Home() {
 
       <footer id="contact" className="footer">
         <div className="container footer-inner">
-          <p className="footer-line">{site.footerLine}</p>
-          <SocialLinks className="footer-links" />
-          <p className="footer-copy">
-            © {new Date().getFullYear()} {site.name}
-          </p>
+          <div className="contact">
+            <div className="contact-intro">
+              <p className="eyebrow sec-eyebrow contact-eyebrow">{site.contactEyebrow}</p>
+              <h2 className="footer-line">{site.contactTitle}</h2>
+              <p className="contact-text">{site.contactText}</p>
+              <SocialLinks className="footer-links" />
+            </div>
+            <ContactForm
+              email={links.email}
+              topics={services.groups.flatMap((g) => g.cards.map((c) => (c.tag ? `${c.name} (${c.tag})` : c.name)))}
+            />
+          </div>
+          <div className="footer-bottom">
+            <p className="footer-motto">{site.footerLine}</p>
+            <p className="footer-copy">
+              © {new Date().getFullYear()} {site.name}
+            </p>
+          </div>
         </div>
       </footer>
     </>
