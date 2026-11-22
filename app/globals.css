@@ -2113,3 +2113,26 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
 .svc-meta .svc-tag {
   margin-left: 0;
 }
+
+/* Video captions */
+.vcard {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.vcap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--text-soft);
+}
+.vcap strong {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}

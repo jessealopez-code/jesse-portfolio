@@ -321,7 +321,7 @@ export default function Home() {
                 <span className="vori-num">05</span>
                 {vori.videos.heading}
               </h3>
-              <VideoGrid ids={vori.videos.ids} label="Vori video" />
+              <VideoGrid items={vori.videos.items} label="Vori video" />
             </div>
 
             <div className="vori-block">

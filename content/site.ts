@@ -355,7 +355,11 @@ export const vori = {
   },
   videos: {
     heading: "Video storytelling to drive demand and education",
-    ids: ["DgmH7mlubkE", "eaUk9O0YewQ", "PpslvOr6kRM"],
+    items: [
+      { id: "DgmH7mlubkE", title: "Meet Chip", caption: "Introducing Vori's AI virtual employee for grocery stores." },
+      { id: "eaUk9O0YewQ", title: "Shelf tags", caption: "How grocers design shelf tags once and print them in minutes." },
+      { id: "PpslvOr6kRM", title: "Quick Food Service", caption: "Launch video for Vori's new tools for prepared-food counters." },
+    ],
   },
   launches: {
     heading: "Built AI workflows to deliver launches at scale",

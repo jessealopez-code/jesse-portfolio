@@ -42,22 +42,30 @@ function Modal({ id, title, onClose }: { id: string; title: string; onClose: () 
 }
 
 /** Grid of video thumbnails; clicking one plays it in a pop-up over the page. */
-export function VideoGrid({ ids, label }: { ids: string[]; label: string }) {
-  const [open, setOpen] = useState<string | null>(null);
+export type VideoItem = { id: string; title: string; caption?: string };
+
+export function VideoGrid({ items, label }: { items: VideoItem[]; label: string }) {
+  const [open, setOpen] = useState<VideoItem | null>(null);
   return (
     <>
       <div className="vori-grid-3" data-reveal>
-        {ids.map((id, i) => (
-          <button key={id} type="button" className="vthumb" onClick={() => setOpen(id)} aria-label={`Play ${label} ${i + 1}`}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" />
-            <span className="vthumb-play" aria-hidden="true">
-              ▶
-            </span>
-          </button>
+        {items.map((v) => (
+          <figure key={v.id} className="vcard">
+            <button type="button" className="vthumb" onClick={() => setOpen(v)} aria-label={`Play video: ${v.title}`}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt="" loading="lazy" />
+              <span className="vthumb-play" aria-hidden="true">
+                ▶
+              </span>
+            </button>
+            <figcaption className="vcap">
+              <strong>{v.title}</strong>
+              {v.caption ? <span>{v.caption}</span> : null}
+            </figcaption>
+          </figure>
         ))}
       </div>
-      {open ? <Modal id={open} title={label} onClose={() => setOpen(null)} /> : null}
+      {open ? <Modal id={open.id} title={`${label}: ${open.title}`} onClose={() => setOpen(null)} /> : null}
     </>
   );
 }
