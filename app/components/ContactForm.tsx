@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-type Status = "idle" | "sending" | "sent" | "error";
+type Status = "idle" | "sending" | "sent" | "error" | "activate";
 
 /**
  * Contact form. Messages are delivered to Jesse's inbox by FormSubmit (formsubmit.co),
@@ -11,6 +11,7 @@ type Status = "idle" | "sending" | "sent" | "error";
  */
 export default function ContactForm({ email, topics }: { email: string; topics: string[] }) {
   const [status, setStatus] = useState<Status>("idle");
+  const [detail, setDetail] = useState("");
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -30,11 +31,22 @@ export default function ContactForm({ email, topics }: { email: string; topics: 
           _captcha: "false",
         }),
       });
-      const json = await res.json().catch(() => ({}));
-      if (!res.ok || json.success === "false" || json.success === false) throw new Error("failed");
+      const json: { success?: string | boolean; message?: string } = await res.json().catch(() => ({}));
+      const ok = res.ok && json.success !== "false" && json.success !== false;
+      if (!ok) {
+        const msg = String(json.message || `HTTP ${res.status}`);
+        // First-ever submission: FormSubmit emails the inbox owner an activation link instead of delivering.
+        if (/activat/i.test(msg)) {
+          setDetail(msg);
+          setStatus("activate");
+          return;
+        }
+        throw new Error(msg);
+      }
       setStatus("sent");
       form.reset();
-    } catch {
+    } catch (err) {
+      setDetail(err instanceof Error ? err.message : String(err));
       setStatus("error");
     }
   };
@@ -94,6 +106,14 @@ export default function ContactForm({ email, topics }: { email: string; topics: 
       {status === "error" ? (
         <p className="cform-error" role="alert">
           Something went wrong. Please email me directly at <a href={`mailto:${email}`}>{email}</a>.
+          {detail ? <span className="cform-detail">Details: {detail}</span> : null}
+        </p>
+      ) : null}
+      {status === "activate" ? (
+        <p className="cform-error" role="alert">
+          This form is waiting to be switched on. Please email me directly at{" "}
+          <a href={`mailto:${email}`}>{email}</a> for now.
+          <span className="cform-detail">Details: {detail}</span>
         </p>
       ) : null}
     </form>
