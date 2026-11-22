@@ -18,6 +18,7 @@ import CountUp from "./components/CountUp";
 import ChipArt from "./components/ChipArt";
 import ScreenCarousel from "./components/ScreenCarousel";
 import DeepNav from "./components/DeepNav";
+import TypeTitle from "./components/TypeTitle";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -57,17 +58,19 @@ export default function Home() {
       <main id="main">
         {/* Hero */}
         <section id="top" className="container hero">
+          <div className="hero-glow" aria-hidden="true">
+            <span className="glow glow--1" />
+            <span className="glow glow--2" />
+            <span className="glow glow--3" />
+          </div>
           <div className="hero-text">
             <p className="muted">
               {site.name} — {site.role.toLowerCase()}
             </p>
-            <h1 className="hero-title">
-              <span className="hero-line" style={{ animationDelay: "0.1s" }}>Marketer.</span>
-              <br />
-              <span className="hero-line" style={{ animationDelay: "0.3s" }}>Strategist.</span>
-              <br />
-              <span className="hero-line accent" style={{ animationDelay: "0.5s" }}>Storyteller.</span>
-            </h1>
+            <TypeTitle
+              className="hero-title"
+              lines={[{ text: "Marketer." }, { text: "Strategist." }, { text: "Storyteller.", accent: true }]}
+            />
             <p className="hero-intro">{site.heroIntro}</p>
           </div>
           <div className="hero-photo">
