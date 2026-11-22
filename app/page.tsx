@@ -13,6 +13,7 @@ import FloatingContact from "./components/FloatingContact";
 import Collapsible from "./components/Collapsible";
 import BeforeAfter from "./components/BeforeAfter";
 import { companyId } from "@/lib/ids";
+import { icons } from "@/lib/icons";
 import Motion from "./components/Motion";
 import CountUp from "./components/CountUp";
 import ChipArt from "./components/ChipArt";
@@ -382,8 +383,19 @@ export default function Home() {
                     n += 1;
                     return (
                       <article key={c.name} className={`svc-card${c.tag ? " svc-card--ai" : ""}`}>
-                        <span className="svc-num">{String(n).padStart(2, "0")}</span>
-                        {c.tag && <span className="svc-tag">{c.tag}</span>}
+                        <div className="svc-top">
+                          <svg
+                            className="svc-icon"
+                            viewBox="0 0 256 256"
+                            fill="currentColor"
+                            aria-hidden="true"
+                            dangerouslySetInnerHTML={{ __html: icons[c.icon] ?? "" }}
+                          />
+                          <span className="svc-meta">
+                            {c.tag && <span className="svc-tag">{c.tag}</span>}
+                            <span className="svc-num">{String(n).padStart(2, "0")}</span>
+                          </span>
+                        </div>
                         <h3>{c.name}</h3>
                         <p className="svc-line">{c.line}</p>
                         <ul>

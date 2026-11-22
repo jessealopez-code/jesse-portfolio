@@ -466,7 +466,7 @@ export const highlights: Highlight[] = [
   },
 ];
 
-export type ServiceCard = { name: string; tag?: string; line: string; items: string[] };
+export type ServiceCard = { name: string; icon: string; tag?: string; line: string; items: string[] };
 
 export const services = {
   eyebrow: "Services",
@@ -479,16 +479,19 @@ export const services = {
       cards: [
         {
           name: "Understand",
+          icon: "users-three",
           line: "Know your customer better than your competitors do.",
           items: ["Customer and prospect interviews", "Segmentation and ideal customer profiles", "Competitive and market analysis"],
         },
         {
           name: "Position",
+          icon: "crosshair",
           line: "Say what makes you different, and make it stick.",
           items: ["Positioning and narrative", "Messaging frameworks and testing", "Pricing and packaging"],
         },
         {
           name: "Launch",
+          icon: "rocket-launch",
           line: "Bring it to market with conviction.",
           items: [
             "GTM planning and launch tiers",
@@ -499,6 +502,7 @@ export const services = {
         },
         {
           name: "Enable",
+          icon: "handshake",
           line: "Give sales the story and the tools to win.",
           items: ["Pitch decks and one-pagers", "Battlecards and competitive guides", "Sales training and talk tracks"],
         },
@@ -509,21 +513,25 @@ export const services = {
       cards: [
         {
           name: "Convert",
+          icon: "funnel",
           line: "Turn attention into pipeline.",
           items: ["Homepage, product and solution pages", "Competitive and comparison pages", "Full-funnel demand programs"],
         },
         {
           name: "Expand",
+          icon: "trend-up",
           line: "Turn customers into your biggest growth engine.",
           items: ["Onboarding and adoption journeys", "Lifecycle and nurture programs", "Upsell, cross-sell and new-tier launches"],
         },
         {
           name: "Prove",
+          icon: "quotes",
           line: "Let customers make the case.",
           items: ["Case studies and customer stories", "Video storytelling", "Advocacy and social proof programs"],
         },
         {
           name: "Scale",
+          icon: "sparkle",
           tag: "AI-powered",
           line: "Do more with a lean team.",
           items: ["AI marketing workflows", "Launch and content systems", "Playbooks that keep the engine running"],

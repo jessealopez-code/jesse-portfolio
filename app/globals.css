@@ -2080,3 +2080,36 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
 .about-eyebrow {
   margin-bottom: 12px;
 }
+
+/* Services icons */
+.svc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.svc-icon {
+  width: 52px;
+  height: 52px;
+  padding: 11px;
+  box-sizing: border-box;
+  color: var(--accent);
+  background: rgba(142, 197, 255, 0.1);
+  border-radius: 12px;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.svc-card:hover .svc-icon {
+  transform: rotate(-6deg) scale(1.06);
+  background: rgba(142, 197, 255, 0.18);
+}
+.svc-card--ai .svc-icon {
+  background: rgba(142, 197, 255, 0.2);
+}
+.svc-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.svc-meta .svc-tag {
+  margin-left: 0;
+}
