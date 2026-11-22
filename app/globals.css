@@ -1536,3 +1536,40 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
     background: var(--accent);
   }
 }
+
+/* Hover-to-glide edges (desktop) */
+.screens-viewport {
+  position: relative;
+}
+.screens-track.is-gliding {
+  scroll-snap-type: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .screens-viewport::before,
+  .screens-viewport::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  .screens-viewport::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0));
+  }
+  .screens-viewport::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0));
+  }
+  .screens-viewport:hover:not(.at-start)::before,
+  .screens-viewport:hover:not(.at-end)::after {
+    opacity: 1;
+  }
+  .screens-viewport:hover {
+    cursor: ew-resize;
+  }
+}
