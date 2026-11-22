@@ -20,6 +20,7 @@ import ChipArt from "./components/ChipArt";
 import ScreenCarousel from "./components/ScreenCarousel";
 import DeepNav from "./components/DeepNav";
 import TypeTitle from "./components/TypeTitle";
+import MobileMenu from "./components/MobileMenu";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -55,6 +56,16 @@ export default function Home() {
             Say hello →
           </a>
         </nav>
+        <MobileMenu
+          items={[
+            { href: "#about", label: "Bio" },
+            { href: "#work", label: "Work" },
+            { href: "#deep", label: "Deep dives" },
+            { href: "#services", label: "Services" },
+            { href: "#words", label: "Leadership" },
+            { href: "#contact", label: "Say hello →", accent: true },
+          ]}
+        />
       </header>
 
       <main id="main">

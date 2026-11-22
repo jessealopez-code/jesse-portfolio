@@ -2136,3 +2136,88 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
   color: var(--text);
   letter-spacing: -0.01em;
 }
+
+/* ── Phone menu ─────────────────────────────────────── */
+.menu-btn,
+.mmenu {
+  display: none;
+}
+@media (max-width: 767px) {
+  .nav {
+    flex-wrap: nowrap;
+  }
+  .nav-links {
+    display: none;
+  }
+  .menu-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 9px 16px;
+    cursor: pointer;
+  }
+  .menu-btn-lines {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .menu-btn-lines span {
+    display: block;
+    width: 16px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+  .mmenu.is-open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    padding: 24px 20px 40px;
+    background:
+      radial-gradient(120% 70% at 85% 0%, rgba(37, 99, 217, 0.35), transparent 60%),
+      radial-gradient(90% 60% at 0% 100%, rgba(91, 63, 217, 0.25), transparent 60%),
+      var(--bg);
+    overflow-y: auto;
+  }
+  .mmenu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mmenu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 40px 0;
+  }
+  .mmenu-links a {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 44px;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+    color: var(--text);
+    padding: 6px 0;
+  }
+  .mmenu-links a.accent {
+    color: var(--accent);
+    margin-top: 12px;
+  }
+}
+@media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
+  .mmenu.is-open .mmenu-links a {
+    animation: rise-sm 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  }
+}
