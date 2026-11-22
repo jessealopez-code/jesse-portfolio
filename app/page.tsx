@@ -210,6 +210,15 @@ export default function Home() {
           <div className="vori-block">
             <h3 className="vori-subhead">
               <span className="vori-num">01</span>
+              {vori.website.heading}
+            </h3>
+            <WebsiteStack pages={vori.website.pages} />
+          </div>
+
+          <Collapsible>
+          <div className="vori-block">
+            <h3 className="vori-subhead">
+              <span className="vori-num">02</span>
               {vori.chip.heading}
             </h3>
             <div className="launch">
@@ -230,15 +239,6 @@ export default function Home() {
                 </SmartLink>
               </div>
             </div>
-          </div>
-
-          <Collapsible>
-          <div className="vori-block">
-            <h3 className="vori-subhead">
-              <span className="vori-num">02</span>
-              {vori.website.heading}
-            </h3>
-            <WebsiteStack pages={vori.website.pages} />
           </div>
 
           <div className="vori-block">
