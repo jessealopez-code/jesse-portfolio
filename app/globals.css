@@ -1487,7 +1487,8 @@ blockquote {
 }
 
 /* Groups whose items fade up in sequence as they scroll into view */
-html.motion [data-reveal]:not(.is-in) > * {
+/* Hidden only until revealed; the data-in attribute is a backup marker React never removes */
+html.motion [data-reveal]:not(.is-in):not([data-in]) > * {
   opacity: 0;
 }
 html.motion [data-reveal].is-in > * {
@@ -1534,7 +1535,7 @@ html.motion .compare.is-in > figure:last-child img {
   position: absolute;
   height: auto;
 }
-html.motion .chip-art:not(.is-in) .chip-card {
+html.motion .chip-art:not(.is-in):not([data-in]) .chip-card {
   opacity: 0;
 }
 html.motion .chip-art.is-in .chip-card {
@@ -1652,7 +1653,7 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
 .screens-viewport {
   position: relative;
 }
-.screens-track.is-gliding {
+.screens-viewport.is-gliding .screens-track {
   scroll-snap-type: none;
 }
 @media (hover: hover) and (pointer: fine) {

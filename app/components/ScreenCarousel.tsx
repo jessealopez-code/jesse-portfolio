@@ -78,13 +78,13 @@ export default function ScreenCarousel({ screens, label }: { screens: Screen[]; 
         </button>
       </div>
       <div
-        className={`screens-viewport${atStart ? " at-start" : ""}${atEnd ? " at-end" : ""}`}
+        className={`screens-viewport${atStart ? " at-start" : ""}${atEnd ? " at-end" : ""}${gliding ? " is-gliding" : ""}`}
         onMouseMove={onMove}
         onMouseLeave={stop}
       >
         <div
           ref={ref}
-          className={`screens-track${gliding ? " is-gliding" : ""}`}
+          className="screens-track"
           onScroll={update}
           aria-label={label}
           data-reveal
