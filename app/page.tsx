@@ -257,7 +257,50 @@ export default function Home() {
                         {blk.heading}
                       </h3>
                       <p className="launch-text">{blk.text}</p>
-                      {blk.layout === "benefits" && blk.benefits ? (
+                      {blk.layout === "proof" && blk.proof ? (
+                        <div className="proof">
+                          <div className="proof-stats" data-reveal>
+                            <p className="proof-stats-title">{blk.proof.statsTitle}</p>
+                            <div className="proof-stats-row">
+                              {blk.proof.stats.map((st) => (
+                                <div key={st.value} className="proof-stat">
+                                  <span className="proof-stat-value">{st.value}</span>
+                                  <span className="proof-stat-label">{st.label}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                          <p className="proof-label">Customer stories</p>
+                          <CardRail className="proof-row proof-row--3" label="Customer testimonials">
+                            {blk.proof.testimonials.map((t) => (
+                              <figure key={t.name} className="proof-quote">
+                                <img src={t.image} alt={t.name} loading="lazy" />
+                                <blockquote>“{t.quote}”</blockquote>
+                                <figcaption>
+                                  <strong>{t.name}</strong>
+                                  <span>{t.meta}</span>
+                                </figcaption>
+                              </figure>
+                            ))}
+                          </CardRail>
+                          <p className="proof-label">G2 reviews</p>
+                          <CardRail className="proof-row proof-row--4" label="G2 reviews">
+                            {blk.proof.reviews.map((r) => (
+                              <figure key={r.name} className="proof-review">
+                                <p className="proof-review-title">“{r.title}”</p>
+                                <span className="proof-stars" aria-label="5 out of 5 stars">
+                                  ★★★★★
+                                </span>
+                                <blockquote>“{r.quote}”</blockquote>
+                                <figcaption>
+                                  <strong>{r.name}</strong>
+                                  <span>{r.role}</span>
+                                </figcaption>
+                              </figure>
+                            ))}
+                          </CardRail>
+                        </div>
+                      ) : blk.layout === "benefits" && blk.benefits ? (
                         <BenefitExplorer items={blk.benefits} label={blk.heading} />
                       ) : blk.layout === "verticals" && blk.verticals ? (
                         <CardRail className="sq-rail sq-rail--verticals" label={blk.heading}>

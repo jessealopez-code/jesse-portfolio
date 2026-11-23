@@ -2948,3 +2948,153 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
  .bx-head h4{font-size:26px}}
 
 .bx-tab:focus-visible{outline:2px solid #006aff;outline-offset:2px}
+
+/* ── Square social proof (deep dive), rebuilt as readable live text ── */
+.proof {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+}
+.proof-stats {
+  background: #0a0a0a;
+  color: #fff;
+  border-radius: 20px;
+  padding: 44px 48px;
+}
+.proof-stats-title {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 34px);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0 0 32px;
+  color: #fff;
+}
+.proof-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.proof-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.proof-stat-value {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(48px, 6vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.proof-stat-label {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 220px;
+}
+.proof-label {
+  margin: 36px 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.proof-row {
+  display: grid;
+  gap: 20px;
+}
+.proof-row--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.proof-row--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.proof-quote,
+.proof-review {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(18, 18, 18, 0.05);
+}
+.proof-quote {
+  overflow: hidden;
+}
+.proof-quote img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.proof-quote blockquote,
+.proof-review blockquote {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #2a2a2a;
+}
+.proof-quote blockquote {
+  padding: 22px 24px 0;
+  flex: 1;
+}
+.proof-quote figcaption,
+.proof-review figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+}
+.proof-quote figcaption {
+  padding: 16px 24px 24px;
+}
+.proof-quote figcaption strong,
+.proof-review figcaption strong {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+.proof-review {
+  padding: 24px;
+  gap: 12px;
+}
+.proof-review-title {
+  margin: 0;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.25;
+  color: #1a1a1a;
+}
+.proof-stars {
+  color: #f5c400;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.proof-review blockquote {
+  font-size: 15px;
+  flex: 1;
+}
+@media (max-width: 1100px) {
+  .proof-row--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .proof-stats {
+    padding: 28px 24px;
+  }
+  .proof-stats-row {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .proof-stat-value {
+    font-size: 52px;
+  }
+}

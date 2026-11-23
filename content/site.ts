@@ -434,10 +434,17 @@ export type Highlight = {
 export type StoryBlock = {
   heading: string;
   text: string;
-  layout: "single" | "cards" | "screens" | "verticals" | "benefits"; // cards, screens and verticals swipe on phones
+  layout: "single" | "cards" | "screens" | "verticals" | "benefits" | "proof"; // cards, screens and verticals swipe on phones
   images: { src: string; alt: string; caption: string }[];
   // "verticals": rebuilt Square segment cards. Wrap words in [[ ]] to show them as Square-blue links.
   verticals?: { image: string; title: string; subtitle: string; points: string[] }[];
+  // "proof": stats band, customer testimonials and G2 reviews, rebuilt as live text
+  proof?: {
+    statsTitle: string;
+    stats: { value: string; label: string }[];
+    testimonials: { image: string; quote: string; name: string; meta: string }[];
+    reviews: { title: string; quote: string; name: string; role: string }[];
+  };
   // "benefits": Square's benefit menu rebuilt as a tabbed explorer
   benefits?: { title: string; promise: string; image: string; plus?: boolean; features: { title: string; text: string }[] }[];
 };
@@ -522,10 +529,62 @@ export const highlights: Highlight[] = [
       {
         heading: "Built credibility with reviews, testimonials, and stats",
         text: "Brought customer voices and proof onto every page, from video testimonials and star reviews to stats that showed Square Invoices at scale.",
-        layout: "single",
-        images: [
-          { src: "/images/sq/square-social-proof.jpg", alt: "Square Invoices testimonials, star reviews and usage stats", caption: "Reviews, testimonials, and proof at scale" },
-        ],
+        layout: "proof",
+        images: [],
+        proof: {
+          statsTitle: "Millions of businesses trust Square Invoices.",
+          stats: [
+            { value: "75%", label: "of Square Invoices get paid within a day" },
+            { value: "240M", label: "invoices sent globally" },
+            { value: "$60B", label: "invoices paid globally" },
+          ],
+          testimonials: [
+            {
+              image: "/images/sq/proof-matthew.jpg",
+              quote: "Square is integrated into our accounting software, so we’re much better at keeping track of everything that’s going on with payments. As we grow we’re able to count on having funds available for us to invest in our growth.",
+              name: "Matthew, Centrico Digital",
+              meta: "New York, NY",
+            },
+            {
+              image: "/images/sq/proof-greg.jpg",
+              quote: "Square is scalable. They meet you wherever you’re at, at whatever business level you’re at. We started with them when we were small and continue to stay with them as we grow.",
+              name: "Greg, Dream Home Images",
+              meta: "Scotts Valley, CA",
+            },
+            {
+              image: "/images/sq/proof-anna.jpg",
+              quote: "Before we used Square Invoices, we used paper invoices for everything. With the Square Invoices technology, we are able to save 40 hours a week in billing that can be dedicated to serving our clients better.",
+              name: "Anna, The Largo Group",
+              meta: "Boston, MA",
+            },
+          ],
+          reviews: [
+            {
+              title: "Quickest way to get paid.",
+              quote: "It completely changes the way you look at receiving online payments. Once an invoice is sent, you receive a notification. And the second it is paid, you receive another notification, and you are instantly credited for the amount received.",
+              name: "Sheena R.",
+              role: "Business owner",
+            },
+            {
+              title: "Great for my business!",
+              quote: "Square Invoices have made billing for my business so easy! It’s a great way to track how much revenue was collected and track outstanding invoices. I also love having the ability to send reminders or set up payment plans.",
+              name: "Sally L.",
+              role: "Business owner",
+            },
+            {
+              title: "Easy to use for personal small business.",
+              quote: "I like the user interface of Square Invoices. It makes tracking all of my orders easy! I like the categorization of the invoice statuses so that you can easily see where everything currently stands.",
+              name: "Rachel P.",
+              role: "Marketing content manager",
+            },
+            {
+              title: "Square makes invoicing easy.",
+              quote: "With just a few clicks I can make and send an invoice from my desktop, laptop or phone. I’ve done this from airports and other places, on the go.",
+              name: "Alan B.",
+              role: "Sales and marketing expert",
+            },
+          ],
+        },
       },
       {
         heading: "Turned features into benefit-based language",
