@@ -416,6 +416,7 @@ export type Highlight = {
   before: { image: string; label: string; alt: string };
   after: { image: string; label: string; alt: string };
   points: string[];
+  headline?: string; // shown as a section headline, like the ones below it
   link?: { label: string; href: string };
   screens?: {
     heading: string;
@@ -464,9 +465,9 @@ export const highlights: Highlight[] = [
     title: "acquisition through full-funnel marketing",
     before: { image: "/images/dandy-q1-24.jpg", label: "Q1’24", alt: "Dandy homepage in Q1 2024" },
     after: { image: "/images/dandy-q2-24.jpg", label: "Q2’24", alt: "Dandy homepage in Q2 2024" },
-    points: [
-      "Revamped positioning and messaging to differentiate in a fragmented dental lab space, and reframed features into a dentist-centric workflow narrative.",
-    ],
+    headline:
+      "Revamped positioning and messaging to differentiate in a fragmented dental lab space, and reframed features into a dentist-centric workflow narrative",
+    points: [],
     extra: {
       heading: "Upleveled market credibility through social proof, pricing & packaging, and targeted offers",
       items: [

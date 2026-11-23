@@ -203,11 +203,18 @@ export default function Home() {
                 </div>
                 <BeforeAfter before={h.before} after={h.after} />
                 <Collapsible>
-                <div className="highlight-points" data-reveal>
-                  {h.points.map((pt) => (
-                    <p key={pt.slice(0, 24)}>{pt}</p>
-                  ))}
-                </div>
+                {h.headline ? (
+                  <div className="vori-block">
+                    <h3 className="vori-subhead">{h.headline}</h3>
+                  </div>
+                ) : null}
+                {h.points.length ? (
+                  <div className="highlight-points" data-reveal>
+                    {h.points.map((pt) => (
+                      <p key={pt.slice(0, 24)}>{pt}</p>
+                    ))}
+                  </div>
+                ) : null}
                 {h.link ? (
                   <SmartLink href={h.link.href} className="highlight-link">
                     {h.link.label} →
