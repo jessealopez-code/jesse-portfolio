@@ -231,10 +231,39 @@ export default function Home() {
                     <ScreenCarousel screens={h.screens.images} label="Square Invoices App Store screens" />
                   </div>
                 ) : null}
+                {h.more?.map((blk, bi) => {
+                  const num = (h.headline ? 1 : 0) + (h.screens ? 1 : 0) + bi + 1;
+                  const fig = (im: { src: string; alt: string; caption: string }) => (
+                    <figure key={im.src} className={blk.layout === "single" ? "sq-shot" : "sq-card"}>
+                      <div className={blk.layout === "single" ? "sq-frame" : "sq-card-img"}>
+                        <img src={im.src} alt={im.alt} loading="lazy" />
+                      </div>
+                      <figcaption>{im.caption}</figcaption>
+                    </figure>
+                  );
+                  return (
+                    <div key={blk.heading} className="vori-block sq-block">
+                      <h3 className="vori-subhead">
+                        <span className="vori-num">{pad(num)}</span>
+                        {blk.heading}
+                      </h3>
+                      <p className="launch-text">{blk.text}</p>
+                      {blk.layout === "single" ? (
+                        <div className="sq-shots" data-reveal>
+                          {blk.images.map(fig)}
+                        </div>
+                      ) : (
+                        <CardRail className={`sq-rail sq-rail--${blk.layout}`} label={blk.heading}>
+                          {blk.images.map(fig)}
+                        </CardRail>
+                      )}
+                    </div>
+                  );
+                })}
                 {h.extra ? (
                   <div className="vori-block">
                     <h3 className="vori-subhead">
-                      <span className="vori-num">{pad((h.headline ? 1 : 0) + (h.screens ? 1 : 0) + 1)}</span>
+                      <span className="vori-num">{pad((h.headline ? 1 : 0) + (h.screens ? 1 : 0) + (h.more?.length ?? 0) + 1)}</span>
                       {h.extra.heading}
                     </h3>
                     <CardRail className="vori-grid-3" label="Credibility projects">

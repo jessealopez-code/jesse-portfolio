@@ -417,6 +417,7 @@ export type Highlight = {
   after: { image: string; label: string; alt: string };
   points: string[];
   headline?: string; // shown as a section headline, like the ones below it
+  more?: StoryBlock[]; // extra numbered blocks after the screens section
   link?: { label: string; href: string };
   screens?: {
     heading: string;
@@ -427,6 +428,13 @@ export type Highlight = {
     heading: string;
     items: { title: string; text: string; image: string; href: string; linkLabel: string }[];
   };
+};
+
+export type StoryBlock = {
+  heading: string;
+  text: string;
+  layout: "single" | "cards" | "screens"; // cards and screens swipe on phones
+  images: { src: string; alt: string; caption: string }[];
 };
 
 export const highlights: Highlight[] = [
@@ -459,6 +467,68 @@ export const highlights: Highlight[] = [
         { src: "/images/square-app-7.jpg", alt: "Multiple invoicing options: invoice, recurring invoice, estimate, project" },
       ],
     },
+    more: [
+      {
+        heading: "Built credibility with reviews, testimonials, and stats",
+        text: "Brought customer voices and proof onto every page, from video testimonials and star reviews to stats that showed Square Invoices at scale.",
+        layout: "single",
+        images: [
+          { src: "/images/sq/square-social-proof.jpg", alt: "Square Invoices testimonials, star reviews and usage stats", caption: "Reviews, testimonials, and proof at scale" },
+        ],
+      },
+      {
+        heading: "Attracted the right audiences with segment messaging",
+        text: "Brought audience-specific messaging onto the main page, so professional services, field services, and food and beverage sellers each saw how Square Invoices fit their work.",
+        layout: "cards",
+        images: [
+          { src: "/images/sq/square-seg-1.jpg", alt: "Square Invoices messaging for professional services", caption: "Professional services" },
+          { src: "/images/sq/square-seg-2.jpg", alt: "Square Invoices messaging for field services", caption: "Field services" },
+          { src: "/images/sq/square-seg-3.jpg", alt: "Square Invoices messaging for food and beverage", caption: "Food and beverage" },
+        ],
+      },
+      {
+        heading: "Turned features into benefit-based language",
+        text: "Organized the product around what sellers want — get paid faster, win more work, save more time — instead of a list of features.",
+        layout: "single",
+        images: [
+          { src: "/images/sq/square-feature-messaging.jpg", alt: "Square Invoices 'Save more time' benefit page", caption: "Benefit-led feature messaging" },
+        ],
+      },
+      {
+        heading: "Cross-sold Square sellers with lifecycle marketing",
+        text: "Introduced Square Invoices to existing Square customers through self-serve lifecycle campaigns, reinforcing the positioning with every new feature over two years.",
+        layout: "single",
+        images: [
+          { src: "/images/sq/square-feature-launches.jpg", alt: "Square Invoices lifecycle campaign announcing new features", caption: "Lifecycle campaigns to Square sellers" },
+        ],
+      },
+      {
+        heading: "Launched Square Invoices Plus",
+        text: "Scoped a multi-year roadmap with Product to win the services vertical, then launched Invoices Plus: a subscription of advanced features that save growing businesses time.",
+        layout: "single",
+        images: [
+          { src: "/images/sq/square-invoices-plus.jpg", alt: "Introducing Square Invoices Plus launch", caption: "Invoices Plus launch" },
+        ],
+      },
+      {
+        heading: "Designed a freemium model to monetize premium features",
+        text: "Free to start with no monthly fees, and a Plus plan that unlocks premium features for growing service businesses.",
+        layout: "single",
+        images: [
+          { src: "/images/sq/square-pricing.jpg", alt: "Square Invoices Free and Plus plans", caption: "Free and Plus plans" },
+        ],
+      },
+      {
+        heading: "Equipped sales to close deals",
+        text: "Gave sales teams the story and the proof to win service businesses.",
+        layout: "screens",
+        images: [
+          { src: "/images/sq/square-sales-1.jpg", alt: "Article: 8 important invoice management tips for small businesses", caption: "Content on invoicing best practices" },
+          { src: "/images/sq/square-sales-2.jpg", alt: "Caruso Engineering case study", caption: "Case studies that show business impact" },
+          { src: "/images/sq/square-sales-3.jpg", alt: "Square Invoices product sheet", caption: "Product sheets for sales conversations" },
+        ],
+      },
+    ],
   },
   {
     company: "Dandy",
