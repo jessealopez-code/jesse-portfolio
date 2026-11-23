@@ -119,7 +119,16 @@ export default function Home() {
             <div className="principles-grid" data-reveal>
               {principles.map((p, i) => (
                 <div key={p.title} className="principle">
-                  <span className="principle-num">{pad(i + 1)}</span>
+                  <div className="principle-top">
+                    <svg
+                      className="principle-icon"
+                      viewBox="0 0 256 256"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      dangerouslySetInnerHTML={{ __html: icons[p.icon] ?? "" }}
+                    />
+                    <span className="principle-num">{pad(i + 1)}</span>
+                  </div>
                   <h3>{p.title}</h3>
                   <p>{p.text}</p>
                 </div>

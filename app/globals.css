@@ -2745,3 +2745,36 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
     transition: none;
   }
 }
+
+/* Marketing philosophy icons: a large blue icon leads, with a small number beside it */
+.principle {
+  gap: 14px;
+}
+.principle-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.principle-icon {
+  width: 64px;
+  height: 64px;
+  color: #2563d9;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+.principle:hover .principle-icon {
+  transform: rotate(-6deg) scale(1.06);
+}
+.principle-top .principle-num {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2563d9;
+  letter-spacing: 0.04em;
+  margin-top: 6px;
+}
+@media (max-width: 767px) {
+  .principle-icon {
+    width: 52px;
+    height: 52px;
+  }
+}

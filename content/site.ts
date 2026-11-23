@@ -60,18 +60,22 @@ export const logos = [
 export const principles = [
   {
     title: "Rooted in logic",
+    icon: "brain",
     text: "In a world flooded with messages, I guide companies in connecting with customers by aligning messaging with their existing mental frameworks, ensuring clarity and resonance.",
   },
   {
     title: "Driven by data",
+    icon: "chart-line-up",
     text: "Data isn’t just numbers to me; it’s the secret sauce of successful marketing. By diving deep into what the numbers say, I can unlock insights that fuel impactful campaigns.",
   },
   {
     title: "Inspired by customers",
+    icon: "user-focus",
     text: "Understanding my customers is my superpower. By listening to their needs and desires, I’m able to create marketing that truly resonates and builds strong connections.",
   },
   {
     title: "Takes a stand",
+    icon: "flag-banner",
     text: "Standing out in a crowded marketplace isn’t just about delivering generic “all-in-one” lines—it’s about boldly defining what makes your company uniquely different and better.",
   },
 ];
