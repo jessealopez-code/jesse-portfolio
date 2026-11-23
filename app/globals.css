@@ -2857,3 +2857,69 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
     padding: 10px;
   }
 }
+
+/* Rebuilt Square segment cards (true to Square's style: white card, photo, check list in Square blue) */
+.vert-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(18, 18, 18, 0.06);
+  color: #1a1a1a;
+}
+.vert-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 565 / 304;
+  object-fit: cover;
+}
+.vert-body {
+  padding: 24px 24px 28px;
+}
+.vert-body h4 {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #1a1a1a;
+}
+.vert-sub {
+  font-size: 15px;
+  line-height: 1.45;
+  color: #3e3e3e;
+  margin: 0 0 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e4e4e4;
+}
+.vert-body ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.vert-body li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #1a1a1a;
+}
+.vert-body li::before {
+  /* Square-style blue check */
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.28em;
+  width: 7px;
+  height: 12px;
+  border: solid #006aff;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+.vert-link {
+  color: #006aff;
+  font-weight: 600;
+}

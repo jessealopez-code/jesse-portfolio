@@ -248,7 +248,34 @@ export default function Home() {
                         {blk.heading}
                       </h3>
                       <p className="launch-text">{blk.text}</p>
-                      {blk.layout === "single" ? (
+                      {blk.layout === "verticals" && blk.verticals ? (
+                        <CardRail className="sq-rail sq-rail--verticals" label={blk.heading}>
+                          {blk.verticals.map((v) => (
+                            <article key={v.title} className="vert-card">
+                              <img className="vert-photo" src={v.image} alt="" loading="lazy" />
+                              <div className="vert-body">
+                                <h4>{v.title}</h4>
+                                <p className="vert-sub">{v.subtitle}</p>
+                                <ul>
+                                  {v.points.map((pt) => (
+                                    <li key={pt}>
+                                      {pt.split(/\[\[(.+?)\]\]/).map((part, k) =>
+                                        k % 2 ? (
+                                          <span key={k} className="vert-link">
+                                            {part}
+                                          </span>
+                                        ) : (
+                                          part
+                                        )
+                                      )}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </article>
+                          ))}
+                        </CardRail>
+                      ) : blk.layout === "single" ? (
                         <div className="sq-shots" data-reveal>
                           {blk.images.map(fig)}
                         </div>

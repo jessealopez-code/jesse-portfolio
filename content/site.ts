@@ -433,8 +433,10 @@ export type Highlight = {
 export type StoryBlock = {
   heading: string;
   text: string;
-  layout: "single" | "cards" | "screens"; // cards and screens swipe on phones
+  layout: "single" | "cards" | "screens" | "verticals"; // cards, screens and verticals swipe on phones
   images: { src: string; alt: string; caption: string }[];
+  // "verticals": rebuilt Square segment cards. Wrap words in [[ ]] to show them as Square-blue links.
+  verticals?: { image: string; title: string; subtitle: string; points: string[] }[];
 };
 
 export const highlights: Highlight[] = [
@@ -478,12 +480,47 @@ export const highlights: Highlight[] = [
       },
       {
         heading: "Attracted the right audiences with segment messaging",
-        text: "Brought audience-specific messaging onto the main page, so professional services, field services, and food and beverage sellers each saw how Square Invoices fit their work.",
-        layout: "cards",
-        images: [
-          { src: "/images/sq/square-seg-1.jpg", alt: "Square Invoices messaging for professional services", caption: "Professional services" },
-          { src: "/images/sq/square-seg-2.jpg", alt: "Square Invoices messaging for field services", caption: "Field services" },
-          { src: "/images/sq/square-seg-3.jpg", alt: "Square Invoices messaging for food and beverage", caption: "Food and beverage" },
+        text: "Brought audience-specific messaging onto the main page, so professional services, field services, and retail sellers each saw how Square Invoices fit their work.",
+        layout: "verticals",
+        images: [],
+        verticals: [
+          {
+            image: "/images/sq/vert-pro.jpg",
+            title: "Professional services",
+            subtitle: "For professionals with client engagements in person or remotely.",
+            points: [
+              "Bill for services and long-term projects with digital invoices.",
+              "Streamline projects with milestone-based payment schedules.",
+              "Secure new projects with detailed estimates to clients.",
+              "Protect your business with service agreement contracts with e-signature.",
+              "Collect over-the-phone payments with free [[Virtual Terminal]].",
+            ],
+          },
+          {
+            image: "/images/sq/vert-field.jpg",
+            title: "Field services",
+            subtitle: "For any workers or teams working on the go, on site, or anywhere else.",
+            points: [
+              "Accept online payments with payment-enabled invoices.",
+              "Automate billing with recurring invoices for ongoing services.",
+              "Streamline projects with milestone-based payment schedules.",
+              "Send digital invoices via SMS from the [[Square Invoices app]].",
+              "Secure jobs with digital estimates and protect your business with contracts.",
+              "Collect over-the-phone payments with free [[Virtual Terminal]].",
+            ],
+          },
+          {
+            image: "/images/sq/vert-retail.jpg",
+            title: "Retail",
+            subtitle: "For any retailer with a physical, online, or mobile store.",
+            points: [
+              "Accept online payments for any order with branded invoices.",
+              "Send auto-reminders to collect payments when due.",
+              "Request a shipping address on invoices for mail orders.",
+              "Protect your business with a sale of goods contract for large orders.",
+              "Include a return policy with a custom field.",
+            ],
+          },
         ],
       },
       {
