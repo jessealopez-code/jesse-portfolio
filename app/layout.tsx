@@ -18,7 +18,7 @@ const body = DM_Sans({
   display: "swap",
 });
 
-const siteUrl = "https://jesselopez-portfolio.vercel.app";
+const siteUrl = "https://jessealopez.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
