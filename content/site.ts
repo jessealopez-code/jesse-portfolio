@@ -481,8 +481,67 @@ export const highlights: Highlight[] = [
         { src: "/images/square-app-7.jpg", alt: "Multiple invoicing options: invoice, recurring invoice, estimate, project" },
       ],
     },
-    screensAfter: 7, // App Store repositioning comes after the freemium (monetize) block
+    screensAfter: 3, // App Store repositioning follows the positioning blocks (benefits, audiences, credibility)
     more: [
+      {
+        heading: "Turned features into benefit-based language",
+        text: "Organized the product around what sellers want — get paid faster, win more work, save more time — instead of a list of features.",
+        layout: "benefits",
+        images: [],
+        benefits: [
+          {
+            title: "Get paid faster",
+            promise: "Accept payments 24/7 and let your customers pay in one click with smarter invoicing software.",
+            image: "/images/sq/benefit-paid.png",
+            features: [
+              { title: "Accept payments instantly", text: "Send digital invoices via email, SMS, or a link. Customers can pay online with a credit card, Apple Pay, Google Pay, or ACH bank transfer." },
+              { title: "Automatic payment reminders", text: "Easily set automatic payment reminders before, on, or after due dates, or send one-time reminders as needed." },
+              { title: "Recurring invoices", text: "Set up recurring billing on a daily, weekly, monthly, or yearly schedule to charge customers on a recurring basis." },
+            ],
+          },
+          {
+            title: "Win more work",
+            promise: "Make the right impression with new and existing customers as you secure new work.",
+            image: "/images/sq/benefit-work.png",
+            features: [
+              { title: "Estimates", text: "Provide clients with an estimate they can approve from anywhere. Easily convert accepted estimates to invoices with one click." },
+              { title: "Contracts with e-signature", text: "Create and customize digital contracts with e-signature capabilities, directly from your Square Dashboard." },
+              { title: "Real-time tracking", text: "Stay up to date on whether an estimate has been viewed, declined, or accepted." },
+            ],
+          },
+          {
+            title: "Save more time",
+            plus: true,
+            promise: "Win more work faster, bill for work faster, and provide valuable information to your customers faster.",
+            image: "/images/sq/benefit-time.png",
+            features: [
+              { title: "Multi-package estimates", text: "Offer multiple packages of items and services in a single estimate and spend less time on scoping and pricing projects." },
+              { title: "Custom invoice templates", text: "Save and reuse invoice templates so you don’t need to start from scratch each time." },
+              { title: "Milestone-based payment schedules", text: "Schedule multiple payments for any job or project based on specific milestones — all from one invoice." },
+            ],
+          },
+          {
+            title: "Build customer relationships",
+            promise: "Deliver a seamless customer experience that keeps them coming back to your business.",
+            image: "/images/sq/benefit-relationships.png",
+            features: [
+              { title: "All contacts, one location", text: "Square Customer Directory stores and manages key customer details in one place for free." },
+              { title: "Instant profiles", text: "Automatically add customer details such as name, email, and phone number as you create invoices and collect payments." },
+              { title: "Customer feedback", text: "Collect and view customer feedback in real time after every payment through digital receipts." },
+            ],
+          },
+          {
+            title: "Manage your finances",
+            promise: "Manage cash flow easily and transfer money at the speed of your business.",
+            image: "/images/sq/benefit-finances.png",
+            features: [
+              { title: "Same day, next day, and instant transfers", text: "Access your money the same day and instantly for a fee, or as soon as the next business day, free of charge." },
+              { title: "Overview page", text: "See everything related to your estimates, invoices, and payments, including your overall cash flow." },
+              { title: "Powerful reports", text: "Get detailed data on all your locations, employees, items, and services. Download CSV files to make bookkeeping easier." },
+            ],
+          },
+        ],
+      },
       {
         heading: "Attracted the right audiences with segment messaging",
         text: "Brought audience-specific messaging onto the main page, so professional services, field services, and retail sellers each saw how Square Invoices fit their work.",
@@ -589,75 +648,6 @@ export const highlights: Highlight[] = [
         },
       },
       {
-        heading: "Turned features into benefit-based language",
-        text: "Organized the product around what sellers want — get paid faster, win more work, save more time — instead of a list of features.",
-        layout: "benefits",
-        images: [],
-        benefits: [
-          {
-            title: "Get paid faster",
-            promise: "Accept payments 24/7 and let your customers pay in one click with smarter invoicing software.",
-            image: "/images/sq/benefit-paid.png",
-            features: [
-              { title: "Accept payments instantly", text: "Send digital invoices via email, SMS, or a link. Customers can pay online with a credit card, Apple Pay, Google Pay, or ACH bank transfer." },
-              { title: "Automatic payment reminders", text: "Easily set automatic payment reminders before, on, or after due dates, or send one-time reminders as needed." },
-              { title: "Recurring invoices", text: "Set up recurring billing on a daily, weekly, monthly, or yearly schedule to charge customers on a recurring basis." },
-            ],
-          },
-          {
-            title: "Win more work",
-            promise: "Make the right impression with new and existing customers as you secure new work.",
-            image: "/images/sq/benefit-work.png",
-            features: [
-              { title: "Estimates", text: "Provide clients with an estimate they can approve from anywhere. Easily convert accepted estimates to invoices with one click." },
-              { title: "Contracts with e-signature", text: "Create and customize digital contracts with e-signature capabilities, directly from your Square Dashboard." },
-              { title: "Real-time tracking", text: "Stay up to date on whether an estimate has been viewed, declined, or accepted." },
-            ],
-          },
-          {
-            title: "Save more time",
-            plus: true,
-            promise: "Win more work faster, bill for work faster, and provide valuable information to your customers faster.",
-            image: "/images/sq/benefit-time.png",
-            features: [
-              { title: "Multi-package estimates", text: "Offer multiple packages of items and services in a single estimate and spend less time on scoping and pricing projects." },
-              { title: "Custom invoice templates", text: "Save and reuse invoice templates so you don’t need to start from scratch each time." },
-              { title: "Milestone-based payment schedules", text: "Schedule multiple payments for any job or project based on specific milestones — all from one invoice." },
-            ],
-          },
-          {
-            title: "Build customer relationships",
-            promise: "Deliver a seamless customer experience that keeps them coming back to your business.",
-            image: "/images/sq/benefit-relationships.png",
-            features: [
-              { title: "All contacts, one location", text: "Square Customer Directory stores and manages key customer details in one place for free." },
-              { title: "Instant profiles", text: "Automatically add customer details such as name, email, and phone number as you create invoices and collect payments." },
-              { title: "Customer feedback", text: "Collect and view customer feedback in real time after every payment through digital receipts." },
-            ],
-          },
-          {
-            title: "Manage your finances",
-            promise: "Manage cash flow easily and transfer money at the speed of your business.",
-            image: "/images/sq/benefit-finances.png",
-            features: [
-              { title: "Same day, next day, and instant transfers", text: "Access your money the same day and instantly for a fee, or as soon as the next business day, free of charge." },
-              { title: "Overview page", text: "See everything related to your estimates, invoices, and payments, including your overall cash flow." },
-              { title: "Powerful reports", text: "Get detailed data on all your locations, employees, items, and services. Download CSV files to make bookkeeping easier." },
-            ],
-          },
-        ],
-      },
-      {
-        heading: "Drove feature adoption with lifecycle emails",
-        text: "Kept Square Invoices users discovering what’s new, with lifecycle emails that tied every feature back to one promise: save time and get paid faster.",
-        layout: "emails",
-        images: [
-          { src: "/images/sq/email-adopt-1.jpg", alt: "Email: Our new features all have the same goal", caption: "More flexibility in how you take payments", subject: "Discover new invoices features" },
-          { src: "/images/sq/email-adopt-2.jpg", alt: "Email section: Manage your business in less time", caption: "Manage your business in less time", subject: "Discover new invoices features" },
-          { src: "/images/sq/email-adopt-3.jpg", alt: "Email section: Another way to personalize your invoices", caption: "Another way to personalize your invoices", subject: "Discover new invoices features" },
-        ],
-      },
-      {
         heading: "Cross-sold Square sellers by vertical",
         text: "Introduced Square Invoices to existing Square sellers with vertical emails for home and repair, retail, and professional services, each showing a business like theirs getting paid.",
         layout: "emails",
@@ -665,15 +655,6 @@ export const highlights: Highlight[] = [
           { src: "/images/sq/email-xsell-home.jpg", alt: "Email: Over 10 million field services invoices sent", caption: "Home & repair", subject: "Give a better client experience" },
           { src: "/images/sq/email-xsell-retail.jpg", alt: "Email: Over 10 million retail invoices sent", caption: "Retail", subject: "Give a better shopper experience" },
           { src: "/images/sq/email-xsell-pro.jpg", alt: "Email: Over 25 million professional services invoices sent", caption: "Professional services", subject: "Give a better client experience" },
-        ],
-      },
-      {
-        heading: "Launched Square Invoices Plus",
-        text: "Scoped a multi-year roadmap with Product to win the services vertical, then launched Invoices Plus: a subscription of advanced features that save growing businesses time.",
-        layout: "emails",
-        images: [
-          { src: "/images/sq/email-plus-hero.jpg", alt: "Email: Introducing Square Invoices Plus", caption: "Launch announcement", subject: "Welcome to Square Invoices Plus" },
-          { src: "/images/sq/email-plus-features.jpg", alt: "Email section: Advanced features that save you time", caption: "Advanced features that save you time", subject: "Welcome to Square Invoices Plus" },
         ],
       },
       {
@@ -745,6 +726,25 @@ export const highlights: Highlight[] = [
             ]
           }
         },
+      },
+      {
+        heading: "Launched Square Invoices Plus",
+        text: "Scoped a multi-year roadmap with Product to win the services vertical, then launched Invoices Plus: a subscription of advanced features that save growing businesses time.",
+        layout: "emails",
+        images: [
+          { src: "/images/sq/email-plus-hero.jpg", alt: "Email: Introducing Square Invoices Plus", caption: "Launch announcement", subject: "Welcome to Square Invoices Plus" },
+          { src: "/images/sq/email-plus-features.jpg", alt: "Email section: Advanced features that save you time", caption: "Advanced features that save you time", subject: "Welcome to Square Invoices Plus" },
+        ],
+      },
+      {
+        heading: "Drove feature adoption with lifecycle emails",
+        text: "Kept Square Invoices users discovering what’s new, with lifecycle emails that tied every feature back to one promise: save time and get paid faster.",
+        layout: "emails",
+        images: [
+          { src: "/images/sq/email-adopt-1.jpg", alt: "Email: Our new features all have the same goal", caption: "More flexibility in how you take payments", subject: "Discover new invoices features" },
+          { src: "/images/sq/email-adopt-2.jpg", alt: "Email section: Manage your business in less time", caption: "Manage your business in less time", subject: "Discover new invoices features" },
+          { src: "/images/sq/email-adopt-3.jpg", alt: "Email section: Another way to personalize your invoices", caption: "Another way to personalize your invoices", subject: "Discover new invoices features" },
+        ],
       },
       {
         heading: "Equipped sales to close deals",
