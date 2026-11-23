@@ -434,8 +434,8 @@ export type Highlight = {
 export type StoryBlock = {
   heading: string;
   text: string;
-  layout: "single" | "cards" | "screens" | "verticals" | "benefits" | "proof"; // cards, screens and verticals swipe on phones
-  images: { src: string; alt: string; caption: string }[];
+  layout: "single" | "cards" | "screens" | "verticals" | "benefits" | "proof" | "emails"; // cards, screens and verticals swipe on phones
+  images: { src: string; alt: string; caption: string; subject?: string }[]; // subject: shown in the email header bar ("emails" layout)
   // "verticals": rebuilt Square segment cards. Wrap words in [[ ]] to show them as Square-blue links.
   verticals?: { image: string; title: string; subtitle: string; points: string[] }[];
   // "proof": stats band, customer testimonials and G2 reviews, rebuilt as live text
@@ -479,7 +479,7 @@ export const highlights: Highlight[] = [
         { src: "/images/square-app-7.jpg", alt: "Multiple invoicing options: invoice, recurring invoice, estimate, project" },
       ],
     },
-    screensAfter: 6, // App Store repositioning comes after the freemium (monetize) block
+    screensAfter: 7, // App Store repositioning comes after the freemium (monetize) block
     more: [
       {
         heading: "Attracted the right audiences with segment messaging",
@@ -646,19 +646,32 @@ export const highlights: Highlight[] = [
         ],
       },
       {
-        heading: "Cross-sold Square sellers with lifecycle marketing",
-        text: "Introduced Square Invoices to existing Square customers through self-serve lifecycle campaigns, reinforcing the positioning with every new feature over two years.",
-        layout: "single",
+        heading: "Drove feature adoption with lifecycle emails",
+        text: "Kept Square Invoices users discovering what’s new, with lifecycle emails that tied every feature back to one promise: save time and get paid faster.",
+        layout: "emails",
         images: [
-          { src: "/images/sq/square-feature-launches.jpg", alt: "Square Invoices lifecycle campaign announcing new features", caption: "Lifecycle campaigns to Square sellers" },
+          { src: "/images/sq/email-adopt-1.jpg", alt: "Email: Our new features all have the same goal", caption: "More flexibility in how you take payments", subject: "Discover new invoices features" },
+          { src: "/images/sq/email-adopt-2.jpg", alt: "Email section: Manage your business in less time", caption: "Manage your business in less time", subject: "Discover new invoices features" },
+          { src: "/images/sq/email-adopt-3.jpg", alt: "Email section: Another way to personalize your invoices", caption: "Another way to personalize your invoices", subject: "Discover new invoices features" },
+        ],
+      },
+      {
+        heading: "Cross-sold Square sellers by vertical",
+        text: "Introduced Square Invoices to existing Square sellers with vertical emails for home and repair, retail, and professional services, each showing a business like theirs getting paid.",
+        layout: "emails",
+        images: [
+          { src: "/images/sq/email-xsell-home.jpg", alt: "Email: Over 10 million field services invoices sent", caption: "Home & repair", subject: "Give a better client experience" },
+          { src: "/images/sq/email-xsell-retail.jpg", alt: "Email: Over 10 million retail invoices sent", caption: "Retail", subject: "Give a better shopper experience" },
+          { src: "/images/sq/email-xsell-pro.jpg", alt: "Email: Over 25 million professional services invoices sent", caption: "Professional services", subject: "Give a better client experience" },
         ],
       },
       {
         heading: "Launched Square Invoices Plus",
         text: "Scoped a multi-year roadmap with Product to win the services vertical, then launched Invoices Plus: a subscription of advanced features that save growing businesses time.",
-        layout: "single",
+        layout: "emails",
         images: [
-          { src: "/images/sq/square-invoices-plus.jpg", alt: "Introducing Square Invoices Plus launch", caption: "Invoices Plus launch" },
+          { src: "/images/sq/email-plus-hero.jpg", alt: "Email: Introducing Square Invoices Plus", caption: "Launch announcement", subject: "Welcome to Square Invoices Plus" },
+          { src: "/images/sq/email-plus-features.jpg", alt: "Email section: Advanced features that save you time", caption: "Advanced features that save you time", subject: "Welcome to Square Invoices Plus" },
         ],
       },
       {

@@ -248,7 +248,31 @@ export default function Home() {
                         {blk.heading}
                       </h3>
                       <p className="launch-text">{blk.text}</p>
-                      {blk.layout === "proof" && blk.proof ? (
+                      {blk.layout === "emails" ? (
+                        <CardRail
+                          className={`sq-rail sq-rail--emails sq-rail--n${blk.images.length}`}
+                          label={blk.heading}
+                        >
+                          {blk.images.map((im) => (
+                            <figure key={im.src} className="email-card">
+                              <div className="email-screen">
+                                <div className="email-bar">
+                                  <span className="email-dots" aria-hidden="true">
+                                    <i />
+                                    <i />
+                                    <i />
+                                  </span>
+                                  <span className="email-subject">{im.subject}</span>
+                                </div>
+                                <div className="email-body">
+                                  <img src={im.src} alt={im.alt} loading="lazy" />
+                                </div>
+                              </div>
+                              <figcaption>{im.caption}</figcaption>
+                            </figure>
+                          ))}
+                        </CardRail>
+                      ) : blk.layout === "proof" && blk.proof ? (
                         <div className="proof">
                           <div className="proof-stats" data-reveal>
                             <p className="proof-stats-title">{blk.proof.statsTitle}</p>
