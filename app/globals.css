@@ -1577,7 +1577,6 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
 
 /* ── App screen carousel ────────────────────────────── */
 .screens-text {
-  max-width: 760px;
   margin-top: -12px;
 }
 .screens {
