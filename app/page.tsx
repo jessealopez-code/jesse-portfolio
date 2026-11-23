@@ -17,7 +17,6 @@ import Motion from "./components/Motion";
 import CountUp from "./components/CountUp";
 import ChipArt from "./components/ChipArt";
 import ScreenCarousel from "./components/ScreenCarousel";
-import DeepNav from "./components/DeepNav";
 import TypeTitle from "./components/TypeTitle";
 import MobileMenu from "./components/MobileMenu";
 import ContactForm from "./components/ContactForm";
@@ -187,12 +186,6 @@ export default function Home() {
             <p className="deep-sub">Selected stories that show how I approach positioning, go-to-market, and storytelling.</p>
             <div className="deep-rule" />
           </div>
-          <DeepNav
-            items={[
-              ...highlights.map((h) => ({ id: `deep-${companyId(h.company).slice(3)}`, label: h.company })),
-              { id: "deep-vori", label: "Vori" },
-            ]}
-          />
           <section className="container highlights">
             {highlights.map((h) => (
               <div key={h.title} className="highlight" id={`deep-${companyId(h.company).slice(3)}`}>
