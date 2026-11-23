@@ -15,7 +15,7 @@ const PAUSE = 0.3;
  * Without JavaScript the letters appear after a short delay; with reduced motion they show at once.
  */
 export default function TypeTitle({ lines, className = "" }: { lines: Line[]; className?: string }) {
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
   const caretRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -99,7 +99,7 @@ export default function TypeTitle({ lines, className = "" }: { lines: Line[]; cl
   }, []);
 
   return (
-    <h1 className={`type-title ${className}`} ref={titleRef}>
+    <div className={`type-title ${className}`} ref={titleRef} role="heading" aria-level={2}>
       <span className="visually-hidden">{lines.map((l) => l.text).join(" ")}</span>
       {lines.map((line, li) => (
         <Fragment key={li}>
@@ -114,6 +114,6 @@ export default function TypeTitle({ lines, className = "" }: { lines: Line[]; cl
         </Fragment>
       ))}
       <span className="tcaret" ref={caretRef} aria-hidden="true" />
-    </h1>
+    </div>
   );
 }

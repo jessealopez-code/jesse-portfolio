@@ -80,9 +80,7 @@ export default function Home() {
             <span className="glow glow--3" />
           </div>
           <div className="hero-text">
-            <p className="muted">
-              {site.name} — {site.role.toLowerCase()}
-            </p>
+            <h1 className="muted hero-kicker">{site.h1}</h1>
             <TypeTitle
               className="hero-title"
               lines={[{ text: "Marketer." }, { text: "Strategist." }, { text: "Storyteller.", accent: true }]}

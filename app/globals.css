@@ -3282,3 +3282,10 @@ img[data-zoom] {
 @media (prefers-reduced-motion: reduce) {
   .pt-pane, .pt-thumb, .pt-plan { transition: none; animation: none !important; }
 }
+
+/* H1 is the small "name — role" line; it keeps the look of the plain text line it replaced */
+.hero-kicker {
+  font: inherit;
+  letter-spacing: inherit;
+  margin: 0;
+}

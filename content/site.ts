@@ -19,6 +19,7 @@ export const site = {
   title: "Jesse Lopez — Marketer, Strategist, Storyteller", // share title (LinkedIn, X, Slack)
   description:
     "Product marketing leader who helps tech companies say what makes them different — and grow because of it.", // share description
+  h1: "Jesse Lopez — Product marketing & GTM consultant", // the page's H1 (small line above the typed headline)
   seoTitle: "Jesse Lopez | Product Marketing & GTM Consultant",
   seoDescription:
     "Product marketing leader with 15+ years at Square, Intuit, Brex, Klaviyo and Vori. I help tech companies sharpen positioning, launch, and grow. Let's talk.",
