@@ -434,10 +434,12 @@ export type Highlight = {
 export type StoryBlock = {
   heading: string;
   text: string;
-  layout: "single" | "cards" | "screens" | "verticals" | "benefits" | "proof" | "emails"; // cards, screens and verticals swipe on phones
+  layout: "single" | "cards" | "screens" | "verticals" | "benefits" | "proof" | "emails" | "pricing"; // cards, screens and verticals swipe on phones
   images: { src: string; alt: string; caption: string; subject?: string }[]; // subject: shown in the email header bar ("emails" layout)
   // "verticals": rebuilt Square segment cards. Wrap words in [[ ]] to show them as Square-blue links.
   verticals?: { image: string; title: string; subtitle: string; points: string[] }[];
+  // "pricing": before/after toggle between the old and new pricing models
+  pricing?: import("@/app/components/PricingToggle").PricingStory;
   // "proof": stats band, customer testimonials and G2 reviews, rebuilt as live text
   proof?: {
     statsTitle: string;
@@ -677,10 +679,72 @@ export const highlights: Highlight[] = [
       {
         heading: "Designed a freemium model to monetize premium features",
         text: "Free to start with no monthly fees, and a Plus plan that unlocks premium features for growing service businesses.",
-        layout: "single",
-        images: [
-          { src: "/images/sq/square-pricing.jpg", alt: "Square Invoices Free and Plus plans", caption: "Free and Plus plans" },
-        ],
+        layout: "pricing",
+        images: [],
+        pricing: {
+          "before": {
+            "label": "Free only",
+            "caption": "One free plan. Square Invoices only earned when sellers processed payments.",
+            "title": "Always free to send and no monthly fees.",
+            "sub": "Send unlimited invoices and estimates free. Only pay for processing when you accept card payments. There are no fees for checks or cash.",
+            "stats": [
+              {
+                "value": "$0",
+                "label": "Per month"
+              },
+              {
+                "value": "2.9% + 30¢",
+                "label": "Per invoice paid online"
+              }
+            ],
+            "fine": "When customers authorize Square to keep their card on file, you pay 3.5% + 15¢ per saved card payment."
+          },
+          "after": {
+            "label": "Free + Plus",
+            "caption": "Free to start, with a paid Plus tier for growing service businesses, turning a payments product into software revenue.",
+            "title": "Pick the best plan for your business.",
+            "sub": "Start for free and upgrade any time you want. Only pay for processing when you accept debit and credit card payments and ACH bank transfer payments. There are no fees for checks or cash.",
+            "plans": [
+              {
+                "name": "Free",
+                "price": "$0",
+                "unit": "No monthly fees",
+                "text": "Everything you need to get paid faster. Send unlimited invoices, estimates, contracts, and more for free.",
+                "cta": "Get started",
+                "listTitle": "Includes:",
+                "items": [
+                  "Unlimited invoicing, estimates, and contracts",
+                  "Unlimited users",
+                  "Unlimited customers",
+                  "Access from anywhere",
+                  "Send via email, SMS, or by manually sharing a link",
+                  "Accept payments 24/7"
+                ]
+              },
+              {
+                "name": "Plus",
+                "isNew": true,
+                "price": "$20",
+                "unit": "Per month",
+                "text": "For growing businesses that want to streamline work and billing needs with advanced, time-saving features.",
+                "cta": "Start 30-day free trial",
+                "listTitle": "Includes everything in Free, plus:",
+                "items": [
+                  "Offer options with multi-package estimates",
+                  "Auto-convert accepted estimates to invoices",
+                  "Create milestone-based payment schedules",
+                  "Create and reuse custom invoice templates",
+                  "Add custom fields to any invoices"
+                ]
+              }
+            ],
+            "rates": [
+              "2.9% + 30¢ online card payment",
+              "2.6% + 10¢ in-person card payment",
+              "1% (min. $1) online ACH payment"
+            ]
+          }
+        },
       },
       {
         heading: "Equipped sales to close deals",

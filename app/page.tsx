@@ -23,6 +23,7 @@ import ContactForm from "./components/ContactForm";
 import Magazine from "./components/Magazine";
 import BenefitExplorer from "./components/BenefitExplorer";
 import ImageZoom from "./components/ImageZoom";
+import PricingToggle from "./components/PricingToggle";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -249,7 +250,9 @@ export default function Home() {
                         {blk.heading}
                       </h3>
                       <p className="launch-text">{blk.text}</p>
-                      {blk.layout === "emails" ? (
+                      {blk.layout === "pricing" && blk.pricing ? (
+                        <PricingToggle story={blk.pricing} />
+                      ) : blk.layout === "emails" ? (
                         <CardRail
                           className={`sq-rail sq-rail--emails sq-rail--n${blk.images.length}`}
                           label={blk.heading}
