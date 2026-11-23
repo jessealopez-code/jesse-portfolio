@@ -8,7 +8,6 @@ import { youtubeId } from "@/lib/youtube";
 import QuoteSlider from "./components/QuoteSlider";
 import SmartLink from "./components/SmartLink";
 import CardRail from "./components/CardRail";
-import CompanyTabs from "./components/CompanyTabs";
 import FloatingContact from "./components/FloatingContact";
 import Collapsible from "./components/Collapsible";
 import BeforeAfter from "./components/BeforeAfter";
@@ -148,7 +147,6 @@ export default function Home() {
               across <span className="accent">tech.</span>
             </h2>
           </div>
-          <CompanyTabs companies={chapters.map((c) => c.company)} />
           {chapters.map((c, ci) => (
             <div key={c.company} className="chapter" id={companyId(c.company)} data-company={c.company}>
               <div className="chapter-head">
