@@ -2778,3 +2778,8 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
     height: 52px;
   }
 }
+
+/* Deep-dive opening headline sits above the before/after graphic */
+.highlight-headline {
+  margin-bottom: 28px;
+}

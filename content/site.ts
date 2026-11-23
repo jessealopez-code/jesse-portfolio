@@ -434,6 +434,7 @@ export const highlights: Highlight[] = [
     company: "Square Invoices",
     stat: "2×",
     title: "revenue for Square Invoices",
+    headline: "Revamped the website to capture demand in a crowded market",
     before: { image: "/images/square-2019.jpg", label: "2019", alt: "Square Invoices page in 2019" },
     after: { image: "/images/square-2021.jpg", label: "2021", alt: "Square Invoices page in 2021" },
     points: [
@@ -462,7 +463,7 @@ export const highlights: Highlight[] = [
   {
     company: "Dandy",
     stat: "3×",
-    title: "acquisition through full-funnel marketing",
+    title: "Dandy acquisition through full-funnel marketing",
     before: { image: "/images/dandy-q1-24.jpg", label: "Q1’24", alt: "Dandy homepage in Q1 2024" },
     after: { image: "/images/dandy-q2-24.jpg", label: "Q2’24", alt: "Dandy homepage in Q2 2024" },
     headline:

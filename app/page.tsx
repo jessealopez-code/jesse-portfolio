@@ -201,13 +201,14 @@ export default function Home() {
                   <span className="highlight-stat">{h.stat}</span>
                   <h2 className="highlight-title">{h.title}</h2>
                 </div>
+                {h.headline ? (
+                  <h3 className="vori-subhead highlight-headline">
+                    <span className="vori-num">01</span>
+                    {h.headline}
+                  </h3>
+                ) : null}
                 <BeforeAfter before={h.before} after={h.after} />
                 <Collapsible>
-                {h.headline ? (
-                  <div className="vori-block">
-                    <h3 className="vori-subhead">{h.headline}</h3>
-                  </div>
-                ) : null}
                 {h.points.length ? (
                   <div className="highlight-points" data-reveal>
                     {h.points.map((pt) => (
@@ -222,14 +223,20 @@ export default function Home() {
                 ) : null}
                 {h.screens ? (
                   <div className="vori-block">
-                    <h3 className="vori-subhead">{h.screens.heading}</h3>
+                    <h3 className="vori-subhead">
+                      <span className="vori-num">{pad(h.headline ? 2 : 1)}</span>
+                      {h.screens.heading}
+                    </h3>
                     <p className="launch-text screens-text">{h.screens.text}</p>
                     <ScreenCarousel screens={h.screens.images} label="Square Invoices App Store screens" />
                   </div>
                 ) : null}
                 {h.extra ? (
                   <div className="vori-block">
-                    <h3 className="vori-subhead">{h.extra.heading}</h3>
+                    <h3 className="vori-subhead">
+                      <span className="vori-num">{pad((h.headline ? 1 : 0) + (h.screens ? 1 : 0) + 1)}</span>
+                      {h.extra.heading}
+                    </h3>
                     <CardRail className="vori-grid-3" label="Credibility projects">
                       {h.extra.items.map((item) => (
                         <article key={item.title} className="card">
