@@ -90,7 +90,7 @@ export default function ScreenCarousel({ screens, label }: { screens: Screen[]; 
           data-reveal
         >
           {screens.map((s) => (
-            <img key={s.src} src={s.src} alt={s.alt} loading="lazy" draggable={false} />
+            <img key={s.src} src={s.src} alt={s.alt} loading="lazy" draggable={false} data-zoom />
           ))}
         </div>
       </div>

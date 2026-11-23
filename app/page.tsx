@@ -22,6 +22,7 @@ import MobileMenu from "./components/MobileMenu";
 import ContactForm from "./components/ContactForm";
 import Magazine from "./components/Magazine";
 import BenefitExplorer from "./components/BenefitExplorer";
+import ImageZoom from "./components/ImageZoom";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -236,7 +237,7 @@ export default function Home() {
                   const fig = (im: { src: string; alt: string; caption: string }) => (
                     <figure key={im.src} className={blk.layout === "single" ? "sq-shot" : "sq-card"}>
                       <div className={blk.layout === "single" ? "sq-frame" : "sq-card-img"}>
-                        <img src={im.src} alt={im.alt} loading="lazy" />
+                        <img src={im.src} alt={im.alt} loading="lazy" data-zoom />
                       </div>
                       <figcaption>{im.caption}</figcaption>
                     </figure>
@@ -265,7 +266,8 @@ export default function Home() {
                                   <span className="email-subject">{im.subject}</span>
                                 </div>
                                 <div className="email-body">
-                                  <img src={im.src} alt={im.alt} loading="lazy" />
+                                  <img src={im.src} alt={im.alt} loading="lazy" data-zoom />
+                                  <span className="zoom-hint" aria-hidden="true">⤢ Expand</span>
                                 </div>
                               </div>
                               <figcaption>{im.caption}</figcaption>
@@ -603,6 +605,7 @@ export default function Home() {
 
       <FloatingContact linkedin={links.linkedin} />
       <Motion />
+      <ImageZoom />
 
       <footer id="contact" className="footer">
         <div className="container footer-inner">
