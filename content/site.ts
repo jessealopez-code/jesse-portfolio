@@ -466,7 +466,6 @@ export const highlights: Highlight[] = [
     after: { image: "/images/dandy-q2-24.jpg", label: "Q2’24", alt: "Dandy homepage in Q2 2024" },
     points: [
       "Revamped positioning and messaging to differentiate in a fragmented dental lab space, and reframed features into a dentist-centric workflow narrative.",
-      "Enriched prospect education and improved funnel performance through video storytelling.",
     ],
     extra: {
       heading: "Upleveled market credibility through social proof, pricing & packaging, and targeted offers",
