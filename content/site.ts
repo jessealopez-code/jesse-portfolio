@@ -417,7 +417,8 @@ export type Highlight = {
   after: { image: string; label: string; alt: string };
   points: string[];
   headline?: string; // shown as a section headline, like the ones below it
-  more?: StoryBlock[]; // extra numbered blocks after the screens section
+  more?: StoryBlock[]; // extra numbered blocks
+  screensAfter?: number; // how many "more" blocks come before the screens block (default 0)
   link?: { label: string; href: string };
   screens?: {
     heading: string;
@@ -471,15 +472,8 @@ export const highlights: Highlight[] = [
         { src: "/images/square-app-7.jpg", alt: "Multiple invoicing options: invoice, recurring invoice, estimate, project" },
       ],
     },
+    screensAfter: 6, // App Store repositioning comes after the freemium (monetize) block
     more: [
-      {
-        heading: "Built credibility with reviews, testimonials, and stats",
-        text: "Brought customer voices and proof onto every page, from video testimonials and star reviews to stats that showed Square Invoices at scale.",
-        layout: "single",
-        images: [
-          { src: "/images/sq/square-social-proof.jpg", alt: "Square Invoices testimonials, star reviews and usage stats", caption: "Reviews, testimonials, and proof at scale" },
-        ],
-      },
       {
         heading: "Attracted the right audiences with segment messaging",
         text: "Brought audience-specific messaging onto the main page, so professional services, field services, and retail sellers each saw how Square Invoices fit their work.",
@@ -523,6 +517,14 @@ export const highlights: Highlight[] = [
               "Include a return policy with a custom field.",
             ],
           },
+        ],
+      },
+      {
+        heading: "Built credibility with reviews, testimonials, and stats",
+        text: "Brought customer voices and proof onto every page, from video testimonials and star reviews to stats that showed Square Invoices at scale.",
+        layout: "single",
+        images: [
+          { src: "/images/sq/square-social-proof.jpg", alt: "Square Invoices testimonials, star reviews and usage stats", caption: "Reviews, testimonials, and proof at scale" },
         ],
       },
       {

@@ -222,18 +222,26 @@ export default function Home() {
                     {h.link.label} →
                   </SmartLink>
                 ) : null}
-                {h.screens ? (
+                {(() => {
+                  // Numbered story blocks; the App Store screens block can sit anywhere in the sequence (screensAfter).
+                  const base = h.headline ? 1 : 0;
+                  const moreCount = h.more?.length ?? 0;
+                  const sAt = h.screens ? Math.min(h.screensAfter ?? 0, moreCount) : -1;
+                  const screensNum = base + sAt + 1;
+                  const screensBlock = h.screens ? (
+
                   <div className="vori-block">
                     <h3 className="vori-subhead">
-                      <span className="vori-num">{pad(h.headline ? 2 : 1)}</span>
+                      <span className="vori-num">{pad(screensNum)}</span>
                       {h.screens.heading}
                     </h3>
                     <p className="launch-text screens-text">{h.screens.text}</p>
                     <ScreenCarousel screens={h.screens.images} label="Square Invoices App Store screens" />
                   </div>
-                ) : null}
-                {h.more?.map((blk, bi) => {
-                  const num = (h.headline ? 1 : 0) + (h.screens ? 1 : 0) + bi + 1;
+                
+                  ) : null;
+                  const blocks = h.more?.map((blk, bi) => {
+                  const num = base + bi + 1 + (sAt >= 0 && bi >= sAt ? 1 : 0);
                   const fig = (im: { src: string; alt: string; caption: string }) => (
                     <figure key={im.src} className={blk.layout === "single" ? "sq-shot" : "sq-card"}>
                       <div className={blk.layout === "single" ? "sq-frame" : "sq-card-img"}>
@@ -289,7 +297,15 @@ export default function Home() {
                       )}
                     </div>
                   );
-                })}
+                });
+                  return (
+                    <>
+                      {blocks?.slice(0, Math.max(sAt, 0))}
+                      {screensBlock}
+                      {blocks?.slice(Math.max(sAt, 0))}
+                    </>
+                  );
+                })()}
                 {h.extra ? (
                   <div className="vori-block">
                     <h3 className="vori-subhead">
