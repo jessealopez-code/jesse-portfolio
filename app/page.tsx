@@ -23,6 +23,7 @@ import TypeTitle from "./components/TypeTitle";
 import MobileMenu from "./components/MobileMenu";
 import ContactForm from "./components/ContactForm";
 import Magazine from "./components/Magazine";
+import BenefitExplorer from "./components/BenefitExplorer";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -248,7 +249,9 @@ export default function Home() {
                         {blk.heading}
                       </h3>
                       <p className="launch-text">{blk.text}</p>
-                      {blk.layout === "verticals" && blk.verticals ? (
+                      {blk.layout === "benefits" && blk.benefits ? (
+                        <BenefitExplorer items={blk.benefits} label={blk.heading} />
+                      ) : blk.layout === "verticals" && blk.verticals ? (
                         <CardRail className="sq-rail sq-rail--verticals" label={blk.heading}>
                           {blk.verticals.map((v) => (
                             <article key={v.title} className="vert-card">
