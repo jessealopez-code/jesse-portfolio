@@ -678,7 +678,7 @@ export const highlights: Highlight[] = [
       },
       {
         heading: "Took a free product to a freemium model",
-        text: "Square Invoices was free to use and only made money through payment processing. I designed a freemium model that kept the core product free and added Plus, a paid subscription of premium features for growing service businesses.",
+        text: "Square Invoices was free to use and only made money through payment processing. I launched a freemium model that kept the core product free and added Plus, a paid subscription of premium features for growing service businesses.",
         layout: "pricing",
         images: [],
         pricing: {
