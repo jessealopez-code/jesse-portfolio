@@ -16,9 +16,12 @@ export const links = {
 export const site = {
   name: "Jesse Lopez",
   role: "Product marketing leader",
-  title: "Jesse Lopez — Marketer, Strategist, Storyteller",
+  title: "Jesse Lopez — Marketer, Strategist, Storyteller", // share title (LinkedIn, X, Slack)
   description:
-    "Product marketing leader who helps tech companies say what makes them different — and grow because of it.",
+    "Product marketing leader who helps tech companies say what makes them different — and grow because of it.", // share description
+  seoTitle: "Jesse Lopez | Product Marketing & GTM Consultant",
+  seoDescription:
+    "Product marketing leader with 15+ years at Square, Intuit, Brex, Klaviyo and Vori. I help tech companies sharpen positioning, launch, and grow. Let's talk.",
   heroIntro:
     "I help tech companies say what makes them different — and grow because of it.",
   footerLine: "If you can dream it, you can do it!",

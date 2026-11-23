@@ -22,8 +22,8 @@ const siteUrl = "https://jessealopez.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: site.title,
-  description: site.description,
+  title: site.seoTitle, // what Google shows
+  description: site.seoDescription,
   alternates: { canonical: "/" },
   openGraph: {
     title: site.title,
