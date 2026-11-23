@@ -22,6 +22,7 @@ import DeepNav from "./components/DeepNav";
 import TypeTitle from "./components/TypeTitle";
 import MobileMenu from "./components/MobileMenu";
 import ContactForm from "./components/ContactForm";
+import Magazine from "./components/Magazine";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -287,16 +288,16 @@ export default function Home() {
               </h3>
               <div className="vori-grid-2" data-reveal>
                 {vori.content.items.map((item) => (
-                  <article key={item.title} className="card">
-                    <Placeholder src={item.image} alt={item.title} label="Cover image" />
-                    <div className="card-body">
-                      <h4>{item.title}</h4>
-                      <p>{item.text}</p>
-                      <SmartLink href={item.href} className="card-link">
-                        {item.linkLabel} →
-                      </SmartLink>
-                    </div>
-                  </article>
+                  <Magazine
+                    key={item.title}
+                    title={item.title}
+                    text={item.text}
+                    cover={item.cover}
+                    dir={item.pagesDir}
+                    count={item.pageCount}
+                    href={item.href}
+                    linkLabel={item.linkLabel}
+                  />
                 ))}
               </div>
             </div>

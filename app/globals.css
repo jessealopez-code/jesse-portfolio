@@ -2400,3 +2400,348 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
   font-size: 12px;
   color: #6b6760;
 }
+
+/* ── Magazine flipbooks (Vori content) ──────────────── */
+.mag-card .mag-cover {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 28px 0 22px;
+  margin: 0;
+  cursor: pointer;
+  background: linear-gradient(160deg, #ece6dc, #dcd3c4);
+  border-radius: 14px 14px 0 0;
+  position: relative;
+  perspective: 1400px;
+}
+.mag-cover-book {
+  display: block;
+  width: 44%;
+  margin: 0 auto;
+  position: relative;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* stacked page edges */
+  box-shadow:
+    3px 3px 0 #f7f4ee,
+    4px 4px 0 #cfc7b8,
+    6px 6px 0 #f7f4ee,
+    7px 7px 0 #cfc7b8,
+    16px 22px 32px rgba(40, 30, 10, 0.28);
+  border-radius: 2px 6px 6px 2px;
+}
+.mag-cover-book img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1000 / 1295;
+  object-fit: cover;
+  border-radius: 2px 6px 6px 2px;
+}
+.mag-cover-book::after {
+  /* spine crease */
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 10%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0.12) 40%, rgba(0, 0, 0, 0));
+  border-radius: 2px 0 0 2px;
+}
+.mag-cover:hover .mag-cover-book,
+.mag-cover:focus-visible .mag-cover-book {
+  transform: rotateY(-18deg) translateX(-4px);
+}
+.mag-cover-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background: #121212;
+  padding: 9px 16px;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+.mag-cover-cta svg {
+  width: 18px;
+  height: 18px;
+}
+.mag-cover:hover .mag-cover-cta {
+  background: var(--accent);
+}
+
+.mag-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(120% 80% at 50% 0%, #23262d, #0d0d0f 70%);
+  color: #f3eee6;
+}
+.mag-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+}
+.mag-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mag-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.mag-read {
+  color: #8ec5ff;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+}
+.mag-close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.mag-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 0 16px;
+  overflow: hidden;
+}
+.mag-book {
+  position: relative;
+  perspective: 2600px;
+  cursor: pointer;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+}
+.mag-book--spread {
+  --pw: min(45vw, calc((100vh - 170px) * 0.7722));
+  width: calc(var(--pw) * 2);
+  height: calc(var(--pw) / 0.7722);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.mag-book--spread.is-front {
+  transform: translateX(calc(var(--pw) * -0.5));
+}
+.mag-book--spread.is-back {
+  transform: translateX(calc(var(--pw) * 0.5));
+}
+.mag-book--single {
+  --pw: min(88vw, calc((100vh - 170px) * 0.7722));
+  width: var(--pw);
+  height: calc(var(--pw) / 0.7722);
+}
+.mag-half {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.mag-half--left .mag-page {
+  border-radius: 6px 0 0 6px;
+}
+.mag-half--right .mag-page {
+  border-radius: 0 6px 6px 0;
+}
+.mag-half--solo {
+  width: 100%;
+}
+.mag-page {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #faf8f4;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+.mag-page--empty {
+  background: transparent;
+  box-shadow: none;
+}
+.mag-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 30px);
+  width: 60px;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.16) 45%, rgba(0, 0, 0, 0.28) 50%, rgba(0, 0, 0, 0.16) 55%, rgba(0, 0, 0, 0) 100%);
+  z-index: 3;
+}
+.mag-book.is-front .mag-spine,
+.mag-book.is-back .mag-spine {
+  opacity: 0;
+}
+
+/* The turning page */
+.mag-leaf {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: 4;
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1);
+  animation-fill-mode: forwards;
+}
+.mag-leaf--next {
+  left: 50%;
+  width: 50%;
+  transform-origin: left center;
+  animation-name: leaf-next;
+}
+.mag-leaf--prev {
+  left: 0;
+  width: 50%;
+  transform-origin: right center;
+  animation-name: leaf-prev;
+}
+.mag-leaf--solo-next {
+  inset: 0;
+  transform-origin: left center;
+  animation-name: leaf-next;
+}
+.mag-leaf--solo-prev {
+  inset: 0;
+  transform-origin: left center;
+  animation-name: leaf-solo-prev;
+}
+.mag-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+.mag-face--back {
+  transform: rotateY(180deg);
+}
+.mag-face::after {
+  /* shading that deepens as the page bends */
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  animation: leaf-shade 0.7s ease-in-out forwards;
+}
+.mag-leaf--next .mag-face--front::after,
+.mag-leaf--solo-next .mag-face--front::after {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0) 40%);
+}
+.mag-leaf--next .mag-face--back::after,
+.mag-leaf--prev .mag-face--front::after {
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0) 40%);
+}
+.mag-leaf--prev .mag-face--back::after {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0) 40%);
+}
+.mag-leaf--next .mag-face--front .mag-page,
+.mag-leaf--prev .mag-face--back .mag-page {
+  border-radius: 0 6px 6px 0;
+}
+.mag-leaf--next .mag-face--back .mag-page,
+.mag-leaf--prev .mag-face--front .mag-page {
+  border-radius: 6px 0 0 6px;
+}
+@keyframes leaf-next {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(-180deg); }
+}
+@keyframes leaf-prev {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(180deg); }
+}
+@keyframes leaf-solo-prev {
+  from { transform: rotateY(-180deg); }
+  to { transform: rotateY(0deg); }
+}
+@keyframes leaf-shade {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.mag-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 24px 24px;
+}
+.mag-count {
+  min-width: 150px;
+  text-align: center;
+  font-size: 14px;
+  color: #c9c3b8;
+  font-variant-numeric: tabular-nums;
+}
+.mag-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+.mag-btn--accent {
+  background: #8ec5ff;
+  border-color: #8ec5ff;
+  color: #121212;
+}
+.mag-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.mag-preload {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.mag-preload img {
+  width: 1px;
+  height: 1px;
+}
+@media (max-width: 767px) {
+  .mag-top {
+    padding: 12px 16px;
+  }
+  .mag-title {
+    font-size: 15px;
+  }
+  .mag-read {
+    font-size: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mag-book,
+  .mag-cover-book {
+    transition: none;
+  }
+}
