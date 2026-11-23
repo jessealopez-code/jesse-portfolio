@@ -2787,7 +2787,6 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
 /* ── Square deep-dive story blocks ──────────────────── */
 .sq-shots {
   margin-top: 24px;
-  max-width: 880px;
 }
 .sq-shot,
 .sq-card {
@@ -2802,8 +2801,11 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
 }
 .sq-frame img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
+  max-height: 720px; /* frame spans the page; taller screenshots stay centered instead of growing huge */
+  margin: 0 auto;
   border-radius: 6px;
 }
 .sq-shot figcaption,
