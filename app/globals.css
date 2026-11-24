@@ -3020,7 +3020,7 @@ html.motion .chip-art.is-in .chip-card:nth-of-type(5) { animation-delay: 1.7s; }
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center top;
 }
 .proof-quote blockquote,
 .proof-review blockquote {
