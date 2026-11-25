@@ -24,6 +24,7 @@ import Magazine from "./components/Magazine";
 import BenefitExplorer from "./components/BenefitExplorer";
 import ImageZoom from "./components/ImageZoom";
 import AnchorFix from "./components/AnchorFix";
+import StickyHeader from "./components/StickyHeader";
 import PricingToggle from "./components/PricingToggle";
 import { imgDims } from "@/lib/dims";
 
@@ -47,7 +48,7 @@ export default function Home() {
         Skip to content
       </a>
 
-      <header className="container nav">
+      <StickyHeader>
         <a href="#top" className="nav-logo">
           JL.
         </a>
@@ -71,7 +72,7 @@ export default function Home() {
             { href: "#contact", label: "Say hello →", accent: true },
           ]}
         />
-      </header>
+      </StickyHeader>
 
       <main id="main">
         {/* Hero */}

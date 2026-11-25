@@ -3295,3 +3295,55 @@ img[data-zoom] {
 img {
   height: auto;
 }
+
+/* ── Sticky header (desktop) ── */
+.site-header {
+  position: relative;
+  z-index: 50;
+}
+@media (min-width: 768px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+  }
+  .site-header .nav {
+    transition: padding 0.3s ease;
+  }
+  .site-header.is-scrolled {
+    background: rgba(18, 18, 18, 0.92);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
+    box-shadow: 0 1px 0 rgba(243, 238, 230, 0.08);
+  }
+  .site-header.is-scrolled .nav {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .nav-links a {
+    position: relative;
+    transition: color 0.2s ease;
+  }
+  .nav-links a.is-active:not(.accent-link) {
+    color: #8ec5ff;
+  }
+  .nav-links a.is-active:not(.accent-link)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    border-radius: 2px;
+    background: #8ec5ff;
+  }
+  /* sections stop below the bar when you jump to them */
+  #about,
+  #work,
+  #deep,
+  #services,
+  #words,
+  #contact {
+    scroll-margin-top: 64px;
+  }
+}
