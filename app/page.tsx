@@ -23,7 +23,9 @@ import ContactForm from "./components/ContactForm";
 import Magazine from "./components/Magazine";
 import BenefitExplorer from "./components/BenefitExplorer";
 import ImageZoom from "./components/ImageZoom";
+import AnchorFix from "./components/AnchorFix";
 import PricingToggle from "./components/PricingToggle";
+import { imgDims } from "@/lib/dims";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -236,7 +238,7 @@ export default function Home() {
                   const fig = (im: { src: string; alt: string; caption: string }) => (
                     <figure key={im.src} className={blk.layout === "single" ? "sq-shot" : "sq-card"}>
                       <div className={blk.layout === "single" ? "sq-frame" : "sq-card-img"}>
-                        <img src={im.src} alt={im.alt} loading="lazy" data-zoom />
+                        <img src={im.src} alt={im.alt} loading="lazy" data-zoom {...imgDims(im.src)} />
                       </div>
                       <figcaption>{im.caption}</figcaption>
                     </figure>
@@ -267,7 +269,7 @@ export default function Home() {
                                   <span className="email-subject">{im.subject}</span>
                                 </div>
                                 <div className="email-body">
-                                  <img src={im.src} alt={im.alt} loading="lazy" data-zoom />
+                                  <img src={im.src} alt={im.alt} loading="lazy" data-zoom {...imgDims(im.src)} />
                                   <span className="zoom-hint" aria-hidden="true">⤢ Expand</span>
                                 </div>
                               </div>
@@ -292,7 +294,7 @@ export default function Home() {
                           <CardRail className="proof-row proof-row--3" label="Customer testimonials">
                             {blk.proof.testimonials.map((t) => (
                               <figure key={t.name} className="proof-quote">
-                                <img src={t.image} alt={t.name} loading="lazy" />
+                                <img src={t.image} alt={t.name} loading="lazy" {...imgDims(t.image)} />
                                 <blockquote>“{t.quote}”</blockquote>
                                 <figcaption>
                                   <strong>{t.name}</strong>
@@ -324,7 +326,7 @@ export default function Home() {
                         <CardRail className="sq-rail sq-rail--verticals" label={blk.heading}>
                           {blk.verticals.map((v) => (
                             <article key={v.title} className="vert-card">
-                              <img className="vert-photo" src={v.image} alt="" loading="lazy" />
+                              <img className="vert-photo" src={v.image} alt="" loading="lazy" {...imgDims(v.image)} />
                               <div className="vert-body">
                                 <h4>{v.title}</h4>
                                 <p className="vert-sub">{v.subtitle}</p>
@@ -422,7 +424,7 @@ export default function Home() {
               </h3>
               <div className="launch">
                 <div className="launch-media chip-section-media">
-                  <img src={vori.chip.image} alt={vori.chip.alt} loading="lazy" />
+                  <img src={vori.chip.image} alt={vori.chip.alt} loading="lazy" {...imgDims(vori.chip.image)} />
                 </div>
                 <div className="launch-body">
                   <ul className="cases-uses" data-reveal>
@@ -481,7 +483,7 @@ export default function Home() {
                 <div className="vori-cases" data-reveal>
                   {vori.caseStudies.items.map((c) => (
                     <a key={c.image} href={c.href} target="_blank" rel="noopener noreferrer" className="vori-case-link">
-                      <img src={c.image} alt={c.alt} loading="lazy" className="vori-case" />
+                      <img src={c.image} alt={c.alt} loading="lazy" className="vori-case" {...imgDims(c.image)} />
                     </a>
                   ))}
                 </div>
@@ -607,6 +609,7 @@ export default function Home() {
       <FloatingContact linkedin={links.linkedin} />
       <Motion />
       <ImageZoom />
+      <AnchorFix />
 
       <footer id="contact" className="footer">
         <div className="container footer-inner">

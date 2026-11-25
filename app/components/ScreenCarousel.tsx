@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useEffect, useRef, useState } from "react";
+import { imgDims } from "@/lib/dims";
 
 type Screen = { src: string; alt: string };
 
@@ -90,7 +91,7 @@ export default function ScreenCarousel({ screens, label }: { screens: Screen[]; 
           data-reveal
         >
           {screens.map((s) => (
-            <img key={s.src} src={s.src} alt={s.alt} loading="lazy" draggable={false} data-zoom />
+            <img key={s.src} src={s.src} alt={s.alt} loading="lazy" draggable={false} data-zoom {...imgDims(s.src)} />
           ))}
         </div>
       </div>

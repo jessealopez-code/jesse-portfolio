@@ -3289,3 +3289,9 @@ img[data-zoom] {
   letter-spacing: inherit;
   margin: 0;
 }
+
+/* Images carry width/height attributes (lib/image-dims.json) so they reserve space before loading;
+   height:auto keeps those attributes as an aspect ratio only. Class rules that set a height still win. */
+img {
+  height: auto;
+}

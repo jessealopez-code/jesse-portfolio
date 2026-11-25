@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useRef, useState } from "react";
+import { imgDims } from "@/lib/dims";
 
 export type Benefit = {
   title: string;
@@ -77,7 +78,7 @@ export default function BenefitExplorer({ items, label }: { items: Benefit[]; la
               <p>{b.promise}</p>
             </div>
             <div className="bx-tile">
-              <img src={b.image} alt={`Square Invoices: ${b.title}`} loading="lazy" />
+              <img src={b.image} alt={`Square Invoices: ${b.title}`} loading="lazy" {...imgDims(b.image)} />
             </div>
             <div className="bx-feats">
               {b.features.map((f) => (

@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useEffect, useRef, useState } from "react";
+import { imgDims } from "@/lib/dims";
 
 type Side = { image: string; label: string; alt: string };
 
@@ -55,7 +56,7 @@ export default function BeforeAfter({ before, after }: { before: Side; after: Si
       <div className="compare" data-reveal>
         {[before, after].map((side) => (
           <figure key={side.label}>
-            <img src={side.image} alt={side.alt} loading="lazy" />
+            <img src={side.image} alt={side.alt} loading="lazy" {...imgDims(side.image)} />
             <figcaption>{side.label}</figcaption>
           </figure>
         ))}
@@ -75,8 +76,8 @@ export default function BeforeAfter({ before, after }: { before: Side; after: Si
         onPointerUp={() => (dragging.current = false)}
         onPointerCancel={() => (dragging.current = false)}
       >
-        <img src={after.image} alt={after.alt} className="ba-img" loading="lazy" />
-        <img src={before.image} alt={before.alt} className="ba-img ba-before" loading="lazy" />
+        <img src={after.image} alt={after.alt} className="ba-img" loading="lazy" {...imgDims(after.image)} />
+        <img src={before.image} alt={before.alt} className="ba-img ba-before" loading="lazy" {...imgDims(before.image)} />
         <div className="ba-line" aria-hidden="true">
           <span>⇆</span>
         </div>

@@ -53,7 +53,7 @@ export function VideoGrid({ items, label }: { items: VideoItem[]; label: string 
           <figure key={v.id} className="vcard">
             <button type="button" className="vthumb" onClick={() => setOpen(v)} aria-label={`Play video: ${v.title}`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt="" loading="lazy" />
+              <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt="" loading="lazy" width={480} height={360} />
               <span className="vthumb-play" aria-hidden="true">
                 ▶
               </span>

@@ -3,6 +3,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { imgDims } from "@/lib/dims";
 
 type Props = {
   title: string;
@@ -24,7 +25,7 @@ export default function Magazine(props: Props) {
     <article className="card mag-card">
       <button type="button" className="mag-cover" onClick={() => setOpen(true)} aria-label={`Flip through ${props.title}`}>
         <span className="mag-cover-book">
-          <img src={props.cover} alt="" loading="lazy" />
+          <img src={props.cover} alt="" loading="lazy" {...imgDims(props.cover)} />
         </span>
         <span className="mag-cover-cta">
           <svg viewBox="0 0 256 256" aria-hidden="true">
